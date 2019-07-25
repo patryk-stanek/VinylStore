@@ -1,0 +1,11 @@
+.Home {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+
+    &__container {
+        border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+    }
+}

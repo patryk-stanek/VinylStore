@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Ball",
+        "category" : "Home",
+        "price": "€9.99",
+        "stocked": true,
+        "id": 1
+    }, {
+        "name": "Door",
+        "category" : "Home",
+        "price": "€8.99",
+        "stocked": false,
+        "id": 2
+    }, {
+        "name": "Bottle",
+        "category" : "Home",
+        "price": "€4.99",
+        "stocked": true,
+        "id": 3
+    }, {
+        "name": "Table",
+        "category" : "Work",
+        "price": "€10.99",
+        "stocked": false,
+        "id": 4
+    }, {
+        "name": "Mug",
+        "category" : "Work",
+        "price": "€4.99",
+        "stocked": false,
+        "id": 5
+    }, {
+        "name": "Paper",
+        "category" : "Work",
+        "price": "€2.99",
+        "stocked": true,
+        "id": 6
+    }
+]

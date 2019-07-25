@@ -1,0 +1,15 @@
+.Product {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid orangered;
+
+    &__name {
+        font-weight: 800;
+    }
+
+    &__price {
+        color: green;
+    }
+}
