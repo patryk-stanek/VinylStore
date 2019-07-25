@@ -1,4 +1,8 @@
 a {
     margin-right: 5px;
     color: black;
+
+    &:hover {
+        color: orangered;
+    }
 }

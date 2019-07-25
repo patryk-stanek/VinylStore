@@ -9,6 +9,9 @@ export const Navigation = props => {
             <NavLink exact to='/' activeClassName="active">
                 Home
             </NavLink>
+            <NavLink exact to='/products' activeClassName="active">
+                Products
+            </NavLink>
             <NavLink exact to='/basket' activeClassName="active">
                 Basket
             </NavLink>
