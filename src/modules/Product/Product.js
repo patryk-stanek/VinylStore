@@ -5,8 +5,8 @@ import './Product.scss';
 const Product = props => {
     return (
         <div className='Product'>
-            <span className='Product__name'>{props.name}</span>
-            <span className='Product__price'>{props.price}</span>
+            <span className='Product__name'>{props.product.name}</span>
+            <span className='Product__price'>{props.product.price}</span>
         </div>
     )
 }

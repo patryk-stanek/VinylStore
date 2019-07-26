@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { Sidebar } from '../../components/Sidebar/Sidebar';
-import { ProductsList } from '../../modules/Product/ProductsList';
+// import { ProductsListContainer } from '../../modules/Product/ProductsListContainer';
+import ProductsListContainer from '../../modules/Product/ProductsListContainer.js';
 import { Pagination } from '../../components/Pagination/Pagination';
 
 import './Home.scss';
@@ -12,7 +13,7 @@ export class Home extends React.Component {
             <div className='Home'>
                 <Sidebar />
                 <div className='Home__container'>
-                    <ProductsList />
+                    <ProductsListContainer />
                     <Pagination />
                 </div>
             </div>

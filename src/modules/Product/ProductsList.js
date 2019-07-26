@@ -1,23 +1,19 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Product from './Product';
 
-import products from '../../utils/products.json';
+const ProductsList = props => (
+    <div className='ProductsList'>
+        {props.products.map(product => {
+                return (
+                    <div className='ProductsList__single' key={product.id}>
+                        <Link to={'products/product/' + product.id}>
+                            <Product product={product} />
+                        </Link>
+                    </div>
+                )
+            })}
+    </div>
+)
 
-export class ProductsList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: products,
-        }
-    }
-
-    render() {
-        const productsList = this.state.products.map(data => <Product name={data.name} price={data.price} key={data.id}/>)
-        return (
-            <div>
-                {productsList}
-            </div>
-        )
-    }
-}
+export default ProductsList;
