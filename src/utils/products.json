@@ -35,5 +35,11 @@
         "price": "€2.99",
         "stocked": true,
         "id": 6
+    }, {
+        "name": "Plate",
+        "category" : "Home",
+        "price": "€0.99",
+        "stocked": true,
+        "id": 7
     }
 ]
