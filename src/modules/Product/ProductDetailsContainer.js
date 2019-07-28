@@ -1,8 +1,14 @@
+//Importing methods
 import React from 'react';
 import { connect } from 'react-redux';
+
+//Importing actions
 import { getProduct } from './Product.actions';
+
+//Importing component
 import ProductDetails from './ProductDetails';
 
+//ProductDetailsContainer component
 class ProductDetailsContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -19,6 +25,7 @@ class ProductDetailsContainer extends React.Component {
     }
 }
 
+//Maping global state
 const mapStateToProps = store => ({
     selectedProduct: store.productsReducer.selectedProduct
 });

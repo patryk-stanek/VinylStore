@@ -1,5 +1,7 @@
+//Import react from react
 import React from 'react';
 
+//ProductDetails component
 const ProductDetails = props => (
     <div className='ProductDetails'>
         <header>
