@@ -1,5 +1,5 @@
 //Importing methods
-import React from 'react';
+import React from "react";
 
 //Sidebar component
 export class Sidebar extends React.Component {

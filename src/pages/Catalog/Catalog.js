@@ -1,6 +1,7 @@
 //Importing methods
-import React from 'react';
+import React from "react";
 
+//Catalog container
 export class Catalog extends React.Component {
     render() {
         return (

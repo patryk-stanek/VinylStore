@@ -1,12 +1,12 @@
 //Importing methods
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
 //Importing actions
-import { getProduct } from './Product.actions';
+import { getProduct } from "./Product.actions";
 
 //Importing component
-import ProductDetails from './ProductDetails';
+import ProductDetails from "./ProductDetails";
 
 //ProductDetailsContainer component
 class ProductDetailsContainer extends React.Component {

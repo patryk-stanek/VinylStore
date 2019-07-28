@@ -4,10 +4,10 @@ import {
     GET_PRODUCTS,
     SEARCH_PRODUCTS,
     SET_CATEGORY
-} from './Product.actions';
+} from "./Product.actions";
 
 //Importing .json database
-import productsData from '../../utils/products.json';
+import productsData from "../../utils/products.json";
 
 //Setting initial state
 const initialState = {

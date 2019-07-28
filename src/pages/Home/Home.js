@@ -1,21 +1,21 @@
 //Importing methods
-import React from 'react';
+import React from "react";
 
 //Importing components
-import { Sidebar } from '../../components/Sidebar/Sidebar';
-import ProductsListContainer from '../../modules/Product/ProductsListContainer';
-import { Pagination } from '../../components/Pagination/Pagination';
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import ProductsListContainer from "../../modules/Product/ProductsListContainer";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 //Importing styles
-import './Home.scss';
+import "./Home.scss";
 
 //Home component
 export class Home extends React.Component {
     render() {
         return (
-            <div className='Home'>
+            <div className="home">
                 <Sidebar />
-                <div className='Home__container'>
+                <div className="home__container">
                     <ProductsListContainer />
                     <Pagination />
                 </div>

@@ -1,5 +1,5 @@
 //Importing methods
-import React from 'react';
+import React from "react";
 
 //Footer component
 export const Footer = props => {

@@ -1,10 +1,10 @@
 //Importing methods
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
 //Importing component
-import { Link } from 'react-router-dom';
-import Product from '../../modules/Product/Product';
+import { Link } from "react-router-dom";
+import Product from "../../modules/Product/Product";
 
 //SearchResults component
 class SearchResults extends React.Component {
@@ -28,7 +28,7 @@ class SearchResults extends React.Component {
                         this.state.visibleProducts.map(product => {//Mapping searched products array to components
                             return(
                                 <h2>
-                                    <Link to={'../catalog/product/' + product.id}>
+                                    <Link to={"../catalog/product/" + product.id}>
                                         <Product product={product} />
                                     </Link>
                                 </h2>

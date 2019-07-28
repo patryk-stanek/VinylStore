@@ -1,8 +1,8 @@
 //Importing methods
-import { createStore } from 'redux';
+import { createStore } from "redux";
 
 //Importing reducers
-import reducers from './reducers';
+import reducers from "./reducers";
 
 //Creating store with reducers
 const store = createStore(reducers);

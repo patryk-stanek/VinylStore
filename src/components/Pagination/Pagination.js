@@ -1,5 +1,5 @@
 //Importing methods
-import React from 'react';
+import React from "react";
 
 //Pagination component
 export const Pagination = props => {

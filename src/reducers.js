@@ -1,8 +1,8 @@
 //Importing methods
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
 //Importing reducers
-import productsReducer from '../src/modules/Product/Product.reducers';
+import productsReducer from "../src/modules/Product/Product.reducers";
 
 //Combining reducers
 const reducers = combineReducers({

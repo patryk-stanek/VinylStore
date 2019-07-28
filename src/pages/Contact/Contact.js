@@ -1,5 +1,5 @@
 //Importing methods
-import React from 'react';
+import React from "react";
 
 //Contact component
 export class Contact extends React.Component {
