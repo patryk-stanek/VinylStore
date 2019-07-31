@@ -17,7 +17,7 @@ class Searchbar extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.finishEdit = this.finishEdit.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     componentDidMount() {
@@ -30,18 +30,14 @@ class Searchbar extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();//Block default behavior
-        this.setState({fireRedirect: false});
-        console.log('da');
+        this.setState({fireRedirect: false});//Set fireRedirect back to false and allow to make a new search
     }
 
-    finishEdit(e) {
+    handleSearch(e) {
         if (e.key === 'Enter') {
-            // console.log('ma');
             this.props.dispatch(searchProducts(this.state.searchedProduct));//Dispatching searched term
             this.setState({fireRedirect: true});//Changing value responsible for redirecting management 
             document.getElementById("form").reset();//Clearing input
-            // this.setState({fireRedirect: false})
-            console.log('ra')
         }
     }
 
@@ -56,7 +52,7 @@ class Searchbar extends React.Component {
                         type="text"
                         placeholder="Search products..."
                         onChange={this.handleChange}
-                        onKeyPress={this.finishEdit}
+                        onKeyPress={this.handleSearch}
                     />
                 </form>
                 {
