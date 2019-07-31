@@ -2,7 +2,7 @@
 import { combineReducers } from "redux";
 
 //Importing reducers
-import productsReducer from "../src/modules/Product/Product.reducers";
+import productsReducer from "./components/Product/Product.reducers";
 
 //Combining reducers
 const reducers = combineReducers({

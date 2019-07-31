@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 //Importing component
 import { Link } from "react-router-dom";
-import Product from "../../modules/Product/Product";
+import Product from "../../components/Product/Product";
 
 //SearchResults component
 class SearchResults extends React.Component {
@@ -17,6 +17,10 @@ class SearchResults extends React.Component {
 
     componentDidMount() {
         this.setState({visibleProducts: this.props.visibleProducts});//Passing props with searched product to component state
+    }
+
+    componentWillReceiveProps() {
+        this.setState({visibleProducts: this.props.visibleProducts});
     }
 
     render() {

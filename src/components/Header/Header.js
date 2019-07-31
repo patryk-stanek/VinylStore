@@ -2,8 +2,8 @@
 import React from "react";
 
 //Importing component
-import { Navigation } from "../../../../components/Navigation/Navigation";
-import Searchbar from "../../../../components/Searchbar/Searchbar";
+import { Navigation } from "../Navigation/Navigation";
+import Searchbar from "../Searchbar/Searchbar";
 
 //Header component
 export class Header extends React.Component {

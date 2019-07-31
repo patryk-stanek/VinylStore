@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router";
 
 //Importing actions for Searchbar states
-import { searchProducts, getProducts } from "../../modules/Product/Product.actions";
+import { searchProducts, getProducts } from "../Product/Product.actions";
 
 //Searchbar component
 class Searchbar extends React.Component {
@@ -17,6 +17,7 @@ class Searchbar extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.finishEdit = this.finishEdit.bind(this);
     }
 
     componentDidMount() {
@@ -29,9 +30,19 @@ class Searchbar extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();//Block default behavior
-        this.props.dispatch(searchProducts(this.state.searchedProduct));//Dispatching searched term
-        this.setState({fireRedirect: true});//Changing value responsible for redirecting management 
-        document.getElementById("form").reset();//Clearing input
+        this.setState({fireRedirect: false});
+        console.log('da');
+    }
+
+    finishEdit(e) {
+        if (e.key === 'Enter') {
+            // console.log('ma');
+            this.props.dispatch(searchProducts(this.state.searchedProduct));//Dispatching searched term
+            this.setState({fireRedirect: true});//Changing value responsible for redirecting management 
+            document.getElementById("form").reset();//Clearing input
+            // this.setState({fireRedirect: false})
+            console.log('ra')
+        }
     }
 
     render() {
@@ -41,11 +52,16 @@ class Searchbar extends React.Component {
         return (
             <div>
                 <form id="form" onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder="Search products..." onChange={this.handleChange} />
+                    <input
+                        type="text"
+                        placeholder="Search products..."
+                        onChange={this.handleChange}
+                        onKeyPress={this.finishEdit}
+                    />
                 </form>
                 {
                     fireRedirect && (
-                        <Redirect to={from || `/search/${this.state.searchedProduct}`}/>
+                        <Redirect to={from || `/search`}/>
                     )
                 }
             </div>

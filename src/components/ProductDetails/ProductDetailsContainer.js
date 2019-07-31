@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 //Importing actions
-import { getProduct } from "./Product.actions";
+import { getProduct } from "../Product/Product.actions";
 
 //Importing component
 import ProductDetails from "./ProductDetails";

@@ -3,7 +3,7 @@ import React from "react";
 
 //Importing components
 import { Sidebar } from "../../components/Sidebar/Sidebar";
-import ProductsListContainer from "../../modules/Product/ProductsListContainer";
+import ProductsListContainer from "../../components/Product/ProductsListContainer";
 import { Pagination } from "../../components/Pagination/Pagination";
 
 //Importing styles
