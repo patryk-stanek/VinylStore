@@ -11,16 +11,16 @@ class SearchResults extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            visibleProducts: []//Array for shown products
+            searchedProducts: []//Array for shown products
         }
     }
 
     componentDidMount() {
-        this.setState({visibleProducts: this.props.visibleProducts});//Passing props with searched product to component state
+        this.setState({searchedProducts: this.props.searchedProducts});//Passing props with searched product to component state
     }
 
     componentWillReceiveProps() {
-        this.setState({visibleProducts: this.props.visibleProducts});
+        this.setState({searchedProducts: this.props.searchedProducts});
     }
 
     render() {
@@ -29,7 +29,7 @@ class SearchResults extends React.Component {
                 <h1>/SearchResults</h1>
                 <div>
                     {
-                        this.state.visibleProducts.map(product => {//Mapping searched products array to components
+                        this.state.searchedProducts.map(product => {//Mapping searched products array to components
                             return(
                                 <h2>
                                     <Link to={"../catalog/product/" + product.id}>
@@ -48,7 +48,7 @@ class SearchResults extends React.Component {
 //Mapping global component
 const mapStateToProps = store => ({
     products: store.productsReducer.products,
-    visibleProducts: store.productsReducer.visibleProducts
+    searchedProducts: store.productsReducer.searchedProducts
 });
 
 //Connecting state method to component

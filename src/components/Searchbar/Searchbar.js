@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router";
 
 //Importing actions for Searchbar states
-import { searchProducts, getProducts } from "../Product/Product.actions";
+import { searchProducts } from "../Product/Product.actions";
 
 //Searchbar component
 class Searchbar extends React.Component {
@@ -18,10 +18,6 @@ class Searchbar extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
-    }
-
-    componentDidMount() {
-        this.props.dispatch(getProducts());//Dispatching products list
     }
 
     handleChange(event) {
@@ -68,7 +64,7 @@ class Searchbar extends React.Component {
 //Maping global state
 const mapStateToProps = store => ({
     products: store.productsReducer.products,
-    visibleProducts: store.productsReducer.visibleProducts
+    searchedProducts: store.productsReducer.searchedProducts
 });
 
 //Connecting state method with component

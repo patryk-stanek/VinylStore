@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 //Importing components
 import { Body } from "./components/Body/Body";
-import { Home } from "./pages/Home/Home";
+import Home from "./pages/Home/Home";
 import { Catalog } from "./pages/Catalog/Catalog";
 import { Contact } from "./pages/Contact/Contact";
 import { Basket } from "./pages/Basket/Basket";

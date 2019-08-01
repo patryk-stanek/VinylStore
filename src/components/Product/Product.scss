@@ -13,3 +13,13 @@
         color: green;
     }
 }
+
+.product-list {
+    background-color: yellow;
+    width: 100%;
+
+    &__single {
+        width: 40%;
+        float: left;
+    }
+}
