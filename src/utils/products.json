@@ -71,5 +71,11 @@
         "price": "€1.09",
         "stocked": true,
         "id": 12
+    }, {
+        "name": "Headphone",
+        "category": "Home",
+        "price": "€1.09",
+        "stocked": true,
+        "id": 13
     }
 ]

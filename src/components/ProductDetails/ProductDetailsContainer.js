@@ -10,10 +10,6 @@ import ProductDetails from "./ProductDetails";
 
 //ProductDetailsContainer component
 class ProductDetailsContainer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.props.dispatch(getProduct(this.props.match.params.id));
     }
