@@ -24,28 +24,22 @@ class Home extends React.Component {
             currentPage: 0
         }
 
-        this.console = this.console.bind(this);
         this.handleChangePage = this.handleChangePage.bind(this);
     }
 
     componentWillMount() {
         this.props.dispatch(getProducts());
-        // this.state.currentPage = 0;
         this.setState({currentPage: 0})
     }
     
     handleUpdate() {
-        // this.state.productsPage = [];
         this.setState({productsPage: []})
-        // this.state.currentPage = 0;
         this.setState({currentPage: 0})
         this.forceUpdate();
     }
 
     handleChangePage(page) {
-        // this.state.productsPage = [];
         this.setState({productsPage: []})        
-        // this.state.currentPage = page;
         this.setState({currentPage: page})
         this.forceUpdate();
     }
@@ -66,11 +60,6 @@ class Home extends React.Component {
         }
         return newArray;
     }
-
-    console() {
-        console.log(this.state.productsPage);
-        console.log(this.props.visibleProducts);
-    }
     
     render() {
         this.mapPropsToArray();
@@ -78,9 +67,8 @@ class Home extends React.Component {
             <div className="home">
                 <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={this.handleUpdate.bind(this)}/>
                 <div className="home__container">
-                    <button onClick={this.console}>x</button>
                     <ProductsListContainer visibleProducts={this.state.productsPage[this.state.currentPage]} />
-                    <Pagination handleChangePage={this.handleChangePage}/>
+                    <Pagination handleChangePage={this.handleChangePage} pagesAmount={this.state.productsPage.length} currentPage={this.state.currentPage}/>
                 </div>
             </div>
         )

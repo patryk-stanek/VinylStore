@@ -1,6 +1,8 @@
 //Importing methods
 import React from "react";
 
+import "./Pagination.scss";
+
 //Pagination component
 class Pagination extends React.Component {
     constructor(props) {
@@ -16,9 +18,14 @@ class Pagination extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => this.handleClick(0)}>1</button>
-                <button onClick={() => this.handleClick(1)}>2</button>
-                <button onClick={() => this.handleClick(2)}>3</button>
+                <button onClick={() => this.handleClick(0)}>first</button>
+                {
+                    Array.from(Array(this.props.pagesAmount)).map((id, index) => {
+                        let currentPageStyle = this.props.currentPage === index ? "active" : "inactive";
+                        return <button onClick={() => this.handleClick(index)} className={currentPageStyle}>{index + 1}</button>
+                    })
+                }
+                <button onClick={() => this.handleClick(this.props.pagesAmount - 1)}>last</button>
             </div>
         )
     }
