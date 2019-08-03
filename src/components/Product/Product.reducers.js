@@ -25,9 +25,9 @@ export default function productsReducer(state = initialState, action) {
     switch (action.type) {
         case GET_PRODUCT:
             //Finding object in database array by it's id
-            const selectedProduct = state.products.find(product => product.id === parseInt(action.id));
+            const product = state.products.find(product => product.id === parseInt(action.id));
             //Passing found object to new array
-            return Object.assign({}, state, {selectedProduct});
+            return Object.assign({}, state, {product});
 
         case GET_PRODUCTS:
             //Getting objects array from database file
