@@ -10,42 +10,28 @@ class Sidebar extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleSortFirstToLast = this.handleSortFirstToLast.bind(this);
-        this.handleSortLastToFirst = this.handleSortLastToFirst.bind(this);
-        this.handleSortLowToHigh = this.handleSortLowToHigh.bind(this);
-        this.handleSortHighToLow = this.handleSortHighToLow.bind(this);
+        this.handleSortByName = this.handleSortByName.bind(this);
+        this.handleSortByPrice = this.handleSortByPrice.bind(this);
     }
 
-    handleSortFirstToLast() {
-        this.props.dispatch(sortProductsByName(1));
+    handleSortByName(value) {
+        this.props.dispatch(sortProductsByName(value));
         this.props.handleUpdate();
     }
 
-    handleSortLastToFirst() {
-        this.props.dispatch(sortProductsByName(0));
-        this.props.handleUpdate();
-    }
-
-    handleSortLowToHigh() {
-        this.props.dispatch(sortProductsByPrice(1));
-        this.props.handleUpdate();
-    }
-
-    handleSortHighToLow() {
-        this.props.dispatch(sortProductsByPrice(0));
+    handleSortByPrice(value) {
+        this.props.dispatch(sortProductsByPrice(value));
         this.props.handleUpdate();
     }
 
     render() {
         return (
             <div>
-                <span>Sort by:</span>
-                <ul>
-                    <button onClick={this.handleSortFirstToLast}>Name A-Z</button><br/>
-                    <button onClick={this.handleSortLastToFirst}>Name Z-A</button><br/>
-                    <button onClick={this.handleSortLowToHigh}>Price low-high</button><br/>
-                    <button onClick={this.handleSortHighToLow}>Price high-low</button> 
-                </ul>
+                <span>Sort by:</span><br/>
+                <button onClick={() => this.handleSortByName(1)}>Name A-Z</button><br/>
+                <button onClick={() => this.handleSortByName(0)}>Name Z-A</button><br/>
+                <button onClick={() => this.handleSortByPrice(1)}>Price low-high</button><br/>
+                <button onClick={() => this.handleSortByPrice(0)}>Price high-low</button> 
             </div>
         )
     }

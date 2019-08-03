@@ -22,7 +22,15 @@ class Pagination extends React.Component {
                 {
                     Array.from(Array(this.props.pagesAmount)).map((id, index) => {
                         let currentPageStyle = this.props.currentPage === index ? "active" : "inactive";
-                        return <button onClick={() => this.handleClick(index)} className={currentPageStyle}>{index + 1}</button>
+                        return (
+                            <button
+                                key={index}
+                                onClick={() => this.handleClick(index)}
+                                className={currentPageStyle}
+                            >
+                                {index + 1}
+                            </button>
+                        )
                     })
                 }
                 <button onClick={() => this.handleClick(this.props.pagesAmount - 1)}>last</button>

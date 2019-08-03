@@ -8,7 +8,6 @@ import ProductsListContainer from "../../components/Product/ProductsListContaine
 import Pagination from "../../components/Pagination/Pagination";
 
 //Importing styles
-
 import "./Home.scss";
 
 //Importing actions for Searchbar states
@@ -62,9 +61,11 @@ class Home extends React.Component {
     }
     
     render() {
+        // eslint-disable-next-line
         if (this.state.productsPage = []) {
             this.mapPropsToArray();
         }
+        
         return (
             <div className="home">
                 <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={this.handleUpdate.bind(this)}/>
