@@ -62,7 +62,9 @@ class Home extends React.Component {
     }
     
     render() {
-        this.mapPropsToArray();
+        if (this.state.productsPage = []) {
+            this.mapPropsToArray();
+        }
         return (
             <div className="home">
                 <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={this.handleUpdate.bind(this)}/>
