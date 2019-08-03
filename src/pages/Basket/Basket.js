@@ -1,8 +1,12 @@
 //Importing methods
 import React from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 
-import { addToBasket, removeFromBasket, clearBasket } from "../../components/Basket/Basket.actions";
+import {
+    addToBasket,
+    removeFromBasket,
+    decreaseProductAmount,
+    clearBasket } from "../../components/Basket/Basket.actions";
 
 //Basket component
 class Basket extends React.Component {
@@ -28,6 +32,7 @@ class Basket extends React.Component {
         this.x = this.x.bind(this);
         this.y = this.y.bind(this);
         this.z = this.z.bind(this);
+        this.v = this.v.bind(this);
     }
 
     x(val) {
@@ -38,6 +43,10 @@ class Basket extends React.Component {
         this.props.dispatch(removeFromBasket(val));
     }
 
+    v(val) {
+        this.props.dispatch(decreaseProductAmount(val));
+    }
+
     z() {
         this.props.dispatch(clearBasket());
     }
@@ -46,17 +55,28 @@ class Basket extends React.Component {
         return (
             <div>
                 <h1>/basket</h1>
-                <button onClick={() => this.x(this.state.product1)}>x</button>
-                <button onClick={() => this.x(this.state.product2)}>x1</button>
+                <button onClick={() => this.x(this.state.product1)}>dumm1</button>
+                <button onClick={() => this.x(this.state.product2)}>dumm2</button>
                 <button onClick={() => console.log(this.props.basket)}>console</button>
-                <button onClick={() => this.z()}>z</button>
+                <button onClick={() => console.log(this.props.totalCost)}>cost</button>
+                <button onClick={() => this.z()}>clear basket</button><br/>
+                <span>total items: {this.props.totalItems}</span>
                 <div>
                     {
                         this.props.basket.map(product => {
-                            return <div><span id={product.id}>{product.name}<button onClick={() => this.y(product.id)}>y</button></span><br/></div>
+                            return <div>
+                                <span id={product.id}>
+                                    {product.name}
+                                    <span> - </span>
+                                    <span>{product.amount}</span>
+                                    <button onClick={() => this.y(product)}>delete</button>
+                                    <button onClick={() => this.x(product)}>add One</button>
+                                    <button onClick={() => this.v(product)}>remove One</button>
+                                </span><br/></div>
                         })
                     }
                 </div>
+                <span>{parseFloat(this.props.totalCost).toFixed(2)}</span>
             </div>
         )
     }
@@ -64,7 +84,9 @@ class Basket extends React.Component {
 
 //Maping global state
 const mapStateToProps = store => ({
-    basket: store.basketReducer.basket
+    basket: store.basketReducer.basket,
+    totalCost: store.basketReducer.totalCost,
+    totalItems: store.basketReducer.totalItems
 });
 
 //Connecting state method with component

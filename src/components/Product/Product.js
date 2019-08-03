@@ -1,6 +1,7 @@
 //Importing methods
 import React from "react";
 
+
 //Importing styles
 import "./Product.scss";
 
