@@ -10,6 +10,8 @@ import Basket from "./pages/Basket/Basket";
 import { NoMatch } from "./pages/NoMatch/NoMatch";
 import SearchResults from "./pages/SearchResults/SearchResults";
 import ProductDetailsContainer from "./components/ProductDetails/ProductDetailsContainer";
+import FAQ from "./pages/FAQ/FAQ";
+import Rules from "./pages/Rules/Rules";
 
 //Creating routes
 export default (
@@ -20,6 +22,8 @@ export default (
             <Route exact path={"/contact"} component={Contact} />
             <Route exact path={"/basket"} component={Basket} />
             <Route exact path={"/search"} component={SearchResults} />
+            <Route exact path={"/FAQ"} component={FAQ} />
+            <Route exact path={"/rules"} component={Rules} />
             <Route component={NoMatch} />
         </Switch>
     </Body>

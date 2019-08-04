@@ -2,24 +2,47 @@
     display: flex;
     flex-direction: column;
     margin: 5px;
-    padding: 5px;
     border: 1px solid orangered;
+    color: black;
+    // padding: 50px 0;
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        // text-align: center;
+    }
 
     &__name {
-        font-weight: 800;
+        font-weight: 100;
+        // font-size: 45px;
+    }
+
+    &__artist {
+        font-weight: 100;
+        // font-size: 30px;
     }
 
     &__price {
-        color: green;
+        font-weight: 100;
+        // font-size: 30px;
+    }
+
+    &__cover {
+        // width: calc(100% - 50px);
+        // margin: 0 24px;
+        // border: 1px solid black;
+        width: 100px;
     }
 }
 
 .product-list {
-    background-color: yellow;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
     &__single {
-        width: 40%;
+        width: calc(50% - 10px);
         float: left;
         border: 2px solid pink;
     }

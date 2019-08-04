@@ -36,8 +36,13 @@ export default function productsReducer(state = initialState, action) {
         case SEARCH_PRODUCTS:
             //Filter objects in database array by it's name
             //Names in array as well as search term is converted to lower cases;
-            const foundProducts = state.products.filter(product => product.name.toLowerCase().includes(action.searchText.toLowerCase()));
+            const foundProducts = state.products.filter(product =>
+                product.name.toLowerCase().includes(action.searchText.toLowerCase())
+                ||
+                product.artist.toLowerCase().includes(action.searchText.toLowerCase())
+            );
             //Passing found objects to new array
+            console.log(foundProducts);
             return Object.assign({}, state, {searchedProducts: foundProducts});
 
         case SORT_PRODUCTS_BY_NAME:

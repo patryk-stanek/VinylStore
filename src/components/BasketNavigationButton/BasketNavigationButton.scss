@@ -1,0 +1,21 @@
+.basket-navigation-button {
+    color: red;
+
+    &__icon {
+        margin-right: 5px;
+    }
+
+    &__items {
+        margin-right: 5px;
+
+        &::after {
+            content: "/";
+            display: inline-block;
+            margin-left: 5px;
+        }
+    }
+
+    &__price {
+
+    }
+}

@@ -21,7 +21,7 @@ class Pagination extends React.Component {
                 <button onClick={() => this.handleClick(0)}>first</button>
                 {
                     Array.from(Array(this.props.pagesAmount)).map((id, index) => {
-                        let currentPageStyle = this.props.currentPage === index ? "active" : "inactive";
+                        let currentPageStyle = this.props.currentPage === index ? "current-page" : "inactive-page";
                         return (
                             <button
                                 key={index}

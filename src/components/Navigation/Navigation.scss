@@ -1,8 +1,37 @@
-a {
-    margin-right: 5px;
-    color: black;
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-    &:hover {
-        color: orangered;
+    &__link {
+        color: lightblue;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+
+        &:hover,
+        &:active {
+            color: black;
+        }
+
+        &--active:link,
+        &--active:visited {
+            color: black;
+        }
     }
+
+    &__icon {
+        fill: green;
+        color: green;
+        background-color: green;
+        border: 1px solid red;
+    }
+}
+
+.active {
+    background-color: red;
 }
