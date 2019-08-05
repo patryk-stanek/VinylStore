@@ -1,9 +1,9 @@
 @import "../../styles.scss";
 
 .current-page {
-    background-color: $color-primary;
+    background-color: rgba($color-primary, .5);
 }
 
 .inactive-page {
-    background-color: yellow;
+    background-color: $color-secondary-2;
 }
