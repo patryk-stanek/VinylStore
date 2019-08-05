@@ -1,5 +1,7 @@
+@import "../../styles.scss";
+
 .current-page {
-    background-color: red;
+    background-color: $color-primary;
 }
 
 .inactive-page {
