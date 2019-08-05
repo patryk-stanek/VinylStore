@@ -1,6 +1,8 @@
+//Importing methods
 import React from "react";
 import { connect } from "react-redux";
 
+//Importing styles and icons
 import "./BasketNavigationButton.scss";
 import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 

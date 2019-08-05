@@ -11,7 +11,7 @@ import {
 //Importing .json database
 import productsData from "../../utils/products.json";
 
-//Setting initial state
+//Defining initial state
 const initialState = {
     products: productsData,
     selectedProduct: {},

@@ -14,11 +14,13 @@ class Sidebar extends React.Component {
         this.handleSortByPrice = this.handleSortByPrice.bind(this);
     }
 
+    //Dispatching sorting products by chosen option and updating view
     handleSortByName(value) {
         this.props.dispatch(sortProductsByName(value));
         this.props.handleUpdate();
     }
 
+    //Dispatching sorting products by chosen option and updating view
     handleSortByPrice(value) {
         this.props.dispatch(sortProductsByPrice(value));
         this.props.handleUpdate();

@@ -2,6 +2,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
+//Importing actions
 import {
     addToBasket,
     removeFromBasket,
@@ -12,54 +13,34 @@ import {
 class Basket extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            product1: {
-                "name": "Ball",
-                "category": "Home",
-                "price": "€9.99",
-                "stocked": true,
-                "id": 1
-            },
-            product2: {
-                "name": "wall",
-                "category": "Home",
-                "price": "€2.99",
-                "stocked": true,
-                "id": 2
-            },
-        }
 
-        this.x = this.x.bind(this);
-        this.y = this.y.bind(this);
-        this.z = this.z.bind(this);
-        this.v = this.v.bind(this);
+        this.handleIncreaseProduct = this.handleIncreaseProduct.bind(this);
+        this.handleRemovingProduct = this.handleRemovingProduct.bind(this);
+        this.handleClearingBasket = this.handleClearingBasket.bind(this);
+        this.handleDecreaseAmount = this.handleDecreaseAmount.bind(this);
     }
 
-    x(val) {
-        this.props.dispatch(addToBasket(val));
+    handleIncreaseProduct(product) {
+        this.props.dispatch(addToBasket(product));
     }
 
-    y(val) {
-        this.props.dispatch(removeFromBasket(val));
+    handleRemovingProduct(product) {
+        this.props.dispatch(removeFromBasket(product));
     }
 
-    v(val) {
-        this.props.dispatch(decreaseProductAmount(val));
-    }
-
-    z() {
+    handleClearingBasket() {
         this.props.dispatch(clearBasket());
+    }
+
+    handleDecreaseAmount(product) {
+        this.props.dispatch(decreaseProductAmount(product));
     }
 
     render() {
         return (
             <div>
                 <h1>/basket</h1>
-                <button onClick={() => this.x(this.state.product1)}>dumm1</button>
-                <button onClick={() => this.x(this.state.product2)}>dumm2</button>
-                <button onClick={() => console.log(this.props.basket)}>console</button>
-                <button onClick={() => console.log(this.props.totalCost)}>cost</button>
-                <button onClick={() => this.z()}>clear basket</button><br/>
+                <button onClick={() => this.handleClearingBasket()}>clear basket</button><br/>
                 <span>total items: {this.props.totalItems}</span>
                 <div>
                     {
@@ -69,9 +50,9 @@ class Basket extends React.Component {
                                     {product.name}
                                     <span> - </span>
                                     <span>{product.amount}</span>
-                                    <button onClick={() => this.y(product)}>delete</button>
-                                    <button onClick={() => this.x(product)}>add One</button>
-                                    <button onClick={() => this.v(product)}>remove One</button>
+                                    <button onClick={() => this.handleRemovingProduct(product)}>delete</button>
+                                    <button onClick={() => this.handleIncreaseProduct(product)}>add One</button>
+                                    <button onClick={() => this.handleDecreaseAmount(product)}>remove One</button>
                                 </span><br/></div>
                         })
                     }

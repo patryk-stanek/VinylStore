@@ -1,9 +1,14 @@
+//Importing methods
 import React from "react";
 import { connect } from "react-redux";
 
+//Importing actions
 import {
     addToBasket
 } from "../Basket/Basket.actions"
+
+//Importing styles
+import "./BasketAddButton.scss";
 
 class BasketAddButton extends React.Component {
     constructor(props) {
@@ -12,6 +17,7 @@ class BasketAddButton extends React.Component {
         this.handleAddToBasket = this.handleAddToBasket.bind(this);
     }
 
+    //Dispatching action with adding product to the basket
     handleAddToBasket(product) {
         this.props.dispatch(addToBasket(product));
     }

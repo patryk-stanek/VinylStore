@@ -16,7 +16,7 @@ const ProductDetails = props => (
             <h2>Category: {props.product.category}</h2>
             <h2>Price: {props.product.price}</h2>
             <img
-                src={"../.." + props.product.cover}
+                src={props.product.cover}
                 alt={props.product.name + "_cover"}
                 className="product-details__cover"
             />

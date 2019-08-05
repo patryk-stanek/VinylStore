@@ -7,7 +7,7 @@
         "price": "€19.99",
         "stocked": true,
         "id": 1,
-        "cover": "/images/covers/1.jpg"
+        "cover": "../../images/covers/1.jpg"
     },
     {
         "name": "The Wall",
@@ -17,7 +17,7 @@
         "price": "€21.99",
         "stocked": true,
         "id": 2,
-        "cover": "/images/covers/2.jpg"
+        "cover": "../../images/covers/2.jpg"
     },
     {
         "name": "Division Bell",
@@ -27,7 +27,7 @@
         "price": "€15.99",
         "stocked": false,
         "id": 3,
-        "cover": "/images/covers/3.jpg"
+        "cover": "../../images/covers/3.jpg"
     },
     {
         "name": "Dark Side of the Moon",
@@ -37,7 +37,7 @@
         "price": "€25.99",
         "stocked": false,
         "id": 4,
-        "cover": "/images/covers/4.jpg"
+        "cover": "../../images/covers/4.jpg"
     },
     {
         "name": "Ænima",
@@ -47,7 +47,7 @@
         "price": "€23.99",
         "stocked": false,
         "id": 5,
-        "cover": "/images/covers/5.jpg"
+        "cover": "../../images/covers/5.jpg"
     },
     {
         "name": "Undertow",
@@ -57,7 +57,7 @@
         "price": "€18.99",
         "stocked": true,
         "id": 6,
-        "cover": "/images/covers/6.jpg"
+        "cover": "../../images/covers/6.jpg"
     },
     {
         "name": "Lateralus",
@@ -67,7 +67,7 @@
         "price": "€20.99",
         "stocked": true,
         "id": 7,
-        "cover": "/images/covers/7.jpg"
+        "cover": "../../images/covers/7.jpg"
     },
     {
         "name": "10.000 Days",
@@ -77,7 +77,7 @@
         "price": "€25.99",
         "stocked": false,
         "id": 8,
-        "cover": "/images/covers/8.jpg"
+        "cover": "../../images/covers/8.jpg"
     },
     {
         "name": "Generationwhy",
@@ -87,7 +87,7 @@
         "price": "€30.99",
         "stocked": true,
         "id": 9,
-        "cover": "/images/covers/9.jpg"
+        "cover": "../../images/covers/9.jpg"
     },
     {
         "name": "Ringos Desert",
@@ -97,7 +97,7 @@
         "price": "€27.99",
         "stocked": false,
         "id": 10,
-        "cover": "/images/covers/10.jpg"
+        "cover": "../../images/covers/10.jpg"
     },
     {
         "name": "Igor",
@@ -107,7 +107,7 @@
         "price": "€14.99",
         "stocked": false,
         "id": 11,
-        "cover": "/images/covers/11.jpg"
+        "cover": "../../images/covers/11.jpg"
     },
     {
         "name": "Raj",
@@ -117,7 +117,7 @@
         "price": "€16.99",
         "stocked": true,
         "id": 12,
-        "cover": "/images/covers/12.jpg"
+        "cover": "../../images/covers/12.jpg"
     },
     {
         "name": "Sea You Later",
@@ -127,7 +127,7 @@
         "price": "€9.99",
         "stocked": true,
         "id": 13,
-        "cover": "/images/covers/13.jpg"
+        "cover": "../../images/covers/13.jpg"
     },
     {
         "name": "Prequelle",
@@ -137,6 +137,6 @@
         "price": "€18.99",
         "stocked": true,
         "id": 14,
-        "cover": "/images/covers/14.jpg"
+        "cover": "../../images/covers/14.jpg"
     }
 ]

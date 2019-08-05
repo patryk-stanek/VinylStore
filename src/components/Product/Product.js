@@ -10,7 +10,7 @@ const Product = props => {
         <div className="product">
             <img 
                 className="product__cover"
-                src={"../.." + props.product.cover}
+                src={props.product.cover}
                 alt={props.product.name + "_cover"}
             />
             <div className="product__details">
