@@ -9,8 +9,8 @@ import {
     decreaseProductAmount,
     clearBasket } from "../../components/Basket/Basket.actions";
 
-//Basket component
-class Basket extends React.Component {
+//Cart component
+class Cart extends React.Component {
     constructor(props) {
         super(props);
 
@@ -21,19 +21,19 @@ class Basket extends React.Component {
     }
 
     handleIncreaseProduct(product) {
-        this.props.dispatch(addToBasket(product));
+        this.props.addToBasket(product);
     }
 
     handleRemovingProduct(product) {
-        this.props.dispatch(removeFromBasket(product));
+        this.props.removeFromBasket(product);
     }
 
     handleClearingBasket() {
-        this.props.dispatch(clearBasket());
+        this.props.clearBasket();
     }
 
     handleDecreaseAmount(product) {
-        this.props.dispatch(decreaseProductAmount(product));
+        this.props.decreaseProductAmount(product);
     }
 
     render() {
@@ -70,5 +70,14 @@ const mapStateToProps = store => ({
     totalItems: store.basketReducer.totalItems
 });
 
-//Connecting state method with component
-export default connect(mapStateToProps)(Basket);
+const mapDispatchToProps = dispatch => ({
+    addToBasket: product => dispatch(addToBasket(product)),
+    removeFromBasket: product => dispatch(removeFromBasket(product)),
+    clearBasket: () => dispatch(clearBasket()),
+    decreaseProductAmount: product => dispatch(decreaseProductAmount(product))
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(Cart);

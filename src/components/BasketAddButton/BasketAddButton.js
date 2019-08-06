@@ -17,9 +17,8 @@ class BasketAddButton extends React.Component {
         this.handleAddToBasket = this.handleAddToBasket.bind(this);
     }
 
-    //Dispatching action with adding product to the basket
     handleAddToBasket(product) {
-        this.props.dispatch(addToBasket(product));
+        this.props.addToBasket(product);
     }
 
     render() {
@@ -34,5 +33,12 @@ const mapStateToProps = store => ({
     basket: store.basketReducer.basket
 });
 
+const mapDispatchToProps = dispatch => ({
+    addToBasket: product => dispatch(addToBasket(product)),
+})
+
 //Connecting state method with component
-export default connect(mapStateToProps)(BasketAddButton);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(BasketAddButton);

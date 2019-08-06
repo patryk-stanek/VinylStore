@@ -23,7 +23,7 @@ export const Navigation = props => {
             <NavLink exact to="/contact" activeClassName="navigation__link--active" className="navigation__link">
                 Contact
             </NavLink>
-            <NavLink exact to="/basket" activeClassName="navigation__link--active" className="navigation__link">
+            <NavLink exact to="/cart" activeClassName="navigation__link--active" className="navigation__link">
                 <BasketNavigationButton />
             </NavLink>
         </div>

@@ -15,14 +15,14 @@ class Sidebar extends React.Component {
     }
 
     //Dispatching sorting products by chosen option and updating view
-    handleSortByName(value) {
-        this.props.dispatch(sortProductsByName(value));
+    handleSortByName(option) {
+        this.props.sortProductsByName(option);
         this.props.handleUpdate();
     }
 
     //Dispatching sorting products by chosen option and updating view
-    handleSortByPrice(value) {
-        this.props.dispatch(sortProductsByPrice(value));
+    handleSortByPrice(option) {
+        this.props.sortProductsByPrice(option);
         this.props.handleUpdate();
     }
 
@@ -44,5 +44,13 @@ const mapStateToProps = store => ({
     visibleProducts: store.productsReducer.visibleProducts
 });
 
+const mapDispatchToProps = dispatch => ({
+    sortProductsByName: option => dispatch(sortProductsByName(option)),
+    sortProductsByPrice: option => dispatch(sortProductsByPrice(option))
+})
+
 //Connecting state method with component
-export default connect(mapStateToProps)(Sidebar);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps)
+(Sidebar);

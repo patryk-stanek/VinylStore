@@ -29,9 +29,9 @@ class Searchbar extends React.Component {
         this.setState({fireRedirect: false});//Set fireRedirect back to false and allow to make a new search
     }
 
-    handleSearch(e) {
-        if (e.key === 'Enter') {
-            this.props.dispatch(searchProducts(this.state.searchedProduct));//Dispatching searched term
+    handleSearch(event) {
+        if (event.key === 'Enter') {
+            this.props.searchProducts(this.state.searchedProduct);
             this.setState({fireRedirect: true});//Changing value responsible for redirecting management 
             document.getElementById("form").reset();//Clearing input
         }
@@ -67,5 +67,12 @@ const mapStateToProps = store => ({
     searchedProducts: store.productsReducer.searchedProducts
 });
 
+const mapDispatchToProps = dispatch => ({
+    searchProducts: event => dispatch(searchProducts(event)),
+})
+
 //Connecting state method with component
-export default connect(mapStateToProps)(Searchbar);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps)
+(Searchbar);
