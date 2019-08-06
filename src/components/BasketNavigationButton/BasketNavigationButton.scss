@@ -1,8 +1,13 @@
+@import "../../styles.scss";
+
 .basket-navigation-button {
-    color: red;
+    color: rgba($color-black, .5);
 
     &__icon {
-        margin-right: 5px;
+        margin-right: 10px;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $color-primary;
     }
 
     &__items {
@@ -13,9 +18,5 @@
             display: inline-block;
             margin-left: 5px;
         }
-    }
-
-    &__price {
-
     }
 }

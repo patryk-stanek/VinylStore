@@ -1,11 +1,16 @@
+@import "../../styles.scss";
+
 .navigation {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+    margin-top: 14px;
 
     &__link {
-        color: lightblue;
+        @include transition;
+        color: rgba($color-black, .2);
         text-decoration: none;
         text-transform: uppercase;
 
@@ -15,23 +20,12 @@
 
         &:hover,
         &:active {
-            color: black;
+            color: $color-primary;
         }
 
         &--active:link,
         &--active:visited {
-            color: black;
+            color: $color-black;
         }
     }
-
-    &__icon {
-        fill: green;
-        color: green;
-        background-color: green;
-        border: 1px solid red;
-    }
-}
-
-.active {
-    background-color: red;
 }

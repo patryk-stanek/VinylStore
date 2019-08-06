@@ -1,0 +1,36 @@
+@import "../../styles.scss";
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 17px;
+
+    &__input {
+        @include transition;
+        width: 250px;
+        padding: 8px 20px 8px 10px;
+        border: 1px solid rgba($color-black, .2);
+    }
+
+    &__input:focus {
+        width: 300px;
+        border: 1px solid rgba($color-black, .5);
+    }
+
+    &__input:focus + &__icon {
+        color: rgba($color-black, .5);
+    }
+
+    &__input::placeholder {
+        color: rgba($color-black, .2);
+    }
+
+    &__icon {
+        @include transition;
+        margin-left: -25px;
+        font-size: 15px;
+        color: rgba($color-black, .2);
+    }
+}

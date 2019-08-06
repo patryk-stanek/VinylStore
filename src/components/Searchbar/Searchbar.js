@@ -6,6 +6,9 @@ import { Redirect } from "react-router";
 //Importing actions for Searchbar states
 import { searchProducts } from "../Product/Product.actions";
 
+//Importing styles
+import "./Searchbar.scss";
+
 //Searchbar component
 class Searchbar extends React.Component {
     constructor(props) {
@@ -42,14 +45,17 @@ class Searchbar extends React.Component {
         const { fireRedirect } = this.state;
 
         return (
-            <div>
-                <form id="form" onSubmit={this.handleSubmit}>
+            <div className="form">
+                <form id="form" onSubmit={this.handleSubmit} className="form__container">
                     <input
                         type="text"
                         placeholder="Search products..."
                         onChange={this.handleChange}
                         onKeyPress={this.handleSearch}
+                        className="form__input"
+                        
                     />
+                    <i class="form__icon fas fa-search"></i>
                 </form>
                 {
                     fireRedirect && (
