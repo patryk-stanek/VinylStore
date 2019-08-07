@@ -1,0 +1,19 @@
+@import "../../styles.scss";
+
+.rules {
+    padding: 0 150px;
+
+    &__header {
+        font-size: 45px;
+        font-weight: 100;
+        text-align: center;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        padding: 10px 0;
+    }
+}

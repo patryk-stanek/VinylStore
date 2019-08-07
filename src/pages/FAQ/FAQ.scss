@@ -1,0 +1,32 @@
+@import "../../styles.scss";
+
+.faq {
+    text-align: center;
+
+    &__header {
+        font-size: 45px;
+        font-weight: 100;
+    }
+
+    &__box {
+        padding: 20px 0;
+
+        &::before {
+            content: "";
+            display: block;
+            background-color: $color-primary;
+            height: 1px;
+            width: 250px;
+            margin: 0 auto;
+        }
+    }
+
+    &__question {
+        color: $color-primary;
+        font-weight: 100;
+    }
+
+    &__answer {
+        padding: 0 150px;
+    }
+}
