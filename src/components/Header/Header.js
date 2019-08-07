@@ -14,7 +14,7 @@ export class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <h1 className="header__title"><span className="header__span">Vinyl</span>St<i class="header__icon fas fa-compact-disc"></i>re</h1>
+                <h1 className="header__title"><span className="header__span">Vinyl</span>St<i className="header__icon fas fa-compact-disc"></i>re</h1>
                 <Searchbar />
                 <Navigation />
             </div>

@@ -12,18 +12,24 @@
         width: 250px;
         padding: 8px 20px 8px 10px;
         border: 1px solid rgba($color-black, .2);
+        color: $color-primary;
     }
 
     &__input:focus {
         width: 300px;
-        border: 1px solid rgba($color-black, .5);
+        border: 1px solid rgba($color-primary, .9);
+
+        &::placeholder {
+            color: rgba($color-primary, .2);
+        }
     }
 
     &__input:focus + &__icon {
-        color: rgba($color-black, .5);
+        color: rgba($color-primary, .5);
     }
 
     &__input::placeholder {
+        @include transition;
         color: rgba($color-black, .2);
     }
 

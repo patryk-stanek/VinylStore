@@ -1,12 +1,11 @@
 .home {
     display: flex;
     flex-direction: row;
-    border: 1px solid red;
 
     &__container {
         border: 1px solid blue;
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 85%;
     }
 }

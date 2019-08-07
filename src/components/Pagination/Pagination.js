@@ -15,7 +15,7 @@ class Pagination extends React.Component {
         let nextPage = this.props.currentPage <= this.props.pagesAmount ? this.props.currentPage + 1 : this.props.currentPage;
         return (
             <div>
-                <button onClick={() => this.props.handleChangePage(prevPage)}><i class="fas fa-chevron-left"></i></button>
+                <button onClick={() => this.props.handleChangePage(prevPage)}><i className="fas fa-chevron-left"></i></button>
                 {
                     Array.from(Array(this.props.pagesAmount)).map((id, index) => {
                         //Condition for setting style for active page
@@ -31,7 +31,7 @@ class Pagination extends React.Component {
                         )
                     })
                 }
-                <button onClick={() => this.props.handleChangePage(nextPage)}><i class="fas fa-chevron-right"></i></button>
+                <button onClick={() => this.props.handleChangePage(nextPage)}><i className="fas fa-chevron-right"></i></button>
             </div>
         )
     }

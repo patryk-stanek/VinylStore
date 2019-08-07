@@ -4,7 +4,9 @@ import {
     GET_PRODUCTS,
     SEARCH_PRODUCTS,
     SORT_PRODUCTS_BY_NAME,
+    SORT_PRODUCTS_BY_ARTIST,
     SORT_PRODUCTS_BY_PRICE,
+    SORT_PRODUCTS_BY_ID,
     SET_CATEGORY
 } from "./Product.actions";
 
@@ -31,6 +33,7 @@ export default function productsReducer(state = initialState, action) {
 
         case GET_PRODUCTS:
             //Getting objects array from database file
+            console.log('x');
             return Object.assign({}, state, {visibleProducts: state.products});
 
         case SEARCH_PRODUCTS:
@@ -60,7 +63,24 @@ export default function productsReducer(state = initialState, action) {
             }
 
             const sortedProductsByName = state.products.sort(compareName);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByName})
+            return Object.assign({}, state, {visibleProducts: sortedProductsByName});
+
+            case SORT_PRODUCTS_BY_ARTIST:
+                const compareArtist = (a, b) => {
+                    const artistA = a.artist.toLowerCase();
+                    const artistB = b.artist.toLowerCase();
+                    let comparison = 0;
+    
+                    if (artistA > artistB) {
+                        action.option === 0 ? comparison = -1 : comparison = 1;
+                    } else {
+                        action.option === 0 ? comparison = 1 : comparison = -1;
+                    }
+                    return comparison;
+                }
+    
+                const sortedProductsByArtist = state.products.sort(compareArtist);
+                return Object.assign({}, state, {visibleProducts: sortedProductsByArtist});
 
         case SORT_PRODUCTS_BY_PRICE:
             const comparePrice = (a, b) => {
@@ -75,7 +95,11 @@ export default function productsReducer(state = initialState, action) {
             };
 
             const sortedProductsByPrice = state.products.sort(comparePrice);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice})
+            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice});
+
+        case SORT_PRODUCTS_BY_ID:
+            const sortedProductsByid = state.products.sort((a,b) => a.id - b.id);
+            return Object.assign({}, state, {visibleProducts: sortedProductsByid});
 
         case SET_CATEGORY:
             //Filter objects in database array by chosen category

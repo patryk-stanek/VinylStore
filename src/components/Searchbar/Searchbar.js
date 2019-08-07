@@ -55,7 +55,7 @@ class Searchbar extends React.Component {
                         className="form__input"
                         
                     />
-                    <i class="form__icon fas fa-search"></i>
+                    <i className="form__icon fas fa-search"></i>
                 </form>
                 {
                     fireRedirect && (
@@ -80,5 +80,4 @@ const mapDispatchToProps = dispatch => ({
 //Connecting state method with component
 export default connect(
     mapStateToProps,
-    mapDispatchToProps)
-(Searchbar);
+    mapDispatchToProps)(Searchbar);
