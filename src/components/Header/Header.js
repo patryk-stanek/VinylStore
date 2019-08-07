@@ -13,11 +13,11 @@ import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 export class Header extends React.Component {
     render() {
         return (
-            <div className="header">
+            <header className="header">
                 <h1 className="header__title"><span className="header__span">Vinyl</span>St<i className="header__icon fas fa-compact-disc"></i>re</h1>
                 <Searchbar />
                 <Navigation />
-            </div>
+            </header>
         )
     }
 }

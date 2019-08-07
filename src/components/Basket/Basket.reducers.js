@@ -90,7 +90,7 @@ export default function basketReducer(state = initialState, action) {
             }
 
         case CLEAR_BASKET:
-            //Clearing baskek
+            //Clearing basket
             return {
                 basket: [],
                 totalCost: 0,

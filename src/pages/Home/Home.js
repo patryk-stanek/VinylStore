@@ -40,6 +40,7 @@ class Home extends React.Component {
     handleChangePage(page) {
         this.setState({productsPage: []})//Clearing products on page  
         this.setState({currentPage: page})//Changin page to chosen
+        window.scrollTo(0, 0);
         this.forceUpdate();//Forcing component to update
     }
 

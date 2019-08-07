@@ -1,0 +1,10 @@
+@import "../../styles.scss";
+
+.footer {
+    text-align: center;
+    padding: 25px 0 50px;
+
+    &__text {
+        color: rgba($color-black, .5);
+    }
+}

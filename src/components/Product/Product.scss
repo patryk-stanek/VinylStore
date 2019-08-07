@@ -1,37 +1,48 @@
+@import "../../styles.scss";
+
 .product {
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    border: 1px solid orangered;
-    color: black;
-    // padding: 50px 0;
+    padding: 50px;
+    background-color: rgba($color-grey, 1);
+    margin: 10px 0;
+    color: $color-white;
 
     &__details {
         display: flex;
+        flex-direction: row;
+        font-weight: 100;
+        padding-top: 10px;
+        text-transform: uppercase;
+        justify-content: space-between;
+    }
+
+    &__box {
+        display: flex;
         flex-direction: column;
-        // text-align: center;
     }
 
     &__name {
-        font-weight: 100;
-        // font-size: 45px;
+        font-size: 20px;
+        margin-bottom: 15px;
     }
 
     &__artist {
-        font-weight: 100;
-        // font-size: 30px;
+        font-weight: 700;
+        font-size: 10px;
+        margin-bottom: 10px;
     }
 
     &__price {
-        font-weight: 100;
-        // font-size: 30px;
+        font-size: 20px;
+    }
+
+    &__container {
+        width: 100%;
+        margin: 0 auto;
     }
 
     &__cover {
-        // width: calc(100% - 50px);
-        // margin: 0 24px;
-        // border: 1px solid black;
-        width: 100px;
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -40,10 +51,11 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -5px;
 
     &__single {
         width: calc(50% - 10px);
         float: left;
-        border: 2px solid pink;
     }
 }

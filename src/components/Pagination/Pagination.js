@@ -14,24 +14,34 @@ class Pagination extends React.Component {
         //Condition for next page
         let nextPage = this.props.currentPage <= this.props.pagesAmount ? this.props.currentPage + 1 : this.props.currentPage;
         return (
-            <div>
-                <button onClick={() => this.props.handleChangePage(prevPage)}><i className="fas fa-chevron-left"></i></button>
+            <div className="pagination">
+                <button
+                    onClick={() => this.props.handleChangePage(prevPage)}
+                    className="pagination__button"
+                >
+                    <i className="pagination__icon fas fa-chevron-left"></i>
+                </button>
                 {
                     Array.from(Array(this.props.pagesAmount)).map((id, index) => {
                         //Condition for setting style for active page
-                        let currentPageStyle = this.props.currentPage === index ? "current-page" : "inactive-page";
+                        let currentPageStyle = this.props.currentPage === index ? "pagination__button--active" : "pagination__button--inactive";
                         return (
                             <button
                                 key={index}
                                 onClick={() => this.props.handleChangePage(index)}
-                                className={currentPageStyle}
+                                className={"pagination__button " + currentPageStyle}
                             >
                                 {index + 1}
                             </button>
                         )
                     })
                 }
-                <button onClick={() => this.props.handleChangePage(nextPage)}><i className="fas fa-chevron-right"></i></button>
+                <button 
+                    onClick={() => this.props.handleChangePage(nextPage)}
+                    className="pagination__button"
+                >
+                    <i className="pagination__icon fas fa-chevron-right"></i>
+                </button>
             </div>
         )
     }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 //Importing component
 import Product from "./Product";
-import BasketAddButton from "../BasketAddButton/BasketAddButton";
+// import BasketAddButton from "../BasketAddButton/BasketAddButton";
 
 //ProductsList component
 const ProductsList = props => (
@@ -15,7 +15,7 @@ const ProductsList = props => (
                         <Link to={"catalog/product/" + product.id} style={{textDecoration: "none"}}>
                             <Product product={product} />
                         </Link>
-                        <BasketAddButton product={product}/>
+                        {/* <BasketAddButton product={product}/> */}
                     </div>
                 )
             })}
