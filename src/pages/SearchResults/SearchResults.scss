@@ -1,0 +1,27 @@
+@import "../../styles.scss";
+
+.results {
+
+    &__header {
+        text-align: center;
+        font-weight: 100;
+        margin-bottom: 50px;
+    }
+
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: -5px;
+    }
+
+    &__box {
+        width: calc(25% - 10px);
+
+        & * {
+            font-size: 10px;
+        }
+    }
+}

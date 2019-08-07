@@ -21,10 +21,35 @@ class BasketAddButton extends React.Component {
         this.props.addToBasket(product);
     }
 
-    render() {
+    renderStocked() {
         return (
-            <button onClick={() => this.handleAddToBasket(this.props.product)}>Add to basket</button>
+            <button
+                onClick={() => this.handleAddToBasket(this.props.product)}
+                className="add-to-basket"
+            >
+                <i className="add-to-basket__icon fas fa-cart-plus"></i>
+            </button>
         )
+    }
+
+    renderNotStocked() {
+        return (
+            <React.Fragment>
+                <button
+                    className="add-to-basket"
+                    disabled
+                >
+                    <i className="add-to-basket__icon fas fa-cart-plus"></i>
+                    <span className="add-to-basket__out">
+                        Item out of stock
+                    </span>
+                </button>
+            </React.Fragment>
+        )
+    }
+
+    render() {
+        return this.props.product.stocked === true ? this.renderStocked() : this.renderNotStocked();
     }
 }
 

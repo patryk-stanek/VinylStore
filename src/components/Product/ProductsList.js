@@ -15,7 +15,6 @@ const ProductsList = props => (
                         <Link to={"catalog/product/" + product.id} style={{textDecoration: "none"}}>
                             <Product product={product} />
                         </Link>
-                        {/* <BasketAddButton product={product}/> */}
                     </div>
                 )
             })}

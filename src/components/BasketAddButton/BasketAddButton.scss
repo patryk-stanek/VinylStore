@@ -1,0 +1,48 @@
+@import "../../styles.scss";
+
+.add-to-basket {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 0;
+
+    &:disabled &__icon {
+        cursor: auto;
+        color: $color-secondary;
+        border: 1px solid $color-secondary;
+
+        &:hover,
+        &:active {
+            background-color: transparent;
+            color: $color-secondary;
+        }
+    }
+
+    &__icon {
+        @include transition;
+        border: 1px solid $color-tertiary;
+        padding: 10px;
+        text-align: center;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 15px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        color: $color-tertiary;
+
+        &:hover,
+        &:active {
+            background-color: $color-tertiary;
+            color: $color-white;
+        }
+    }
+
+    &__out {
+        margin-left: 10px;
+        font-weight: 100;
+        color: $color-secondary;
+    }
+}

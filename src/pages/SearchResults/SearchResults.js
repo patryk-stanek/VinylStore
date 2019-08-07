@@ -6,6 +6,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Product from "../../components/Product/Product";
 
+//Importing styles
+import "./SearchResults.scss";
+
 //SearchResults component
 class SearchResults extends React.Component {
     constructor(props) {
@@ -24,18 +27,19 @@ class SearchResults extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
-            <div>
-                <h1>/SearchResults</h1>
-                <div>
+            <div className="results">
+                <h1 className="results__header">Search Results</h1>
+                <div className="results__container">
                     {
                         this.state.searchedProducts.map(product => {//Mapping searched products array to components
                             return(
-                                <h2>
-                                    <Link to={"../catalog/product/" + product.id}>
+                                <div className="results__box">
+                                    <Link to={"../catalog/product/" + product.id} style={{textDecoration: "none"}}>
                                         <Product product={product} />
                                     </Link>
-                                </h2>
+                                </div>
                             )
                         })
                     }

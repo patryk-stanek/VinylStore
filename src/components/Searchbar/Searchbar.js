@@ -59,7 +59,7 @@ class Searchbar extends React.Component {
                 </form>
                 {
                     fireRedirect && (
-                        <Redirect to={from || `/search`}/>
+                        <Redirect to={from || `/search`} />
                     )
                 }
             </div>

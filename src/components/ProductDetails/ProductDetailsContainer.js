@@ -12,6 +12,7 @@ import ProductDetails from "./ProductDetails";
 class ProductDetailsContainer extends React.Component {
     componentDidMount() {
         this.props.dispatch(getProduct(this.props.match.params.id));
+        window.scrollTo(0, 0);
     }
 
     render() {

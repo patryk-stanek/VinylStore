@@ -1,5 +1,6 @@
 //Importing methods
 import React from "react";
+import { Link } from "react-router-dom"
 
 //Importing component
 import { Navigation } from "../Navigation/Navigation";
@@ -14,7 +15,11 @@ export class Header extends React.Component {
     render() {
         return (
             <header className="header">
-                <h1 className="header__title"><span className="header__span">Vinyl</span>St<i className="header__icon fas fa-compact-disc"></i>re</h1>
+                <Link to="/" className="header__link">
+                    <h1 className="header__title">
+                        <span className="header__span">Vinyl</span>St<i className="header__icon fas fa-compact-disc"></i>re
+                    </h1>
+                </Link>
                 <Searchbar />
                 <Navigation />
             </header>

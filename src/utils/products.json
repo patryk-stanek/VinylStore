@@ -7,7 +7,14 @@
         "price": "€19.99",
         "stocked": true,
         "id": 1,
-        "cover": "../../images/covers/1.jpg"
+        "cover": "../../images/covers/1.jpg",
+        "tracks": [
+            "Shine On You Crazy Diamond, Parts I-V",
+            "Welcome to the Machine",
+            "Have a Cigar",
+            "Wish You Were Here",
+            "Shine On You Crazy Diamond, Parts VI-IX"
+        ]
     },
     {
         "name": "The Wall",
@@ -17,7 +24,35 @@
         "price": "€21.99",
         "stocked": true,
         "id": 2,
-        "cover": "../../images/covers/2.jpg"
+        "cover": "../../images/covers/2.jpg",
+        "tracks": [
+            "In The Flesh?",
+            "The Thin Ice",
+            "Another Brick in the Wall, Part 1",
+            "The Happiest Days of Our Live",
+            "Another Brick in the Wall, Part 2",
+            "Mother",
+            "Goodbye Blue Sky",
+            "Empty Spaces",
+            "Young Lust",
+            "One of My Turns",
+            "Don't Leave Me Now",
+            "Another Brick in the Wall, Part 3",
+            "Goodbye Crueal World",
+            "Hey You",
+            "Is There Anybody Out There?",
+            "Nobody Home",
+            "Vera",
+            "Bring the Boys Back Home",
+            "Comfortably Numb",
+            "The Show Must Go On",
+            "In the Flesh",
+            "Run Like Hell",
+            "Waiting For The Worms",
+            "Stop",
+            "The Trial",
+            "Outside the Wall"
+        ]
     },
     {
         "name": "Division Bell",
@@ -27,7 +62,20 @@
         "price": "€15.99",
         "stocked": false,
         "id": 3,
-        "cover": "../../images/covers/3.jpg"
+        "cover": "../../images/covers/3.jpg",
+        "tracks": [
+            "Cluster One",
+            "What Do You Want From Me",
+            "Poles Apart",
+            "Marooned",
+            "A Great Day for Freedom",
+            "Wearing the Inside Out",
+            "Take It Back",
+            "Coming Back to Life",
+            "Keep Talking",
+            "Lost for Words",
+            "High Hopes"
+        ]
     },
     {
         "name": "Dark Side of the Moon",
@@ -37,17 +85,45 @@
         "price": "€25.99",
         "stocked": false,
         "id": 4,
-        "cover": "../../images/covers/4.jpg"
+        "cover": "../../images/covers/4.jpg",
+        "tracks": [
+            "Speak to Me/Breath",
+            "On the Run",
+            "Time",
+            "The Great Gig in the Sky",
+            "Money",
+            "Us and Them",
+            "Any Colour You Like",
+            "Brain Damage",
+            "Eclipse"
+        ]
     },
     {
-        "name": "Ænima",
+        "name": "Ænema",
         "artist": "Tool",
         "year": "1996",
         "category": "LP",
         "price": "€23.99",
         "stocked": false,
         "id": 5,
-        "cover": "../../images/covers/5.jpg"
+        "cover": "../../images/covers/5.jpg",
+        "tracks": [
+            "Stinkfist",
+            "Eulogy",
+            "H.",
+            "Useful Idiot",
+            "Forty Six & 2",
+            "Message To Harry Manback",
+            "Hooker With a Penis",
+            "Intermission",
+            "Jimmy",
+            "Die Eier Von Satan",
+            "Pushit",
+            "Cesaro Summability",
+            "Ænema",
+            "(-) Ions",
+            "Third Eye"
+        ]
     },
     {
         "name": "Undertow",
@@ -57,7 +133,19 @@
         "price": "€18.99",
         "stocked": true,
         "id": 6,
-        "cover": "../../images/covers/6.jpg"
+        "cover": "../../images/covers/6.jpg",
+        "tracks": [
+            "Intolerance",
+            "Prison Sex",
+            "Sober",
+            "Bottom",
+            "Crawl Away",
+            "Swamp Song",
+            "Undertow",
+            "4°",
+            "Flood",
+            "Disgustipated"
+        ]
     },
     {
         "name": "Lateralus",
@@ -67,7 +155,22 @@
         "price": "€20.99",
         "stocked": true,
         "id": 7,
-        "cover": "../../images/covers/7.jpg"
+        "cover": "../../images/covers/7.jpg",
+        "tracks": [
+            "The Grudge",
+            "Eon Blue Apocalypse",
+            "The Patient",
+            "Mantra",
+            "Schism",
+            "Parabol",
+            "Parabola",
+            "Ticks & Leeches",
+            "Lateralus",
+            "Disposition",
+            "Reflection",
+            "Triad",
+            "Faaip De Oiad"
+        ]
     },
     {
         "name": "10.000 Days",
@@ -77,7 +180,20 @@
         "price": "€25.99",
         "stocked": false,
         "id": 8,
-        "cover": "../../images/covers/8.jpg"
+        "cover": "../../images/covers/8.jpg",
+        "tracks": [
+            "Vicarious",
+            "Jambi",
+            "Wings For Marie (Pt 1)",
+            "10,000 Days (Wings Pt 2)",
+            "The Pot",
+            "Lipan Conjuring",
+            "Lost Keys (Blame Hofman",
+            "Rosetta Stoned",
+            "Intension",
+            "Right In Two",
+            "Viginti Tres"
+        ]
     },
     {
         "name": "Generationwhy",
@@ -87,7 +203,23 @@
         "price": "€30.99",
         "stocked": true,
         "id": 9,
-        "cover": "../../images/covers/9.jpg"
+        "cover": "../../images/covers/9.jpg",
+        "tracks": [
+            "Intro (Neon City)",
+            "Cold Blooded",
+            "In The Morning",
+            "Secret Weapon",
+            "Electrify Me",
+            "Numb",
+            "Palm of My Hand",
+            "Money",
+            "One Minute to Midnight",
+            "Reaching",
+            "Hometown Girl",
+            "Good Life",
+            "Generationwhy",
+            "Working For It - Bonus Track"
+        ]
     },
     {
         "name": "Ringos Desert",
@@ -97,7 +229,23 @@
         "price": "€27.99",
         "stocked": false,
         "id": 10,
-        "cover": "../../images/covers/10.jpg"
+        "cover": "../../images/covers/10.jpg",
+        "tracks": [
+            "Stormy Love, NM.",
+            "Still Want U",
+            "Guilty Love",
+            "Desert Woman",
+            "Provocateur",
+            "Burn Babylon",
+            "Save Me",
+            "Ghost In My Bed",
+            "Love That Hurts",
+            "Light It Up",
+            "Drowning",
+            "Coming Home",
+            "Waters of Monaco",
+            "My Life"
+        ]
     },
     {
         "name": "Igor",
@@ -107,7 +255,21 @@
         "price": "€14.99",
         "stocked": false,
         "id": 11,
-        "cover": "../../images/covers/11.jpg"
+        "cover": "../../images/covers/11.jpg",
+        "tracks": [
+            "Igor's Theme",
+            "Earfquake",
+            "I Think",
+            "Exactly What You Run From You End Up Chasing",
+            "Running out of Time",
+            "New Magic Wand",
+            "A Boy is a Gun*",
+            "Puppet",
+            "What's Good",
+            "Gone, Gone / Thank You",
+            "I Don't Love You Anymore",
+            "Are We Still Friends?"
+        ]
     },
     {
         "name": "Raj",
@@ -117,7 +279,17 @@
         "price": "€16.99",
         "stocked": true,
         "id": 12,
-        "cover": "../../images/covers/12.jpg"
+        "cover": "../../images/covers/12.jpg",
+        "tracks": [
+            "Kino",
+            "Raj",
+            "Deszcz",
+            "Uciekam",
+            "Przykro mi",
+            "Nieszczesliwa",
+            "Frank",
+            "Tam gdzie jest nudno, ale gdzie bedziemy szczesliwi'"
+        ]
     },
     {
         "name": "Sea You Later",
@@ -127,7 +299,20 @@
         "price": "€9.99",
         "stocked": true,
         "id": 13,
-        "cover": "../../images/covers/13.jpg"
+        "cover": "../../images/covers/13.jpg",
+        "tracks": [
+            "Odyseusz",
+            "Blue Flower",
+            "Mozliwosc Wyspy",
+            "Dark Side",
+            "Kocham Byc z Toba",
+            "Don't Be Afraid",
+            "Love",
+            "Nie Gotujemy",
+            "Nightmare",
+            "Sama Wkracza w Pustke",
+            "Tide of Time"
+        ]
     },
     {
         "name": "Prequelle",
@@ -137,6 +322,37 @@
         "price": "€18.99",
         "stocked": true,
         "id": 14,
-        "cover": "../../images/covers/14.jpg"
+        "cover": "../../images/covers/14.jpg",
+        "tracks": [
+            "Ashes",
+            "Rats",
+            "Faith",
+            "See The Light",
+            "Miasma",
+            "Dance Macabre",
+            "Pro Memoria",
+            "Witch Image",
+            "Helvetesfonster",
+            "Life Eternal"
+        ]
+    },
+    {
+        "name": "Fear Inoculum",
+        "artist": "Tool",
+        "year": "2019",
+        "category": "CD",
+        "price": "€25.99",
+        "stocked": true,
+        "id": 15,
+        "cover": "../../images/covers/15.jpg",
+        "tracks": [
+            "Fear Inoculum",
+            "Track 02",
+            "Track 03",
+            "Track 04",
+            "Track 05",
+            "Track 06",
+            "Track 07"
+        ]
     }
 ]

@@ -29,6 +29,11 @@ class Sidebar extends React.Component {
         this.handleOptionChange = this.handleOptionChange.bind(this);
     }
 
+    componentWillMount() {
+        this.props.sortProductsById();
+        this.props.handleUpdate();
+    }
+
     //Dispatching sorting products by chosen option and updating view
     handleSortByName(option) {
         this.props.sortProductsByName(option);
@@ -55,7 +60,7 @@ class Sidebar extends React.Component {
     handleOptionChange(event) {
         this.setState({
             selectedOption: event.target.value
-        })
+        });
     }
 
     render() {
