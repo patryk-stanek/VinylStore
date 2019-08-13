@@ -10,10 +10,11 @@ class Pagination extends React.Component {
 
     render() {
         //Condition for previous page
-        let prevPage = this.props.currentPage >= 1 ? this.props.currentPage - 1 : this.props.currentPage;
+        const prevPage = this.props.currentPage >= 1 ? this.props.currentPage - 1 : this.props.currentPage;
         //Condition for next page
-        let nextPage = this.props.currentPage <= this.props.pagesAmount ? this.props.currentPage + 1 : this.props.currentPage;
+        const nextPage = this.props.currentPage <= this.props.pagesAmount ? this.props.currentPage + 1 : this.props.currentPage;
 
+        //Pages loop and array
         const pages = [];
         for (let i=0; i<this.props.pagesAmount; i++) {
             const currentPageStyle = this.props.currentPage === i ? "pagination__button--active" : "pagination__button--inactive";
@@ -53,7 +54,11 @@ class Pagination extends React.Component {
                 } */}
                 {pages}
                 <button 
-                    onClick={() => this.props.handleChangePage(nextPage)}
+                    onClick={() => {
+                        if (this.props.currentPage > this.props.pagesAmount) {
+                            this.props.handleChangePage(nextPage);
+                        }
+                    }}
                     className="pagination__button"
                 >
                     <i className="pagination__icon fas fa-chevron-right"></i>
