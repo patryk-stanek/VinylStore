@@ -1,0 +1,10 @@
+[
+    {
+        "rabatCode": "vinyl",
+        "discount": 0.15
+    },
+    {
+        "rabatCode": "cover",
+        "discount": 0.2
+    }
+]

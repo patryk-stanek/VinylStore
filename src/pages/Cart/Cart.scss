@@ -1,0 +1,179 @@
+@import "../../styles.scss";
+
+.cart {
+
+    &__header {
+        font-weight: 100;
+        text-align: center;
+    }
+
+    &__container {
+        padding: 0 200px;
+        font-size: 20px;
+    }
+
+    &__clean-button {
+        @include transition;
+        display: block;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        color: rgba($color-black, .2);
+        margin-bottom: 15px;
+
+        &:hover,
+        &:active {
+            color: $color-primary;
+        }
+    }
+
+    &__clear-icon {
+        margin-right: 10px;
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+    }
+
+    &__item {
+        @include transition;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 10px 0;
+        border-bottom: 1px solid black;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            border-bottom: 1px solid $color-secondary-2;
+        }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__name {
+        font-weight: 100;
+        margin-left: 5px;
+        margin-right: 15px;
+    }
+
+    &__artist {
+
+    }
+
+    &__amount {
+        margin: 0 5px;
+        font-size: 15px;
+        width: 50px;
+        height: 25px;
+        line-height: 25px;
+        border: 1px solid $color-black;
+        text-align: center;
+        background-color: $color-white;
+        color: $color-black;
+    }
+
+    &__button {
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-right: 5px;
+
+        &:not(:first-of-type) {
+            margin-left: 5px;
+        }
+    }
+
+    &__icon {
+        @include transition;
+        font-size: 10px;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        margin-bottom: -2px;
+        border: 1px solid $color-black;
+        color: $color-white;
+        background-color: $color-black;
+
+        &:hover,
+        &:active {
+            background-color: $color-secondary-2;
+            border: 1px solid $color-secondary-2;
+            // color: $color-black;
+        }
+    }
+
+    &__summary {
+        margin-top: 35px;
+        text-align: right;
+        text-transform: uppercase;
+    }
+
+    &__total-cost {
+
+        & span::before {
+            content: "€";
+            display: inline-block;
+            margin: 0 5px 0 10px;
+        }
+    }
+
+    &__discounts {
+
+        & input[type=text] {
+            @include transition;
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid $color-grey;
+    
+            &:focus {
+                border: 1px solid $color-primary;
+            }
+    
+            &:hover,
+            &:active {
+                border: 1px solid $color-primary-2;
+            }
+        }
+    }
+    
+    &__discount-text {
+        font-size: 10px;
+        display: block;
+    }
+
+    &__discount-button {
+        @include transition;
+        padding: 10px;
+        margin: 5px 0;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 100;
+
+        &--active {
+            border: 1px solid $color-primary;
+            background-color: $color-primary;
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+                border: 1px solid $color-primary-2;
+                background-color: $color-primary-2;
+            }
+        }
+
+        &--inactive {
+            border: 1px solid $color-primary-3;
+            background-color: $color-primary-3;
+            cursor: not-allowed;
+        }
+    }
+}

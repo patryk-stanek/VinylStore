@@ -33,7 +33,6 @@ export default function productsReducer(state = initialState, action) {
 
         case GET_PRODUCTS:
             //Getting objects array from database file
-            console.log('x');
             return Object.assign({}, state, {visibleProducts: state.products});
 
         case SEARCH_PRODUCTS:
@@ -45,7 +44,6 @@ export default function productsReducer(state = initialState, action) {
                 product.artist.toLowerCase().includes(action.searchText.toLowerCase())
             );
             //Passing found objects to new array
-            console.log(foundProducts);
             return Object.assign({}, state, {searchedProducts: foundProducts});
 
         case SORT_PRODUCTS_BY_NAME:

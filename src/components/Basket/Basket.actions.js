@@ -3,6 +3,7 @@ export const ADD_TO_BASKET = "ADD_TO_BASKET";
 export const REMOVE_FROM_BASKET = "REMOVE_FROM_BASKET";
 export const DECREASE_PRODUCT_AMOUNT = "DECREASE_PRODUCT_AMOUNT"
 export const CLEAR_BASKET = "CLEAR_BASKET";
+export const CALCULATE_DISCOUNT = "CALCULATE_DISCOUNT"
 
 //Adding a single product to the basket
 export function addToBasket(product) {
@@ -33,5 +34,13 @@ export function decreaseProductAmount(product) {
 export function clearBasket() {
     return {
         type: CLEAR_BASKET
+    }
+}
+
+//Calculate discount
+export function calculateDiscount(code) {
+    return {
+        type: CALCULATE_DISCOUNT,
+        code
     }
 }

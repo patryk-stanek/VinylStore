@@ -1,0 +1,95 @@
+@import "../../styles.scss";
+
+.contact {
+
+    &__header {
+        font-size: 45px;
+        font-weight: 100;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &:first-child {
+            margin-right: -200px;
+        }
+    }
+
+    &__line {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__input {
+        @include transition;
+        margin: 5px;
+        padding: 10px;
+        border: 1px solid $color-grey;
+
+        &:focus {
+            border: 1px solid $color-primary;
+        }
+
+        &:hover,
+        &:active {
+            border: 1px solid $color-primary-2;
+        }
+
+        &::placeholder {
+            color: $color-grey;
+            font-family: 'Roboto', sans-serif
+        }
+
+        &--half {
+            width: 100%;
+        }
+
+        &--textarea {
+            resize: none;
+        }
+    }
+
+    &__button {
+        @include transition;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid $color-primary;
+        background-color: $color-primary;
+        text-transform: uppercase;
+        cursor: pointer;
+        color: white;
+        font-weight: 100;
+
+        &:hover,
+        &:active {
+            border: 1px solid $color-primary-2;
+            background-color: $color-primary-2;
+        }
+    }
+
+    &__information {
+        text-align: right;
+    }
+
+    &__part {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: rgba($color-black, .2);
+    }
+
+    &__main {
+        font-weight: 100;
+        margin-left: 15px;
+        color: $color-primary;
+    }
+}

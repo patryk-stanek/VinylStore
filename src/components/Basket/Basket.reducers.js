@@ -3,14 +3,19 @@ import {
     ADD_TO_BASKET,
     REMOVE_FROM_BASKET,
     DECREASE_PRODUCT_AMOUNT,
-    CLEAR_BASKET
+    CLEAR_BASKET,
+    CALCULATE_DISCOUNT
 } from "./Basket.actions";
+
+//Importing discount codes
+import discountCodes from "../../utils/discounts.json";
 
 //Defining inital state
 const initialState = {
     basket: [],
     totalCost: 0,
-    totalItems: 0
+    totalItems: 0,
+    discount: ''
 };
 
 //Creating reducers
@@ -28,7 +33,7 @@ export default function basketReducer(state = initialState, action) {
                     state.basket[i].amount++;
                     return {
                         ...state,
-                        totalCost: costAfterAdd,
+                        totalCost: costAfterAdd - (costAfterAdd * state.discount),
                         totalItems: state.totalItems + 1
                     };
                 }
@@ -83,7 +88,7 @@ export default function basketReducer(state = initialState, action) {
                     return {
                         ...state,
                         basket: stateAfterDecrease,
-                        totalCost: parseFloat(state.totalCost - costDecreased).toFixed(2),
+                        totalCost: state.totalCost - costDecreased,
                         totalItems: state.totalItems - 1
                     };
                 }
@@ -96,6 +101,19 @@ export default function basketReducer(state = initialState, action) {
                 totalCost: 0,
                 totalItems: 0
             };
+        
+        case CALCULATE_DISCOUNT:
+            for (let i=0; i<discountCodes.length; i++) {
+                if(discountCodes[i].rabatCode === action.code && state.discount === '') {
+                    const costDiscount = state.totalCost - (state.totalCost * discountCodes[i].discount);
+                    return {
+                        ...state,
+                        totalCost: costDiscount,
+                        discount: discountCodes[i].rabatCode
+                    }
+                } 
+            }
+            return state;
 
         default:
             return state;

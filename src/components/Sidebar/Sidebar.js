@@ -78,7 +78,7 @@ class Sidebar extends React.Component {
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
                         />
-                        <label for="option-button1" className="sidebar__button">
+                        <label htmlFor="option-button1" className="sidebar__button">
                             Recommended
                         </label>
                     </div>
@@ -92,7 +92,7 @@ class Sidebar extends React.Component {
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
                         />
-                        <label for="option-button2" className="sidebar__button">
+                        <label htmlFor="option-button2" className="sidebar__button">
                             Sort by album name
                         </label>
                     </div>
@@ -106,7 +106,7 @@ class Sidebar extends React.Component {
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
                         />
-                        <label for="option-button3" className="sidebar__button">
+                        <label htmlFor="option-button3" className="sidebar__button">
                             Sort by artist
                         </label>
                     </div>
@@ -120,7 +120,7 @@ class Sidebar extends React.Component {
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
                         />
-                        <label for="option-button4" className="sidebar__button">
+                        <label htmlFor="option-button4" className="sidebar__button">
                             Sort by lowest price
                         </label>
                     </div>
@@ -134,7 +134,7 @@ class Sidebar extends React.Component {
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
                         />
-                        <label for="option-button5" className="sidebar__button">
+                        <label htmlFor="option-button5" className="sidebar__button">
                             Sort by highest price
                         </label>
                     </div>

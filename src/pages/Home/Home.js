@@ -20,7 +20,7 @@ class Home extends React.Component {
 
         this.state = {
             productsPage: [],
-            currentPage: 0
+            currentPage: ''
         }
 
         this.handleChangePage = this.handleChangePage.bind(this);
@@ -40,8 +40,8 @@ class Home extends React.Component {
     handleChangePage(page) {
         this.setState({productsPage: []})//Clearing products on page  
         this.setState({currentPage: page})//Changin page to chosen
-        window.scrollTo(0, 0);
         this.forceUpdate();//Forcing component to update
+        window.scrollTo(0, 0);
     }
 
     mapPropsToArray() {
@@ -69,7 +69,6 @@ class Home extends React.Component {
         if (this.state.productsPage = []) {
             this.mapPropsToArray();
         }
-        
         return (
             <div className="home">
                 <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={this.handleUpdate.bind(this)}/>

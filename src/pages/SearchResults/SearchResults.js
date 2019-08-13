@@ -27,7 +27,6 @@ class SearchResults extends React.Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="results">
                 <h1 className="results__header">Search Results</h1>

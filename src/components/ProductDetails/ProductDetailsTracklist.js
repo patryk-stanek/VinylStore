@@ -3,14 +3,12 @@ import React from "react";
 class ProductDetailsTracklist extends React.Component {
 
     render() {
-        console.log(this.props.tracks)
         if (this.props.tracks !== undefined) {
             return (
-                <React.Fragment>
+                <ul className="tracklist">
                     {
                         this.props.tracks.map((track, index) => {
                             return (
-                                <ul className="tracklist">
                                     <li
                                         className="tracklist__item"
                                         key={index}
@@ -18,11 +16,10 @@ class ProductDetailsTracklist extends React.Component {
                                         <span className="tracklist__number">{index + 1}.</span>
                                         {track}
                                     </li>
-                                </ul>
                             )
                         })
                     }
-                </React.Fragment>
+                </ul>
             )
         } else {
             return <span>x</span>
