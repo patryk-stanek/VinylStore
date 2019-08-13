@@ -17,6 +17,12 @@
         font-size: 75px;
     }
 
+    &__title:hover > &__icon,
+    &__title:active > &__icon {
+        color: $color-secondary-3;
+        transform: rotate(360deg);
+    }
+
     &__span {
         color: transparent;
         font-weight: 400;
@@ -25,6 +31,7 @@
     }
 
     &__icon {
+        @include transition;
         font-size: 75%;
     }
 }

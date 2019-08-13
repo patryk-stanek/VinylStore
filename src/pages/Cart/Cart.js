@@ -58,9 +58,6 @@ class Cart extends React.Component {
 
     handleDiscount(event) {
         event.preventDefault();
-
-        // this.props.calculateDiscount(this.state.codeEntered);
-
         for (let i=0; i<discountCodes.length; i++) {
             if(discountCodes[i].rabatCode === this.state.codeEntered && this.state.discount === 0) {
                 this.setState({
@@ -72,7 +69,7 @@ class Cart extends React.Component {
     }
 
     render() {
-        const discountButton = this.state.discount === 0 ? "cart__discount-button--active" : "cart__discount-button--inactive";
+        const discountButton = this.state.discount === 0 ? "cart__button-text--active" : "cart__button-text--inactive";
         const discountText = this.state.discount > 0 ? `You have ${this.state.discount * 100}% discount` : "";
         return (
             <div className="cart">
@@ -96,20 +93,20 @@ class Cart extends React.Component {
                                     <div className="cart__box">
                                         <button
                                             onClick={() => this.handleIncreaseProduct(product)}
-                                            className="cart__button"
+                                            className="cart__button-icon"
                                         >
                                             <i className="cart__icon fas fa-plus"></i>
                                         </button>
                                         <span className="cart__amount">{product.amount}</span>
                                         <button
                                             onClick={() => this.handleDecreaseAmount(product)}
-                                            className="cart__button"
+                                            className="cart__button-icon"
                                         >
                                             <i className="cart__icon fas fa-minus"></i>
                                         </button>
                                         <button
                                             onClick={() => this.handleRemovingProduct(product)}
-                                            className="cart__button"
+                                            className="cart__button-icon"
                                         >
                                             <i className="cart__icon fas fa-trash-alt"></i>
                                         </button>
@@ -120,10 +117,10 @@ class Cart extends React.Component {
                     }
                     </ul>
                     <div className="cart__summary">
-                        <span className="cart__total-items">Total items: {this.props.totalItems}</span><br/>
+                        <span className="cart__total-items">Total items: {this.props.totalItems}</span>
                         <form onSubmit={this.handleDiscount} className="cart__discounts">
                             <input type="text" onChange={this.handleCodeEnter}/>
-                            <input type="submit" value="submit" className={"cart__discount-button " + discountButton}/>
+                            <input type="submit" value="submit" className={"cart__button-text " + discountButton}/>
                         </form>
                         <span className="cart__discount-text">{discountText}</span>
                         <span className="cart__total-cost">
@@ -133,7 +130,8 @@ class Cart extends React.Component {
                                     parseFloat(this.props.totalCost - (this.props.totalCost * this.state.discount)).toFixed(2)
                                 }
                             </span>
-                        </span><br/>
+                        </span>
+                        <button className="cart__button-text cart__button-text--active" onClick={() => alert('Thank You for Your order!')}>Place order!</button>
                     </div>
                 </div>
             </div>
