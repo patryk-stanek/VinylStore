@@ -12,6 +12,10 @@
     &__container {
         display: flex;
         flex-direction: row;
+
+        @include respond(break-m) {
+            flex-direction: column;
+        }
     }
 
     &__box {
@@ -78,6 +82,11 @@
 
     &__information {
         text-align: right;
+
+        @include respond(break-m) {
+            text-align: center;
+            margin-top: 20px;
+        }
     }
 
     &__part {

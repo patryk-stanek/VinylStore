@@ -1,6 +1,13 @@
+@import "../../styles.scss";
+
 .home {
     display: flex;
     flex-direction: row;
+
+    @include respond(break-s) {
+        flex-direction: column;
+        align-items: center;
+    }
 
     &__container {
         display: flex;

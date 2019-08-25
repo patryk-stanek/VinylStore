@@ -5,6 +5,10 @@
     display: flex;
     justify-content: flex-end;
 
+    @include respond(break-s) {
+        justify-content: center;
+    }
+
     &__button {
         @include transition;
         border: none;

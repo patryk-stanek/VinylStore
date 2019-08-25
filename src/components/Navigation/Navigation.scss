@@ -8,6 +8,12 @@
     font-size: 16px;
     margin-top: 14px;
 
+    @include respond(break-s) {
+        margin-top: 25px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
     &__link {
         @include transition;
         color: rgba($color-black, .2);
@@ -17,6 +23,11 @@
 
         &:not(:last-child) {
             margin-right: 25px;
+
+            @include respond(break-s) {
+                margin-right: 5px;
+                margin-left: 5px;
+            }
         }
 
         &:hover,

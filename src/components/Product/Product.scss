@@ -62,8 +62,16 @@
     justify-content: space-between;
     margin-top: -5px;
 
+    @include respond(break-s) {
+        flex-direction: column;
+    }
+
     &__single {
         width: calc(50% - 10px);
         float: left;
+
+        @include respond(break-s) {
+            width: 100%;
+        }
     }
 }

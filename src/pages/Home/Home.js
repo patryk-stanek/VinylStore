@@ -11,7 +11,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import "./Home.scss";
 
 //Importing actions for Searchbar states
-import { getProducts, changePage } from "../../components/Product/Product.actions";
+import { changePage } from "../../components/Product/Product.actions";
 
 //Home component
 class Home extends React.Component {

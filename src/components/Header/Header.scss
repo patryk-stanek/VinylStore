@@ -25,6 +25,11 @@
     &__title {
         font-weight: 100;
         font-size: 75px;
+
+        @include respond(break-s) {
+            font-size: 50px;
+            margin: 0;
+        }
     }
 
     &__title:hover > &__icon,

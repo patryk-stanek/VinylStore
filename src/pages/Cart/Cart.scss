@@ -54,6 +54,10 @@
         &:active {
             border-bottom: 1px solid $color-secondary-2;
         }
+
+        @include respond(break-xs) {
+            flex-direction: column;
+        }
     }
 
     &__box {
@@ -61,6 +65,10 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+
+        @include respond(break-s) {
+            margin: 5px 0;
+        }
     }
 
     &__name {
@@ -118,6 +126,10 @@
 
         & * {
             margin: 10px 0;
+        }
+
+        @include respond(break-s) {
+            text-align: center;
         }
     }
 

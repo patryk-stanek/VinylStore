@@ -5,8 +5,16 @@
     flex-direction: row;
     width: 100%;
 
+    @include respond(break-s) {
+        flex-direction: column;
+    }
+
     &__cover {
         width: 50%;
+
+        @include respond(break-s) {
+            width: 100%;
+        }
     }
 
     &__image {
@@ -24,6 +32,10 @@
         @include respond(break-xl) {
             padding: 0;
             text-align: right;
+        }
+
+        @include respond(break-s) {
+            width: 100%;
         }
     }
 
