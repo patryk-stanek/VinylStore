@@ -11,7 +11,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import "./Home.scss";
 
 //Importing actions for Searchbar states
-import { getProducts } from "../../components/Product/Product.actions";
+import { getProducts, changePage } from "../../components/Product/Product.actions";
 
 //Home component
 class Home extends React.Component {
@@ -26,9 +26,10 @@ class Home extends React.Component {
         this.handleChangePage = this.handleChangePage.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         // this.props.dispatch(getProducts());//Getting products list
-        this.setState({currentPage: 0})//Setting start page
+        // this.setState({currentPage: this.props.currentPage})//Setting start page
+        this.handleChangePage(this.props.currentPage);
     }
     
     handleUpdate() {
@@ -38,6 +39,7 @@ class Home extends React.Component {
     }
 
     handleChangePage(page) {
+        this.props.changePage(page);
         this.setState({productsPage: []})//Clearing products on page  
         this.setState({currentPage: page})//Changin page to chosen
         this.forceUpdate();//Forcing component to update
@@ -83,8 +85,13 @@ class Home extends React.Component {
 
 //Maping global state
 const mapStateToProps = store => ({
-    visibleProducts: store.productsReducer.visibleProducts
+    visibleProducts: store.productsReducer.visibleProducts,
+    currentPage: store.productsReducer.currentPage
 });
 
+const mapDispatchToProps = dispatch => ({
+    changePage: page => dispatch(changePage(page)),
+})
+
 //Connecting state method with component
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

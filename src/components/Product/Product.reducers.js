@@ -7,7 +7,8 @@ import {
     SORT_PRODUCTS_BY_ARTIST,
     SORT_PRODUCTS_BY_PRICE,
     SORT_PRODUCTS_BY_ID,
-    SET_CATEGORY
+    SET_CATEGORY,
+    CHANGE_PAGE
 } from "./Product.actions";
 
 //Importing .json database
@@ -64,7 +65,7 @@ export default function productsReducer(state = initialState, action) {
             }
 
             const sortedProductsByName = state.products.sort(compareName);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByName, sortingOption: "sortByNameAscending"});
+            return Object.assign({}, state, {visibleProducts: sortedProductsByName, sortingOption: "sortByNameAscending", currentPage: 0});
 
             case SORT_PRODUCTS_BY_ARTIST:
                 const compareArtist = (a, b) => {
@@ -81,7 +82,7 @@ export default function productsReducer(state = initialState, action) {
                 }
     
                 const sortedProductsByArtist = state.products.sort(compareArtist);
-                return Object.assign({}, state, {visibleProducts: sortedProductsByArtist, sortingOption: "sortByArtistAscending"});
+                return Object.assign({}, state, {visibleProducts: sortedProductsByArtist, sortingOption: "sortByArtistAscending", currentPage: 0});
 
         case SORT_PRODUCTS_BY_PRICE:
             const comparePrice = (a, b) => {
@@ -99,17 +100,20 @@ export default function productsReducer(state = initialState, action) {
             const sortingType = action.option === 1 ? "sortByPriceAscending" : "sortByPriceDescending";
 
             const sortedProductsByPrice = state.products.sort(comparePrice);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice, sortingOption: sortingType});
+            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice, sortingOption: sortingType, currentPage: 0});
 
         case SORT_PRODUCTS_BY_ID:
             const sortedProductsByid = state.products.sort((a,b) => a.id - b.id);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByid, sortingOption: "sortById"});
+            return Object.assign({}, state, {visibleProducts: sortedProductsByid, sortingOption: "sortById", currentPage: 0});
 
         case SET_CATEGORY:
             //Filter objects in database array by chosen category
             const categoryProducts = state.products.filter(product => product.category === action.name);
             //Passing found object to new array
             return Object.assign({}, state, {visibleProducts: categoryProducts});
+
+        case CHANGE_PAGE:
+            return Object.assign({}, state, {currentPage: action.page});
 
         default:
             return state;

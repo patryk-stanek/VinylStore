@@ -7,6 +7,7 @@ export const SORT_PRODUCTS_BY_ARTIST = "SORT_PRODUCTS_BY_ARTIST";
 export const SORT_PRODUCTS_BY_PRICE = "SORT_PRODUCT_BY_PRICE";
 export const SORT_PRODUCTS_BY_ID = "SORT_PRODUCT_BY_ID";
 export const SET_CATEGORY = "SET_CATEGORY";
+export const CHANGE_PAGE = "CHANGE_PAGE"
 
 //Geting single product from database by it's id
 export function getProduct(id) {
@@ -71,3 +72,9 @@ export function setCategory(name) {
     }
 }
 
+export function changePage(page) {
+    return {
+        type: CHANGE_PAGE,
+        page
+    }
+}
