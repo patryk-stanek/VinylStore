@@ -1,4 +1,10 @@
+@import "../../styles.scss";
+
 .body {
     max-width: 1140px;
     margin: 0 auto;
+
+    @include respond(break-xl) {
+        padding: 50px;
+    }
 }

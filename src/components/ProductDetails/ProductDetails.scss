@@ -20,6 +20,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include respond(break-xl) {
+            padding: 0;
+            text-align: right;
+        }
     }
 
     &__name {
@@ -46,6 +51,10 @@
         padding: 20px 0;
         display: flex;
         flex-direction: row;
+
+        @include respond(break-xl) {
+            justify-content: flex-end;
+        }
     }
 
     &__category {

@@ -41,6 +41,10 @@
             border-bottom: 1px solid $color-primary;
             color: $color-primary;
         }
+
+        @include respond(break-xl) {
+            font-size: 12px;
+        }
     }
 
     &__input {

@@ -6,6 +6,10 @@
     margin: 10px 0;
     color: $color-white;
 
+    @include respond(break-xl) {
+        padding: 10px;
+    }
+
     &__details {
         display: flex;
         flex-direction: row;
@@ -13,6 +17,10 @@
         padding-top: 10px;
         text-transform: uppercase;
         justify-content: space-between;
+
+        @include respond(break-xl) {
+            flex-direction: column;
+        }
     }
 
     &__box {

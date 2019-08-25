@@ -28,5 +28,9 @@
 
     &__answer {
         padding: 0 150px;
+
+        @include respond(break-xl) {
+            padding: 0;
+        }
     }
 }

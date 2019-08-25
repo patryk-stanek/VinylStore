@@ -3,6 +3,10 @@
 .rules {
     padding: 0 150px;
 
+    @include respond(break-xl) {
+        padding: 0;
+    }
+
     &__header {
         font-size: 45px;
         font-weight: 100;

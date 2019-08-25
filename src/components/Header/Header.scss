@@ -3,13 +3,23 @@
 .header {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
 
+    @include respond(break-xl) {
+        justify-content: space-around;
+    }
+
     &__link {
         text-decoration: none;
         color: $color-black;
+
+        @include respond(break-xl) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__title {

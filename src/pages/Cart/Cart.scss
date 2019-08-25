@@ -10,6 +10,10 @@
     &__container {
         padding: 0 200px;
         font-size: 20px;
+
+        @include respond(break-xl) {
+            padding: 0;
+        }
     }
 
     &__clean-button {
