@@ -39,7 +39,7 @@ class Cart extends React.Component {
     }
 
     handleRemovingProduct(product) {
-        this.props.removeFromBasket(product);
+        this.props.removeFromBasket(product);//przeniesc bezposrednio do jsx
     }
 
     handleClearingBasket() {

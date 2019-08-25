@@ -27,7 +27,7 @@ class Home extends React.Component {
     }
 
     componentWillMount() {
-        this.props.dispatch(getProducts());//Getting products list
+        // this.props.dispatch(getProducts());//Getting products list
         this.setState({currentPage: 0})//Setting start page
     }
     

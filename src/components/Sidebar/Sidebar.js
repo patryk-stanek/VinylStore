@@ -18,7 +18,7 @@ class Sidebar extends React.Component {
         super(props);
 
         this.state = {
-            selectedOption: "option1"
+            selectedOption: ""
         }
 
         this.handleSortByName = this.handleSortByName.bind(this);
@@ -30,7 +30,12 @@ class Sidebar extends React.Component {
     }
 
     componentWillMount() {
-        this.props.sortProductsById();
+        this.setState({
+            selectedOption: this.props.sortingOption
+        })
+        if (this.props.sortingOption === "sortById") {
+            this.props.sortProductsById();
+        }
         this.props.handleUpdate();
     }
 
@@ -44,6 +49,7 @@ class Sidebar extends React.Component {
     handleSortByArtist(option) {
         this.props.sortProductsByArtist(option);
         this.props.handleUpdate();
+        
     }
 
     //Dispatching sorting products by chosen option and updating view
@@ -72,8 +78,8 @@ class Sidebar extends React.Component {
                         <input 
                             type="radio"
                             id="option-button1"
-                            value="option1"
-                            checked={this.state.selectedOption === "option1"}
+                            value="sortById"
+                            checked={this.state.selectedOption === "sortById"}
                             onChange={() => this.handleRecommended()}
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
@@ -86,8 +92,8 @@ class Sidebar extends React.Component {
                         <input 
                             type="radio"
                             id="option-button2"
-                            value="option2"
-                            checked={this.state.selectedOption === "option2"}
+                            value="sortByNameAscending"
+                            checked={this.state.selectedOption === "sortByNameAscending"}
                             onChange={() => this.handleSortByName(1)}
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
@@ -100,8 +106,8 @@ class Sidebar extends React.Component {
                         <input 
                             type="radio"
                             id="option-button3"
-                            value="option3"
-                            checked={this.state.selectedOption === "option3"}
+                            value="sortByArtistAscending"
+                            checked={this.state.selectedOption === "sortByArtistAscending"}
                             onChange={() => this.handleSortByArtist(1)}
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
@@ -114,8 +120,8 @@ class Sidebar extends React.Component {
                         <input 
                             type="radio"
                             id="option-button4"
-                            value="option4"
-                            checked={this.state.selectedOption === "option4"}
+                            value="sortByPriceAscending"
+                            checked={this.state.selectedOption === "sortByPriceAscending"}
                             onChange={() => this.handleSortByPrice(1)}
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
@@ -128,8 +134,8 @@ class Sidebar extends React.Component {
                         <input 
                             type="radio"
                             id="option-button5"
-                            value="option5"
-                            checked={this.state.selectedOption === "option5"}
+                            value="sortByPriceDescending"
+                            checked={this.state.selectedOption === "sortByPriceDescending"}
                             onChange={() => this.handleSortByPrice(0)}
                             onClick={this.handleOptionChange}
                             className="sidebar__input"
@@ -146,7 +152,8 @@ class Sidebar extends React.Component {
 
 //Maping global state
 const mapStateToProps = store => ({
-    visibleProducts: store.productsReducer.visibleProducts
+    visibleProducts: store.productsReducer.visibleProducts,
+    sortingOption: store.productsReducer.sortingOption
 });
 
 const mapDispatchToProps = dispatch => ({

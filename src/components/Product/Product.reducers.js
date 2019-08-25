@@ -19,7 +19,9 @@ const initialState = {
     selectedProduct: {},
     searchedProducts: [],
     visibleProducts: [],
-    sortedProducts: []
+    sortedProducts: [],
+    sortingOption: '' || "sortById",
+    currentPage: '' || 0
 }
 
 //Creating reducers
@@ -51,6 +53,7 @@ export default function productsReducer(state = initialState, action) {
                 const nameA = a.name.toLowerCase();
                 const nameB = b.name.toLowerCase();
                 let comparison = 0;
+                // console.log(state.sortingOption);
 
                 if (nameA > nameB) {
                     action.option === 0 ? comparison = -1 : comparison = 1;
@@ -61,7 +64,7 @@ export default function productsReducer(state = initialState, action) {
             }
 
             const sortedProductsByName = state.products.sort(compareName);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByName});
+            return Object.assign({}, state, {visibleProducts: sortedProductsByName, sortingOption: "sortByNameAscending"});
 
             case SORT_PRODUCTS_BY_ARTIST:
                 const compareArtist = (a, b) => {
@@ -78,26 +81,29 @@ export default function productsReducer(state = initialState, action) {
                 }
     
                 const sortedProductsByArtist = state.products.sort(compareArtist);
-                return Object.assign({}, state, {visibleProducts: sortedProductsByArtist});
+                return Object.assign({}, state, {visibleProducts: sortedProductsByArtist, sortingOption: "sortByArtistAscending"});
 
         case SORT_PRODUCTS_BY_PRICE:
             const comparePrice = (a, b) => {
                 const priceA = Number(a.price.replace(/[^0-9.-]+/g,""));
                 const priceB = Number(b.price.replace(/[^0-9.-]+/g,""));
-                
+
                 if (action.option === 1) {
                     return priceA - priceB
                 } else {
                     return priceB - priceA
                 }
+
             };
 
+            const sortingType = action.option === 1 ? "sortByPriceAscending" : "sortByPriceDescending";
+
             const sortedProductsByPrice = state.products.sort(comparePrice);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice});
+            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice, sortingOption: sortingType});
 
         case SORT_PRODUCTS_BY_ID:
             const sortedProductsByid = state.products.sort((a,b) => a.id - b.id);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByid});
+            return Object.assign({}, state, {visibleProducts: sortedProductsByid, sortingOption: "sortById"});
 
         case SET_CATEGORY:
             //Filter objects in database array by chosen category
