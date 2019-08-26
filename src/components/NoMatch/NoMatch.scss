@@ -1,0 +1,9 @@
+@import "../../styles.scss";
+
+.no-match {
+    text-align: center;
+
+    & * {
+        font-weight: 100;
+    }
+}
