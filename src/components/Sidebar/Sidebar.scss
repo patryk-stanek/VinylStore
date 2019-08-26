@@ -47,10 +47,12 @@
             border: 1px solid $color-primary;
         }
 
-        &:hover,
-        &:active {
-            border-bottom: 1px solid $color-primary;
-            color: $color-primary;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                border-bottom: 1px solid $color-primary;
+                color: $color-primary;
+            }
         }
 
         @include respond(break-xl) {

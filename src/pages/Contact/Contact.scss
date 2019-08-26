@@ -39,13 +39,15 @@
         padding: 10px;
         border: 1px solid $color-grey;
 
-        &:focus {
-            border: 1px solid $color-primary;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                border: 1px solid $color-primary-2;
+            }
         }
 
-        &:hover,
-        &:active {
-            border: 1px solid $color-primary-2;
+        &:focus {
+            border: 1px solid $color-primary;
         }
 
         &::placeholder {
@@ -73,10 +75,12 @@
         color: white;
         font-weight: 100;
 
-        &:hover,
-        &:active {
-            border: 1px solid $color-primary-2;
-            background-color: $color-primary-2;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                border: 1px solid $color-primary-2;
+                background-color: $color-primary-2;
+            }
         }
     }
 

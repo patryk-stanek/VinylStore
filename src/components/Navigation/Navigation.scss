@@ -30,9 +30,11 @@
             }
         }
 
-        &:hover,
-        &:active {
-            color: $color-primary;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                color: $color-primary;
+            }
         }
 
         &--active:link,

@@ -8,11 +8,55 @@ import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 //Pagination component
 class Pagination extends React.Component {
 
+    renderPrevPageButton() {
+        if(this.props.currentPage >= 1) {
+            return (
+                <button
+                    onClick={() => this.props.handleChangePage(this.props.currentPage - 1)}
+                    className="pagination__button pagination__button--active"
+                >
+                    <i className="pagination__icon fas fa-chevron-left"></i>
+                </button>
+            )
+        } else {
+            return (
+                <button
+                    disabled
+                    className="pagination__button pagination__button--inactive"
+                >
+                    <i className="pagination__icon fas fa-chevron-left"></i>
+                </button>
+            )
+        }
+    }
+
+    renderNextPageButton() {
+        if(this.props.currentPage === this.props.pagesAmount - 1) {
+            return (
+                <button
+                    disabled
+                    className="pagination__button pagination__button--inactive"
+                >
+                    <i className="pagination__icon fas fa-chevron-right"></i>
+                </button>
+            )
+        } else {
+            return (
+                <button 
+                    onClick={() => this.props.handleChangePage(this.props.currentPage + 1)}
+                    className="pagination__button pagination__button--active"
+                >
+                    <i className="pagination__icon fas fa-chevron-right"></i>
+                </button>
+            )
+        }
+    }
+
+    renderPagination() {
+        
+    }
+
     render() {
-        //Condition for previous page
-        const prevPage = this.props.currentPage >= 1 ? this.props.currentPage - 1 : this.props.currentPage;
-        //Condition for next page
-        const nextPage = this.props.currentPage <= this.props.pagesAmount ? this.props.currentPage + 1 : this.props.currentPage;
 
         //Pages loop and array
         const pages = [];
@@ -31,38 +75,9 @@ class Pagination extends React.Component {
         
         return (
             <div className="pagination">
-                <button
-                    onClick={() => this.props.handleChangePage(prevPage)}
-                    className="pagination__button"
-                >
-                    <i className="pagination__icon fas fa-chevron-left"></i>
-                </button>
-                {/* {
-                    Array.from(Array(this.props.pagesAmount)).map((id, index) => {
-                        //Condition for setting style for active page
-                        const currentPageStyle = this.props.currentPage === index ? "pagination__button--active" : "pagination__button--inactive";
-                        return (
-                            <button
-                                key={index}
-                                onClick={() => this.props.handleChangePage(index)}
-                                className={"pagination__button " + currentPageStyle}
-                            >
-                                {index + 1}
-                            </button>
-                        )
-                    })
-                } */}
+                {this.renderPrevPageButton()}
                 {pages}
-                <button 
-                    onClick={() => {
-                        if (this.props.currentPage > this.props.pagesAmount) {
-                            this.props.handleChangePage(nextPage);
-                        }
-                    }}
-                    className="pagination__button"
-                >
-                    <i className="pagination__icon fas fa-chevron-right"></i>
-                </button>
+                {this.renderNextPageButton()}
             </div>
         )
     }

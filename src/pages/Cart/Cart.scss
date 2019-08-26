@@ -25,9 +25,11 @@
         color: rgba($color-black, .2);
         margin-bottom: 15px;
 
-        &:hover,
-        &:active {
-            color: $color-primary;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                color: $color-primary;
+            }
         }
     }
 
@@ -50,9 +52,11 @@
         border-bottom: 1px solid black;
         cursor: pointer;
 
-        &:hover,
-        &:active {
-            border-bottom: 1px solid $color-secondary-2;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                border-bottom: 1px solid $color-secondary-2;
+            }
         }
 
         @include respond(break-xs) {
@@ -111,10 +115,12 @@
         color: $color-white;
         background-color: $color-black;
 
-        &:hover,
-        &:active {
-            background-color: $color-secondary-2;
-            border: 1px solid $color-secondary-2;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                background-color: $color-secondary-2;
+                border: 1px solid $color-secondary-2;
+            }
         }
     }
 
@@ -161,10 +167,12 @@
             &:focus {
                 border: 1px solid $color-primary;
             }
-    
-            &:hover,
-            &:active {
-                border: 1px solid $color-primary-2;
+
+            @include respond(hover) {
+                &:hover,
+                &:active {
+                    border: 1px solid $color-primary-2;
+                }
             }
         }
     }
@@ -187,10 +195,12 @@
             background-color: $color-primary;
             cursor: pointer;
 
-            &:hover,
-            &:active {
-                border: 1px solid $color-primary-2;
-                background-color: $color-primary-2;
+            @include respond(hover) {
+                &:hover,
+                &:active {
+                    border: 1px solid $color-primary-2;
+                    background-color: $color-primary-2;
+                }
             }
         }
 

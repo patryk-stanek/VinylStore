@@ -13,10 +13,12 @@
         color: $color-secondary;
         border: 1px solid $color-secondary;
 
-        &:hover,
-        &:active {
-            background-color: transparent;
-            color: $color-secondary;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                background-color: transparent;
+                color: $color-secondary;
+            }
         }
     }
 
@@ -33,10 +35,12 @@
         line-height: 20px;
         color: $color-tertiary;
 
-        &:hover,
-        &:active {
-            background-color: $color-tertiary;
-            color: $color-white;
+        @include respond(hover) {
+            &:hover,
+            &:active {
+                background-color: $color-tertiary;
+                color: $color-white;
+            }
         }
     }
 

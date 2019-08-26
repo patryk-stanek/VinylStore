@@ -39,6 +39,7 @@ class Home extends React.Component {
     }
 
     handleChangePage(page) {
+        console.log(page);
         this.props.changePage(page);
         this.setState({productsPage: []})//Clearing products on page  
         this.setState({currentPage: page})//Changin page to chosen

@@ -6,12 +6,16 @@ import "./Product.scss";
 
 //Product container
 const Product = props => {
+    const imageBig = "../../images/covers/" + props.product.id + "/cover-l.jpg";
+    const imageMedium = "../../images/covers/" + props.product.id + "/cover-m.jpg";
+    const imageUrl = window.innerWidth >= 991 ? imageBig : imageMedium;
+
     return (
         <div className="product">
             <div className="product__container">
                 <img 
                     className="product__cover"
-                    src={props.product.cover}
+                    src={imageUrl}
                     alt={props.product.name + "_cover"}
                 />
                 <div className="product__details">

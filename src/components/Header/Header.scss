@@ -32,10 +32,12 @@
         }
     }
 
-    &__title:hover > &__icon,
-    &__title:active > &__icon {
-        color: $color-secondary-3;
-        transform: rotate(360deg);
+    @include respond(hover) {
+        &__title:hover > &__icon,
+        &__title:active > &__icon {
+            color: $color-secondary-3;
+            transform: rotate(360deg);
+        }
     }
 
     &__span {
