@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 //Importing component
 import { Link } from "react-router-dom";
-import Product from "../../components/Product/Product";
+import Product from "../Product/Product";
 
 //Importing styles
 import "./SearchResults.scss";

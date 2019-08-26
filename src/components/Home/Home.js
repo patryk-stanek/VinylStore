@@ -3,15 +3,15 @@ import React from "react";
 import { connect } from "react-redux";
 
 //Importing components
-import Sidebar from "../../components/Sidebar/Sidebar";
-import ProductsListContainer from "../../components/Product/ProductsListContainer";
-import Pagination from "../../components/Pagination/Pagination";
+import Sidebar from "../Sidebar/Sidebar";
+import ProductsListContainer from "../Product/ProductsListContainer";
+import Pagination from "../Pagination/Pagination";
 
 //Importing styles
 import "./Home.scss";
 
 //Importing actions for Searchbar states
-import { changePage } from "../../components/Product/Product.actions";
+import { changePage } from "../Product/Product.actions";
 
 //Home component
 class Home extends React.Component {
