@@ -3,7 +3,11 @@
 .rules {
     padding: 0 150px;
 
-    @include respond(break-xl) {
+    @include respond(break-l) {
+        padding: 0 100px;
+    }
+
+    @include respond(break-s) {
         padding: 0;
     }
 
@@ -11,10 +15,16 @@
         font-size: 45px;
         font-weight: 100;
         text-align: center;
+
+        @include respond(break-xl) {
+            padding: 0;
+        }
     }
 
     &__list {
         list-style: none;
+        padding: 0;
+        text-align: center;
     }
 
     &__item {

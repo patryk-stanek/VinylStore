@@ -21,11 +21,23 @@
         width: calc(25% - 10px);
 
         & * {
-            font-size: 10px;
+            font-size: 12px;
+
+            @include respond(break-l) {
+                font-size: 14px;
+            }
+
+            @include respond(break-s) {
+                font-size: 16px;
+            }
         }
 
-        @include respond(break-xl) {
+        @include respond(break-l) {
             width: calc(50% - 10px);
+        }
+
+        @include respond(break-s) {
+            width: 100%;
         }
     }
 }
