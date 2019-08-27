@@ -98,7 +98,8 @@ export default function basketReducer(state = initialState, action) {
             return {
                 basket: [],
                 totalCost: 0,
-                totalItems: 0
+                totalItems: 0,
+                discount: 0
             };
         
         case CALCULATE_DISCOUNT:

@@ -59,7 +59,7 @@ class Cart extends React.Component {
 
     handleCodeEnter(event) {
         this.setState({
-            codeEntered: event.target.value
+            codeEntered: event.target.value.toLowerCase()
         })
     }
 
@@ -78,6 +78,9 @@ class Cart extends React.Component {
 
     handleSubmit() {
         alert("Thank You for Your order!");
+        this.setState({
+            codeEntered: ""
+        })
         this.handleClearingBasket();
     }
 
@@ -132,7 +135,7 @@ class Cart extends React.Component {
                     <div className="cart__summary">
                         <span className="cart__total-items">Total items: {this.props.totalItems}</span>
                         <form onSubmit={this.handleDiscount} className="cart__discounts">
-                            <input type="text" onChange={this.handleCodeEnter}/>
+                            <input type="text" onChange={this.handleCodeEnter} value={this.state.codeEntered}/>
                             <input type="submit" value="submit" className={"cart__button-text " + discountButton}/>
                         </form>
                         <span className="cart__discount-text">{discountText}</span>
