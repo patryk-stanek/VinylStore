@@ -8,10 +8,23 @@
     font-size: 16px;
     margin-top: 14px;
 
+    @include respond(break-xl) {
+        justify-content: space-between;
+    }
+
+    @include respond(break-m) {
+        font-size: 18px;
+    }
+
+    @include respond(break-m) {
+        // width: 100%;
+    }
+
     @include respond(break-s) {
-        margin-top: 25px;
+        margin-top: 0px;
         justify-content: space-around;
         flex-wrap: wrap;
+        width: 100%;
     }
 
     &__link {
@@ -21,12 +34,15 @@
         text-transform: uppercase;
         border-bottom: 1px solid transparent;
 
+        @include respond(break-m) {
+            padding: 0 5px;
+        }
+
         &:not(:last-child) {
             margin-right: 25px;
 
             @include respond(break-s) {
-                margin-right: 5px;
-                margin-left: 5px;
+                margin-right: 0px;
             }
         }
 

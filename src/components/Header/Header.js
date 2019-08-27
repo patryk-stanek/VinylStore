@@ -22,6 +22,9 @@ export class Header extends React.Component {
                 </Link>
                 <Searchbar />
                 <Navigation />
+                <div className="ad">
+                    <h2>Music day promo code: <span>vinyl</span></h2>
+                </div>
             </header>
         )
     }

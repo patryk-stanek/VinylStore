@@ -9,6 +9,10 @@
     }
 
     @include respond(break-l) {
-        padding: 10px;
+        padding: 20px;
+    }
+
+    @include respond(break-s) {
+        padding: 0;
     }
 }

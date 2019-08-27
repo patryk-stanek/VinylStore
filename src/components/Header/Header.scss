@@ -12,6 +12,10 @@
         justify-content: space-around;
     }
 
+    @include respond(break-m) {
+        margin-bottom: 20px;
+    }
+
     &__link {
         text-decoration: none;
         color: $color-black;
@@ -25,18 +29,21 @@
     &__title {
         font-weight: 100;
         font-size: 75px;
+        color: $color-black;
+        padding-bottom: 10px;
 
         @include respond(break-s) {
-            font-size: 50px;
+            font-size: 55px;
             margin: 0;
+            background-color: $color-primary;
+            color: $color-white;
         }
     }
 
     @include respond(hover) {
         &__title:hover > &__icon,
         &__title:active > &__icon {
-            color: $color-secondary-3;
-            transform: rotate(360deg);
+            transform: rotate3d(0, 1, 0, 360deg);
         }
     }
 
@@ -45,10 +52,67 @@
         font-weight: 400;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $color-black;
+
+        @include respond(break-s) {
+            -webkit-text-stroke-color: $color-white;
+        }
     }
 
     &__icon {
         @include transition;
         font-size: 75%;
+    }
+
+    & .searchbar,
+    & .navigation {
+
+        @include respond(break-xl) {
+            width: 49%;
+        }
+
+        @include respond(break-m) {
+            width: 100%;
+        }
+    }
+    
+    & .navigation {
+
+        @include respond(break-m) {
+            margin-top: 20px;
+        }
+    }
+}
+
+.ad {
+    width: 100%;
+    background-color: $color-tertiary;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+
+    h2 {
+        color: white;
+        font-weight: 100;
+        margin: 0;
+        font-size: 50px;
+        padding: 0;
+
+        @include respond(break-l) {
+            font-size: 45px;
+        }
+
+        @include respond(break-m) {
+            font-size: 35px;
+        }
+
+        @include respond(break-s) {
+            font-size: 20px;
+            font-weight: 500;
+            padding: 2px 0;
+        }
+
+        span {
+            color: $color-primary-3;
+        }
     }
 }

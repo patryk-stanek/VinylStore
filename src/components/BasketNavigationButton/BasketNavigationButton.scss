@@ -8,6 +8,11 @@
     border-bottom: 1px solid transparent;
     backface-visibility: hidden;
 
+    @include respond(break-l) {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     @include respond(hover) {
         &:hover,
         &:active {
@@ -20,6 +25,12 @@
         color: transparent;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: $color-primary;
+
+        @include respond(break-l) {
+            margin-right: 5px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     }
 
     &__items {

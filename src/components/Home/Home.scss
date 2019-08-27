@@ -13,5 +13,13 @@
         display: flex;
         flex-direction: column;
         width: 75%;
+
+        @include respond(break-l) {
+            width: 80%;
+        }
+
+        @include respond(break-m) {
+            width: 100%;
+        }
     }
 }

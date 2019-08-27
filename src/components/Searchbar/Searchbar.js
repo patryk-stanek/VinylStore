@@ -45,17 +45,17 @@ class Searchbar extends React.Component {
         const { fireRedirect } = this.state;
 
         return (
-            <div className="form">
+            <div className="searchbar">
                 <form id="form" onSubmit={this.handleSubmit} className="form__container">
                     <input
                         type="text"
                         placeholder="Search products..."
                         onChange={this.handleChange}
                         onKeyPress={this.handleSearch}
-                        className="form__input"
+                        className="searchbar__input"
                         
                     />
-                    <i className="form__icon fas fa-search"></i>
+                    <i className="searchbar__icon fas fa-search"></i>
                 </form>
                 {
                     fireRedirect && (
