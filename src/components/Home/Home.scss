@@ -15,10 +15,10 @@
         width: 75%;
 
         @include respond(break-l) {
-            width: 80%;
+            width: 70%;
         }
 
-        @include respond(break-m) {
+        @include respond(break-s) {
             width: 100%;
         }
     }

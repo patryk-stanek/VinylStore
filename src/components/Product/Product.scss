@@ -2,7 +2,7 @@
 
 .product {
     padding: 40px;
-    background-color: rgba($color-grey, .5);
+    background-color: rgba($color-primary-3, 1);
     margin: 10px 0;
     color: $color-white;
 
@@ -10,16 +10,25 @@
         padding: 10px;
     }
 
+    @include respond(break-s) {
+        padding: 22px;
+    }
+
+    @include respond(break-xs) {
+        padding: 10px;
+    }
+
     &__details {
         display: flex;
         flex-direction: row;
         font-weight: 100;
-        padding-top: 10px;
+        padding: 10px 0 0 0;
         text-transform: uppercase;
         justify-content: space-between;
 
         @include respond(break-xl) {
             flex-direction: column;
+            padding: 10px;
         }
     }
 

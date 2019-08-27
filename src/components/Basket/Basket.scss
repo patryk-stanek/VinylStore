@@ -48,7 +48,7 @@
         padding-left: 0;
 
         @include respond(break-s) {
-            background-color: rgba($color-tertiary, .1);
+            background-color: rgba($color-primary-2, .1);
             margin-top: 20px;
         }
     }
@@ -59,7 +59,7 @@
         justify-content: space-between;
         flex-direction: row;
         padding: 10px 0;
-        border-bottom: 1px solid $color-tertiary;
+        border-bottom: 1px solid $color-primary-2;
         cursor: pointer;
         color: rgba($color-black, .9);
 
@@ -127,9 +127,9 @@
         height: 25px;
         line-height: 25px;
         margin-bottom: -2px;
-        border: 1px solid $color-tertiary;
+        border: 1px solid $color-primary-2;
         color: $color-white;
-        background-color: $color-tertiary;
+        background-color: $color-primary-2;
 
         @include respond(hover) {
             &:hover,
@@ -151,9 +151,10 @@
         }
 
         @include respond(break-s) {
+            color: $color-white;
             padding: 15px 0 10px 0;
             text-align: center;
-            background-color: rgba($color-tertiary, .2);
+            background-color: rgba($color-primary-2, 1);
         }
     }
 
@@ -209,8 +210,8 @@
         font-weight: 100;
 
         &--active {
-            border: 1px solid $color-secondary;
-            background-color: $color-secondary;
+            border: 1px solid $color-secondary-3;
+            background-color: $color-secondary-3;
             cursor: pointer;
 
             @include respond(hover) {
@@ -223,15 +224,15 @@
         }
 
         &--submit {
-            border: 1px solid $color-tertiary;
-            background-color: $color-tertiary;
+            border: 1px solid $color-tertiary-3;
+            background-color: $color-tertiary-3;
             cursor: pointer;
 
             @include respond(hover) {
                 &:hover,
                 &:active {
-                    border: 1px solid $color-tertiary-2;
-                    background-color: $color-tertiary-2;
+                    border: 1px solid $color-tertiary-3;
+                    background-color: $color-tertiary-3;
                 }
             }
         }

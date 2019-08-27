@@ -11,16 +11,20 @@
     &__box {
         padding: 20px 0;
 
-        &::before {
-            content: "";
-            display: block;
-            background-color: $color-primary;
-            height: 1px;
-            width: 250px;
-            margin: 0 auto;
+        &:not(:nth-child(2)) {
+            
 
-            @include respond(break-s) {
-                width: 90%;
+            &::before {
+                content: "";
+                display: block;
+                background-color: $color-primary;
+                height: 1px;
+                width: 250px;
+                margin: 0 auto;
+
+                @include respond(break-s) {
+                    width: 95%;
+                }
             }
         }
     }

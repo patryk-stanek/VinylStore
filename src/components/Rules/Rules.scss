@@ -33,9 +33,5 @@
 
     &__item {
         padding: 10px 0;
-
-        @include respond(break-s) {
-            padding: 0;
-        }
     }
 }

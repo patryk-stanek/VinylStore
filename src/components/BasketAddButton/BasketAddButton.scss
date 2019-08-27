@@ -24,7 +24,7 @@
 
     &__icon {
         @include transition;
-        border: 1px solid $color-tertiary;
+        border: 1px solid $color-tertiary-3;
         padding: 10px;
         text-align: center;
         background-color: transparent;
@@ -33,7 +33,7 @@
         width: 20px;
         height: 20px;
         line-height: 20px;
-        color: $color-tertiary;
+        color: $color-tertiary-3;
 
         @include respond(hover) {
             &:hover,
