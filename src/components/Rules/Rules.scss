@@ -25,9 +25,17 @@
         list-style: none;
         padding: 0;
         text-align: center;
+
+        @include respond(break-s) {
+            text-align: justify;
+        }
     }
 
     &__item {
         padding: 10px 0;
+
+        @include respond(break-s) {
+            padding: 0;
+        }
     }
 }

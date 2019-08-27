@@ -18,6 +18,10 @@
             height: 1px;
             width: 250px;
             margin: 0 auto;
+
+            @include respond(break-s) {
+                width: 90%;
+            }
         }
     }
 
@@ -31,6 +35,10 @@
 
         @include respond(break-xl) {
             padding: 0 10px;
+        }
+
+        @include respond(break-s) {
+            text-align: justify;
         }
     }
 }

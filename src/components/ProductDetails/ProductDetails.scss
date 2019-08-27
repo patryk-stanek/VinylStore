@@ -45,6 +45,10 @@
         margin-bottom: -50px;
         font-weight: 100;
         font-size: 60px;
+
+        @include respond(break-s) {
+            padding-bottom: 10px;
+        }
     }
 
     &__artist {
