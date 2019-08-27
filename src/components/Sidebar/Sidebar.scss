@@ -5,6 +5,14 @@
     padding: 0;
     margin: 0;
 
+    & form {
+
+        @include respond(break-m) {
+            padding-top: 7px;
+        }
+
+    }
+
     @include respond(break-s) {
         width: 100%;
         text-align: center;

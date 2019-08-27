@@ -9,12 +9,14 @@
 
     @include respond(break-s) {
         margin-top: 25px;
+        padding-top: 28vw;
         width: 100%;
     }
 
     & form {
 
-        @include respond(break-s) {
+        @include respond(break-l) {
+            overflow: hidden;
             width: 100%;
         }
     }

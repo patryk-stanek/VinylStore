@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 35px;
+    position: relative;
 
     @include respond(break-xl) {
         justify-content: space-around;
@@ -33,10 +34,14 @@
         padding-bottom: 10px;
 
         @include respond(break-s) {
-            font-size: 55px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 20vw;
             margin: 0;
             background-color: $color-primary;
             color: $color-white;
+            z-index: 1000;
         }
     }
 
@@ -94,22 +99,8 @@
         color: white;
         font-weight: 100;
         margin: 0;
-        font-size: 50px;
-        padding: 0;
-
-        @include respond(break-l) {
-            font-size: 45px;
-        }
-
-        @include respond(break-m) {
-            font-size: 35px;
-        }
-
-        @include respond(break-s) {
-            font-size: 20px;
-            font-weight: 500;
-            padding: 2px 0;
-        }
+        font-size: 6vw;
+        padding: 10px 0;
 
         span {
             color: $color-primary-3;
