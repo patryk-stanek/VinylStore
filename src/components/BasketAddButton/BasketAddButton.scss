@@ -38,7 +38,7 @@
         @include respond(hover) {
             &:hover,
             &:active {
-                background-color: $color-tertiary;
+                background-color: $color-tertiary-3;
                 color: $color-white;
             }
         }

@@ -240,7 +240,7 @@
         &--inactive {
             border: 1px solid $color-primary-3;
             background-color: $color-primary-3;
-            cursor: not-allowed;
+            cursor: auto;
         }
     }
 }

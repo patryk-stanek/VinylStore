@@ -15,7 +15,7 @@
 
     & form {
 
-        @include respond(break-l) {
+        @include respond(break-xl) {
             overflow: hidden;
             width: 100%;
         }
