@@ -10,7 +10,7 @@ class BasketNavigationButton extends React.Component {
     render() {
         return (
             <div className="basket-navigation-button">
-                <i className="fas fa-shopping-bag basket-navigation-button__icon"></i>
+                <i className="fas fa-shopping-cart basket-navigation-button__icon"></i>
                 <span className="basket-navigation-button__items">{this.props.totalItems}</span>
                 <span className="basket-navigation-button__price">€{parseFloat(this.props.totalCost).toFixed(2)}</span>
             </div>

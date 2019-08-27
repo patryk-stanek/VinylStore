@@ -99,8 +99,12 @@
         color: white;
         font-weight: 100;
         margin: 0;
-        font-size: 6vw;
+        font-size: 70px;
         padding: 10px 0;
+
+        @include respond(break-xl) {
+            font-size: 6vw;
+        }
 
         span {
             color: $color-primary-3;

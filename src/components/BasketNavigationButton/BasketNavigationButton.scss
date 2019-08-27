@@ -23,8 +23,9 @@
     &__icon {
         margin-right: 10px;
         color: transparent;
+        color: rgba($color-tertiary, .1);
         -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $color-primary;
+        -webkit-text-stroke-color: $color-tertiary;
 
         @include respond(break-l) {
             margin-right: 5px;

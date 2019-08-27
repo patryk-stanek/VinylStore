@@ -131,7 +131,7 @@ class Cart extends React.Component {
                                 }
                             </span>
                         </span>
-                        <button className="cart__button-text cart__button-text--active" onClick={() => alert('Thank You for Your order!')}>Place order!</button>
+                        <button className="cart__button-text cart__button-text--submit" onClick={() => alert('Thank You for Your order!')}>Place order!</button>
                     </div>
                 </div>
             </div>

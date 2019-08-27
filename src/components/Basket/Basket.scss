@@ -25,6 +25,11 @@
         color: rgba($color-black, .2);
         margin-bottom: 15px;
 
+        @include respond(break-s) {
+            margin-bottom: 0;
+            margin: 0 auto -15px auto;
+        }
+
         @include respond(hover) {
             &:hover,
             &:active {
@@ -41,6 +46,11 @@
         list-style: none;
         margin: 0;
         padding-left: 0;
+
+        @include respond(break-s) {
+            background-color: rgba($color-tertiary, .1);
+            margin-top: 20px;
+        }
     }
 
     &__item {
@@ -49,14 +59,19 @@
         justify-content: space-between;
         flex-direction: row;
         padding: 10px 0;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid $color-tertiary;
         cursor: pointer;
+        color: rgba($color-black, .9);
 
         @include respond(hover) {
             &:hover,
             &:active {
                 border-bottom: 1px solid $color-secondary-2;
             }
+        }
+
+        @include respond(break-s) {
+            margin: 5px 0;
         }
 
         @include respond(break-xs) {
@@ -71,6 +86,7 @@
         justify-content: center;
 
         @include respond(break-s) {
+            font-size: 17px;
             margin: 5px 0;
         }
     }
@@ -87,10 +103,10 @@
         width: 50px;
         height: 25px;
         line-height: 25px;
-        border: 1px solid $color-black;
+        border: 1px solid $color-grey;
         text-align: center;
         background-color: $color-white;
-        color: $color-black;
+        color: $color-grey;
     }
 
     &__button-icon {
@@ -111,9 +127,9 @@
         height: 25px;
         line-height: 25px;
         margin-bottom: -2px;
-        border: 1px solid $color-black;
+        border: 1px solid $color-tertiary;
         color: $color-white;
-        background-color: $color-black;
+        background-color: $color-tertiary;
 
         @include respond(hover) {
             &:hover,
@@ -135,7 +151,9 @@
         }
 
         @include respond(break-s) {
+            padding: 10px 0;
             text-align: center;
+            background-color: rgba($color-tertiary, .2);
         }
     }
 
@@ -191,15 +209,29 @@
         font-weight: 100;
 
         &--active {
-            border: 1px solid $color-primary;
-            background-color: $color-primary;
+            border: 1px solid $color-secondary;
+            background-color: $color-secondary;
             cursor: pointer;
 
             @include respond(hover) {
                 &:hover,
                 &:active {
-                    border: 1px solid $color-primary-2;
-                    background-color: $color-primary-2;
+                    border: 1px solid $color-secondary-2;
+                    background-color: $color-secondary-2;
+                }
+            }
+        }
+
+        &--submit {
+            border: 1px solid $color-tertiary;
+            background-color: $color-tertiary;
+            cursor: pointer;
+
+            @include respond(hover) {
+                &:hover,
+                &:active {
+                    border: 1px solid $color-tertiary-2;
+                    background-color: $color-tertiary-2;
                 }
             }
         }
