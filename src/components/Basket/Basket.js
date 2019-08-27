@@ -32,6 +32,7 @@ class Cart extends React.Component {
         this.handleDecreaseAmount = this.handleDecreaseAmount.bind(this);
         this.handleDiscount = this.handleDiscount.bind(this);
         this.handleCodeEnter = this.handleCodeEnter.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -73,6 +74,11 @@ class Cart extends React.Component {
             } 
         }
 
+    }
+
+    handleSubmit() {
+        alert("Thank You for Your order!");
+        this.handleClearingBasket();
     }
 
     render() {
@@ -138,7 +144,7 @@ class Cart extends React.Component {
                                 }
                             </span>
                         </span>
-                        <button className="cart__button-text cart__button-text--submit" onClick={() => alert('Thank You for Your order!')}>Place order!</button>
+                        <button className="cart__button-text cart__button-text--submit" onClick={() => this.handleSubmit()}>Place order!</button>
                     </div>
                 </div>
             </div>

@@ -38,6 +38,16 @@
         margin: 5px;
         padding: 10px;
         border: 1px solid $color-grey;
+        font-family: 'Roboto', sans-serif;
+
+        @include respond(break-s) {
+            font-size: 15px;
+            padding: 10px 5px;
+            margin: 2px 0;
+            color: $color-grey;
+            border: none;
+            border-top: 1px solid rgba($color-grey, .5);
+        }
 
         @include respond(hover) {
             &:hover,
@@ -47,12 +57,14 @@
         }
 
         &:focus {
-            border: 1px solid $color-primary;
+            // border: 1px solid $color-primary;
         }
 
         &::placeholder {
-            color: $color-grey;
-            font-family: 'Roboto', sans-serif
+            color: rgba($color-grey, .5);
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            font-size: 10px;
         }
 
         &--half {
@@ -66,6 +78,7 @@
 
     &__button {
         @include transition;
+        font-size: 20px;
         padding: 10px;
         margin: 5px;
         border: 1px solid $color-primary;
@@ -74,6 +87,10 @@
         cursor: pointer;
         color: white;
         font-weight: 100;
+
+        @include respond(break-s) {
+            margin: 0px;
+        }
 
         @include respond(hover) {
             &:hover,

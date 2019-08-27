@@ -11,10 +11,10 @@ export class Contact extends React.Component {
         super(props);
 
         this.state = {
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
         }
     }
 
@@ -29,17 +29,28 @@ export class Contact extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
         const templateParams = {
             from: this.state.name,
             subject: this.state.subject,
             message: this.state.message
         };
+
         emailjs.send("gmail", "template_QZzvx9yA", templateParams, "user_CoeXiqn6N18KnUJWx2Lyh")
             .then(function(response) {
-                console.log('SUCCESS!', response.status, response.text);
+                console.log("SUCCESS!", response.status, response.text);
             }, function(error) {
-                console.log('FAILED...', error);
+                console.log("FAILED...", error);
             });
+
+        this.setState({
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
+        });
+
+        alert("Thank You. We will contact You soon!");
     }
     render() {
         return (
@@ -52,6 +63,7 @@ export class Contact extends React.Component {
                                 className="contact__input contact__input--half"
                                 type="text"
                                 id="name"
+                                value={this.state.name}
                                 placeholder="Your name"
                                 minLength="3"
                                 required
@@ -61,6 +73,7 @@ export class Contact extends React.Component {
                                 className="contact__input contact__input--half"
                                 type="email"
                                 id="email"
+                                value={this.state.email}
                                 placeholder="Your email"
                                 minLength="3"
                                 required
@@ -71,6 +84,7 @@ export class Contact extends React.Component {
                             className="contact__input contact__input--subject"
                             type="text"
                             id="subject"
+                            value={this.state.subject}
                             placeholder="Subject"
                             minLength="3"
                             required
@@ -79,6 +93,7 @@ export class Contact extends React.Component {
                         <textarea 
                             className="contact__input contact__input--textarea"
                             id="message"
+                            value={this.state.message}
                             placeholder="Your message"
                             rows="10"
                             onChange={this.handleInputChange.bind(this)}
