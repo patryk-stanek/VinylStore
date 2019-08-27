@@ -34,6 +34,12 @@ class Cart extends React.Component {
         this.handleCodeEnter = this.handleCodeEnter.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({
+            discount: this.props.discount
+        })
+    }
+
     handleIncreaseProduct(product) {
         this.props.addToBasket(product);
     }
@@ -62,7 +68,8 @@ class Cart extends React.Component {
             if(discountCodes[i].rabatCode === this.state.codeEntered && this.state.discount === 0) {
                 this.setState({
                     discount: discountCodes[i].discount
-                })
+                });
+                this.props.calculateDiscount(discountCodes[i].discount);
             } 
         }
 
@@ -127,7 +134,7 @@ class Cart extends React.Component {
                             Total cost: 
                             <span>
                                 {
-                                    parseFloat(this.props.totalCost - (this.props.totalCost * this.state.discount)).toFixed(2)
+                                    parseFloat(this.props.totalCost).toFixed(2)
                                 }
                             </span>
                         </span>
@@ -143,7 +150,8 @@ class Cart extends React.Component {
 const mapStateToProps = store => ({
     basket: store.basketReducer.basket,
     totalCost: store.basketReducer.totalCost,
-    totalItems: store.basketReducer.totalItems
+    totalItems: store.basketReducer.totalItems,
+    discount: store.basketReducer.discount
 });
 
 const mapDispatchToProps = dispatch => ({

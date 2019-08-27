@@ -15,7 +15,7 @@ const initialState = {
     basket: [],
     totalCost: 0,
     totalItems: 0,
-    discount: ''
+    discount: 0
 };
 
 //Creating reducers
@@ -102,17 +102,13 @@ export default function basketReducer(state = initialState, action) {
             };
         
         case CALCULATE_DISCOUNT:
-            for (let i=0; i<discountCodes.length; i++) {
-                if(discountCodes[i].rabatCode === action.code && state.discount === '') {
-                    const costDiscount = state.totalCost - (state.totalCost * discountCodes[i].discount);
-                    return {
-                        ...state,
-                        totalCost: costDiscount,
-                        discount: discountCodes[i].rabatCode
-                    }
-                } 
+            const costDiscount = state.totalCost - (state.totalCost * action.code);
+            console.log(costDiscount);
+            return {
+                ...state,
+                totalCost: costDiscount,
+                discount: action.code
             }
-            return state;
 
         default:
             return state;
