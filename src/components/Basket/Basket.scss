@@ -5,10 +5,14 @@
     &__header {
         font-weight: 100;
         text-align: center;
+        padding-top: 20px;
+        font-size: 45px;
+        padding-bottom: 20px;
     }
 
     &__container {
         padding: 0 200px;
+        padding: 0;
         font-size: 20px;
 
         @include respond(break-xl) {
@@ -16,7 +20,7 @@
         }
     }
 
-    &__clean-button {
+    &__clear-button {
         @include transition;
         display: block;
         border: none;
@@ -145,6 +149,8 @@
         text-align: right;
         text-transform: uppercase;
         font-weight: 100;
+        background-color: rgba($color-tertiary-3, .5);
+        padding: 5px 10px;
 
         & * {
             margin: 10px 0;
@@ -210,20 +216,6 @@
         font-weight: 100;
 
         &--active {
-            border: 1px solid $color-secondary-3;
-            background-color: $color-secondary-3;
-            cursor: pointer;
-
-            @include respond(hover) {
-                &:hover,
-                &:active {
-                    border: 1px solid $color-secondary-2;
-                    background-color: $color-secondary-2;
-                }
-            }
-        }
-
-        &--submit {
             border: 1px solid $color-tertiary-3;
             background-color: $color-tertiary-3;
             cursor: pointer;
@@ -233,6 +225,20 @@
                 &:active {
                     border: 1px solid $color-tertiary-3;
                     background-color: $color-tertiary-3;
+                }
+            }
+        }
+
+        &--submit {
+            border: 1px solid $color-secondary-3;
+            background-color: $color-secondary-3;
+            cursor: pointer;
+
+            @include respond(hover) {
+                &:hover,
+                &:active {
+                    border: 1px solid $color-secondary-2;
+                    background-color: $color-secondary-2;
                 }
             }
         }

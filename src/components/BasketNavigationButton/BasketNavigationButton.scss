@@ -21,6 +21,7 @@
     }
 
     &__icon {
+        @include transition;
         margin-right: 10px;
         color: transparent;
         -webkit-text-stroke-width: 1px;
@@ -30,6 +31,10 @@
             margin-right: 5px;
             text-overflow: ellipsis;
             white-space: nowrap;
+        }
+
+        &--updated {
+            -webkit-text-stroke-color: $color-primary;
         }
     }
 

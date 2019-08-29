@@ -7,7 +7,7 @@
         padding: 0 100px;
     }
 
-    @include respond(break-s) {
+    @include respond(break-m) {
         padding: 0 10px;
     }
 
@@ -15,10 +15,7 @@
         font-size: 45px;
         font-weight: 100;
         text-align: center;
-
-        @include respond(break-xl) {
-            padding: 0;
-        }
+        padding-top: 15px;
     }
 
     &__list {
@@ -26,7 +23,7 @@
         padding: 0;
         text-align: center;
 
-        @include respond(break-s) {
+        @include respond(break-m) {
             text-align: justify;
         }
     }

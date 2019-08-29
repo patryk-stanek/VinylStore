@@ -93,7 +93,7 @@ class Cart extends React.Component {
                 <div className="cart__container">
                     <button 
                         onClick={() => this.handleClearingBasket()}
-                        className="cart__clean-button"
+                        className="cart__clear-button"
                     >
                         <i className="cart__clear-icon far fa-trash-alt"></i>clear basket
                     </button>

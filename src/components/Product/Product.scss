@@ -1,6 +1,7 @@
 @import "../../styles.scss";
 
 .product {
+    @include transition;
     padding: 40px;
     background-color: rgba($color-primary-3, 1);
     margin: 10px 0;

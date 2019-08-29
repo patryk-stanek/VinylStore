@@ -7,9 +7,6 @@ import {
     CALCULATE_DISCOUNT
 } from "./Basket.actions";
 
-//Importing discount codes
-import discountCodes from "../../utils/discounts.json";
-
 //Defining inital state
 const initialState = {
     basket: [],

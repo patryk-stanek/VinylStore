@@ -50,13 +50,6 @@
         }
     }
 
-    @include respond(hover) {
-        &__title:hover > &__icon,
-        &__title:active > &__icon {
-            transform: rotate3d(0, 1, 0, 360deg);
-        }
-    }
-
     &__span {
         color: transparent;
         font-weight: 400;

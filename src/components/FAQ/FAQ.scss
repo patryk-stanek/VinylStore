@@ -6,6 +6,7 @@
     &__header {
         font-size: 45px;
         font-weight: 100;
+        padding-top: 15px;
     }
 
     &__box {
@@ -41,7 +42,7 @@
             padding: 0 10px;
         }
 
-        @include respond(break-s) {
+        @include respond(break-m) {
             text-align: justify;
         }
     }
