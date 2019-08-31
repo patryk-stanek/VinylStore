@@ -5,7 +5,7 @@ import React from "react";
 import "./Rules.scss"
 
 //Creating Rules container
-const Rules = props => (
+const Rules = () => (
     <div className="rules">
         <h2 className="rules__header">Rules</h2>
         <ul className="rules__list">
@@ -51,6 +51,6 @@ const Rules = props => (
             </li>
         </ul>
     </div>
-)
+);
 
-export default Rules
+export default Rules;

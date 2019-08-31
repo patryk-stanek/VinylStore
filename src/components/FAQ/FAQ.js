@@ -5,7 +5,7 @@ import React from "react";
 import "./FAQ.scss";
 
 //Creating FAQ container
-const FAQ = props => (
+const FAQ = () => (
     <div className="faq">
         <h2 className="faq__header">FAQ</h2>
         <div className="faq__box">
@@ -63,6 +63,6 @@ const FAQ = props => (
             </p>
         </div>
     </div>
-)
+);
 
-export default FAQ
+export default FAQ;

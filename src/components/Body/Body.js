@@ -19,4 +19,4 @@ export class Body extends React.Component {
             </div>
         )
     }
-}
+};

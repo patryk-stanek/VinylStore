@@ -7,6 +7,7 @@ import ProductsList from "./ProductsList";
 //ProductsListContainer component
 class ProductsListContainer extends React.Component {
     render() {
+        //if there's not product in props show information
         if (this.props.visibleProducts !== undefined) {
             return (
                 <ProductsList products={this.props.visibleProducts} />
@@ -17,6 +18,6 @@ class ProductsListContainer extends React.Component {
             )
         }
     }
-}
+};
 
 export default ProductsListContainer;

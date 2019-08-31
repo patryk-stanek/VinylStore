@@ -19,12 +19,11 @@ class Sidebar extends React.Component {
 
         this.state = {
             selectedOption: ""
-        }
+        };
 
         this.handleSortByName = this.handleSortByName.bind(this);
         this.handleSortByArtist = this.handleSortByArtist.bind(this);
         this.handleSortByPrice = this.handleSortByPrice.bind(this);
-
         this.handleRecommended = this.handleRecommended.bind(this);
         this.handleOptionChange = this.handleOptionChange.bind(this);
     }
@@ -150,7 +149,7 @@ class Sidebar extends React.Component {
     }
 }
 
-//Maping global state
+//Mapping state, dispatch and connecting it with component
 const mapStateToProps = store => ({
     visibleProducts: store.productsReducer.visibleProducts,
     sortingOption: store.productsReducer.sortingOption
@@ -161,9 +160,8 @@ const mapDispatchToProps = dispatch => ({
     sortProductsByArtist: option => dispatch(sortProductsByArtist(option)),
     sortProductsByPrice: option => dispatch(sortProductsByPrice(option)),
     sortProductsById: () => dispatch(sortProductsById())
-})
+});
 
-//Connecting state method with component
 export default connect(
     mapStateToProps,
     mapDispatchToProps)(Sidebar);

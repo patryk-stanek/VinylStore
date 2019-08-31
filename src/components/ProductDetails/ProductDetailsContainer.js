@@ -20,9 +20,9 @@ class ProductDetailsContainer extends React.Component {
             <ProductDetails product={this.props.selectedProduct} />
         )
     }
-}
+};
 
-//Maping global state
+//Mapping state and connecting it with component
 const mapStateToProps = store => ({
     selectedProduct: store.productsReducer.selectedProduct
 });

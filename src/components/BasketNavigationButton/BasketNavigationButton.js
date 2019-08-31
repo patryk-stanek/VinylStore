@@ -11,15 +11,17 @@ class BasketNavigationButton extends React.Component {
         super(props);
         this.state = {
             isUpdated: false
-        }
+        };
     }
 
+    //setting state for simple animation for icon 
     componentWillReceiveProps() {
         this.setState({isUpdated: true});
-        setTimeout(() => this.setState({isUpdated: false}), 300);
+        setTimeout(() => this.setState({isUpdated: false}), 300);//after .3 second change state to false and turn off the color
     }
 
     render() {
+        //condition for animation
         const updateStyling = this.state.isUpdated ? "basket-navigation-button__icon--updated" : "";
         return (
             <div className="basket-navigation-button">
@@ -30,12 +32,11 @@ class BasketNavigationButton extends React.Component {
         )
     }
 }
-
-//Maping global state
+;
+//Mapping state= and connecting it with component
 const mapStateToProps = store => ({
     totalCost: store.basketReducer.totalCost,
     totalItems: store.basketReducer.totalItems
 });
 
-//Connecting state method with component
 export default connect(mapStateToProps)(BasketNavigationButton);

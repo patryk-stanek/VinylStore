@@ -1,0 +1,49 @@
+@import "../../styles.scss";
+
+.modal {
+    @include flex-col-center;
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-black, .5);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+
+    &__box {
+        @include flex-col-center;
+        padding: 50px;
+        background-color: $color-white;
+
+        @include respond(break-s) {
+            width: 100%;
+        }
+
+        & span {
+            font-size: 25px;
+            font-weight: 100;
+            margin-bottom: 50px;
+        }
+
+        & button {
+            @include transition;
+            border: 1px solid $color-primary-2;
+            background-color: $color-primary-2;
+            color: $color-white;
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+
+            &:hover,
+            &:active {
+                border: 1px solid $color-primary;
+                background-color: $color-primary;
+            }
+        }
+    }
+}

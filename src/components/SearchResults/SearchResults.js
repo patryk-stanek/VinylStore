@@ -15,7 +15,7 @@ class SearchResults extends React.Component {
         super(props);
         this.state = {
             searchedProducts: []//Array for shown products
-        }
+        };
     }
 
     componentDidMount() {
@@ -23,7 +23,7 @@ class SearchResults extends React.Component {
     }
 
     componentWillReceiveProps() {
-        this.setState({searchedProducts: this.props.searchedProducts});
+        this.setState({searchedProducts: this.props.searchedProducts});//showing products on new search while being on /searchresults
     }
 
     render() {
@@ -46,13 +46,12 @@ class SearchResults extends React.Component {
             </div>
         )
     }
-}
+};
 
-//Mapping global component
+//Mapping state and connecting it with component
 const mapStateToProps = store => ({
     products: store.productsReducer.products,
     searchedProducts: store.productsReducer.searchedProducts
 });
 
-//Connecting state method to component
 export default connect(mapStateToProps)(SearchResults);

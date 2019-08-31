@@ -2,6 +2,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+//Importing components
 import BasketNavigationButton from "../BasketNavigationButton/BasketNavigationButton";
 
 //importing styles

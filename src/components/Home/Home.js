@@ -1,6 +1,7 @@
 //Importing methods
 import React from "react";
 import { connect } from "react-redux";
+import { changePage } from "../Product/Product.actions";//required for keeping page state
 
 //Importing components
 import Sidebar from "../Sidebar/Sidebar";
@@ -10,9 +11,6 @@ import Pagination from "../Pagination/Pagination";
 //Importing styles
 import "./Home.scss";
 
-//Importing actions for Searchbar states
-import { changePage } from "../Product/Product.actions";
-
 //Home component
 class Home extends React.Component {
     constructor(props) {
@@ -20,13 +18,14 @@ class Home extends React.Component {
 
         this.state = {
             productsPage: [],
-            currentPage: ''
-        }
+            currentPage: ""
+        };
 
         this.handleChangePage = this.handleChangePage.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
     }
 
+    //setting visible page from props
     componentDidMount() {
         this.handleChangePage(this.props.currentPage);
     }
@@ -82,7 +81,7 @@ class Home extends React.Component {
     }
 }
 
-//Maping global state
+//Mapping state, dispatch and connecting it with component
 const mapStateToProps = store => ({
     visibleProducts: store.productsReducer.visibleProducts,
     currentPage: store.productsReducer.currentPage
@@ -90,7 +89,6 @@ const mapStateToProps = store => ({
 
 const mapDispatchToProps = dispatch => ({
     changePage: page => dispatch(changePage(page)),
-})
+});
 
-//Connecting state method with component
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

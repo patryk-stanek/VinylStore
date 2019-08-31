@@ -25,6 +25,6 @@ class ProductDetailsTracklist extends React.Component {
             return <span>x</span>
         }
     }
-}
+};
 
 export default ProductDetailsTracklist;

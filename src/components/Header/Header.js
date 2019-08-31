@@ -2,11 +2,11 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-//Importing component
+//Importing components
 import { Navigation } from "../Navigation/Navigation";
 import Searchbar from "../Searchbar/Searchbar";
 
-//Importing styles
+//Importing styles and icons
 import "./Header.scss";
 import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 

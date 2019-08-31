@@ -6,8 +6,9 @@ import "./Product.scss";
 
 //Product container
 const Product = props => {
-    const imageBig = "../../images/covers/" + props.product.id + "/cover-l.jpg";
-    const imageMedium = "../../images/covers/" + props.product.id + "/cover-m.jpg";
+    //variables required for simple responsive image managament
+    const imageBig = `../../images/covers/${props.product.id}/cover-l.jpg`;
+    const imageMedium = `../../images/covers/${props.product.id}/cover-m.jpg`;
     const imageUrl = window.innerWidth >= 991 ? imageBig : imageMedium;
 
     return (
@@ -16,7 +17,7 @@ const Product = props => {
                 <img 
                     className="product__cover"
                     src={imageUrl}
-                    alt={props.product.name + "_cover"}
+                    alt={`${props.product.name}_cover`}
                 />
                 <div className="product__details">
                     <div className="product__box">
@@ -28,6 +29,6 @@ const Product = props => {
             </div>
         </div>
     )
-}
+};
 
 export default Product;

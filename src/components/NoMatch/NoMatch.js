@@ -5,7 +5,7 @@ import React from "react";
 import "./NoMatch.scss";
 
 //NoMatch component
-export const NoMatch = props => {
+export const NoMatch = () => {
     return (
         <div className="no-match">
             <h1>Page not found!</h1>

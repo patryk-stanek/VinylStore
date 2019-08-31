@@ -7,7 +7,8 @@ import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 //Pagination component
 class Pagination extends React.Component {
-
+    //condition for rendering previous button
+    //if according to props You are on first page, it will be blocked from natural resons
     renderPrevPageButton() {
         if(this.props.currentPage >= 1) {
             return (
@@ -32,6 +33,8 @@ class Pagination extends React.Component {
         }
     }
 
+    //condition for rendering next button
+    //if according to props You are on last, it will be blocked from natural resons
     renderNextPageButton() {
         if(this.props.currentPage === this.props.pagesAmount - 1) {
             return (
@@ -42,7 +45,7 @@ class Pagination extends React.Component {
                 >
                     <i className="pagination__icon fas fa-chevron-right"></i>
                 </button>
-            )
+            );
         } else {
             return (
                 <button 
@@ -57,22 +60,22 @@ class Pagination extends React.Component {
     }
 
     render() {
-
         //Pages loop and array
         const pages = [];
         for (let i=0; i<this.props.pagesAmount; i++) {
+            //condition for styling current page pagination button
             const currentPageStyle = this.props.currentPage === i ? "pagination__button--active" : "pagination__button--inactive";
             pages.push(
                 <button
                     key={i}
                     onClick={() => this.props.handleChangePage(i)}
-                    className={"pagination__button " + currentPageStyle}
+                    className={`pagination__button ${currentPageStyle}`}
                     aria-label={`pagination__button-${i}`}
                 >
                     {i + 1}
                 </button>
             )
-        }
+        };
         
         return (
             <div className="pagination">
@@ -82,6 +85,6 @@ class Pagination extends React.Component {
             </div>
         )
     }
-}
+};
 
 export default Pagination;

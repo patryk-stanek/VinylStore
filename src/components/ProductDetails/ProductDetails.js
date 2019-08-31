@@ -1,15 +1,18 @@
 //Import react from react
 import React from "react";
 
+//Import components
 import BasketAddButton from "../BasketAddButton/BasketAddButton";
 import ProductDetalsTracklist from "./ProductDetailsTracklist";
 
+//Import styles
 import "./ProductDetails.scss";
 
 // ProductDetails component
 const ProductDetails = props => {
-    const imageBig = "../../images/covers/" + props.product.id + "/cover-l.jpg";
-    const imageMedium = "../../images/covers/" + props.product.id + "/cover-m.jpg";
+    //variables required for simple responsive image managament
+    const imageBig = `../../images/covers/${props.product.id}/cover-l.jpg`;
+    const imageMedium = `../../images/covers/${props.product.id}/cover-m.jpg`;
     const imageUrl = window.innerWidth >= 991 ? imageBig : imageMedium;
 
     return (

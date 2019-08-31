@@ -23,7 +23,6 @@ export default function basketReducer(state = initialState, action) {
             const costAdded = parseFloat(Number(action.product.price.replace(/[^0-9.]+/g,"")));
             //Defining new total cost of products in the basket
             const costAfterAdd = (state.totalCost * 100 + costAdded * 100) / 100;
-            
             //If the product's already in the basket only change the amount and total price
             for (let i=0; i<state.basket.length; i++) {
                 if(state.basket[i].name === action.product.name) {
@@ -35,10 +34,8 @@ export default function basketReducer(state = initialState, action) {
                     };
                 }
             }
-
             const product = action.product;
             product.amount = action.amount;
-
             return {
                 ...state,
                 basket: [...state.basket, product],
@@ -54,20 +51,18 @@ export default function basketReducer(state = initialState, action) {
             const costAfterRemove = state.totalCost - (costRemoved * action.product.amount);
             //Calculating new total items amount
             const itemsAfterRemove = state.totalItems - action.product.amount;
-
             return {
                 ...state,
                 basket: stateAfterRemove,
                 totalCost: costAfterRemove,
                 totalItems: itemsAfterRemove
-            };
+            }
 
         case DECREASE_PRODUCT_AMOUNT:
             //Converting price
             const costDecreased = parseFloat(Number(action.product.price.replace(/[^0-9.]+/g,"")));
             //Filtering chosen product
             const stateAfterDecrease = state.basket.filter(value => value.id !== action.product.id)
-
             //Loop to find chosen product and decrease it's amount and total price of products
             for (let i=0; i<state.basket.length; i++) {
                 if(state.basket[i].name === action.product.name && action.product.amount > 1) {
@@ -89,7 +84,7 @@ export default function basketReducer(state = initialState, action) {
                         totalItems: state.totalItems - 1
                     };
                 }
-            } return state;
+            } return state
 
         case CLEAR_BASKET:
             return {
@@ -100,8 +95,8 @@ export default function basketReducer(state = initialState, action) {
             };
         
         case CALCULATE_DISCOUNT:
+            //substracting discount from totalcost 
             const costDiscount = state.totalCost - (state.totalCost * action.code);
-            console.log(costDiscount);
             return {
                 ...state,
                 totalCost: costDiscount,
@@ -109,6 +104,6 @@ export default function basketReducer(state = initialState, action) {
             }
 
         default:
-            return state;
+            return state
     }
 }

@@ -5,13 +5,13 @@ import { connect } from "react-redux";
 //Importing actions
 import {
     addToBasket
-} from "../Basket/Basket.actions"
+} from "../Basket/Basket.actions";
 
 //Importing styles
 import "./BasketAddButton.scss";
 
 class BasketAddButton extends React.Component {
-
+    //if "stocked" value is true in databse product will be available for ordering
     renderStocked() {
         return (
             <button
@@ -23,6 +23,7 @@ class BasketAddButton extends React.Component {
         )
     }
 
+    //if "stocked" value is false in databse product will not be available for ordering
     renderNotStocked() {
         return (
             <React.Fragment>
@@ -44,16 +45,15 @@ class BasketAddButton extends React.Component {
     }
 }
 
-//Maping global state
+//Mapping state, dispatch and connecting it with component
 const mapStateToProps = store => ({
-    basket: store.basketReducer.basket
+    basket: store.basketReducer.basket,
 });
 
 const mapDispatchToProps = dispatch => ({
     addToBasket: product => dispatch(addToBasket(product)),
-})
+});
 
-//Connecting state method with component
 export default connect(
     mapStateToProps,
     mapDispatchToProps
