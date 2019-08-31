@@ -24,11 +24,10 @@ class Home extends React.Component {
         }
 
         this.handleChangePage = this.handleChangePage.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     componentDidMount() {
-        // this.props.dispatch(getProducts());//Getting products list
-        // this.setState({currentPage: this.props.currentPage})//Setting start page
         this.handleChangePage(this.props.currentPage);
     }
     
@@ -73,7 +72,7 @@ class Home extends React.Component {
         }
         return (
             <div className="home">
-                <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={this.handleUpdate.bind(this)}/>
+                <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={() => this.handleUpdate()}/>
                 <div className="home__container">
                     <ProductsListContainer visibleProducts={this.state.productsPage[this.state.currentPage]} />
                     <Pagination handleChangePage={this.handleChangePage} pagesAmount={this.state.productsPage.length} currentPage={this.state.currentPage}/>

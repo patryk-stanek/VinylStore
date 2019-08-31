@@ -72,6 +72,7 @@ export function setCategory(name) {
     }
 }
 
+//Changing page of products that are shown
 export function changePage(page) {
     return {
         type: CHANGE_PAGE,

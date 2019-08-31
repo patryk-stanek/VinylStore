@@ -9,15 +9,11 @@ class ProductsListContainer extends React.Component {
     render() {
         if (this.props.visibleProducts !== undefined) {
             return (
-                <React.Fragment>
-                    <ProductsList products={this.props.visibleProducts} />
-                </React.Fragment>
+                <ProductsList products={this.props.visibleProducts} />
             )
         } else {
             return(
-                <React.Fragment>
-                    <span>loading</span>
-                </React.Fragment>
+                <span>Loading...</span>
             )
         }
     }

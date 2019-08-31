@@ -16,8 +16,8 @@ import "./Basket.scss";
 //Import discount codes
 import discountCodes from "../../utils/discounts.json";
 
-//Cart component
-class Cart extends React.Component {
+//Basket component
+class Basket extends React.Component {
     constructor(props) {
         super(props);
 
@@ -25,11 +25,6 @@ class Cart extends React.Component {
             codeEntered: '',
             discount: 0
         }
-
-        this.handleIncreaseProduct = this.handleIncreaseProduct.bind(this);
-        this.handleRemovingProduct = this.handleRemovingProduct.bind(this);
-        this.handleClearingBasket = this.handleClearingBasket.bind(this);
-        this.handleDecreaseAmount = this.handleDecreaseAmount.bind(this);
         this.handleDiscount = this.handleDiscount.bind(this);
         this.handleCodeEnter = this.handleCodeEnter.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,22 +34,6 @@ class Cart extends React.Component {
         this.setState({
             discount: this.props.discount
         })
-    }
-
-    handleIncreaseProduct(product) {
-        this.props.addToBasket(product);
-    }
-
-    handleRemovingProduct(product) {
-        this.props.removeFromBasket(product);//przeniesc bezposrednio do jsx
-    }
-
-    handleClearingBasket() {
-        this.props.clearBasket();
-    }
-
-    handleDecreaseAmount(product) {
-        this.props.decreaseProductAmount(product);
     }
 
     handleCodeEnter(event) {
@@ -81,7 +60,7 @@ class Cart extends React.Component {
         this.setState({
             codeEntered: ""
         })
-        this.handleClearingBasket();
+        this.props.clearBasket();
     }
 
     render() {
@@ -92,7 +71,7 @@ class Cart extends React.Component {
                 <h1 className="cart__header">Your Cart</h1>
                 <div className="cart__container">
                     <button 
-                        onClick={() => this.handleClearingBasket()}
+                        onClick={() => this.props.clearBasket()}
                         className="cart__clear-button"
                     >
                         <i className="cart__clear-icon far fa-trash-alt"></i>clear basket
@@ -108,20 +87,20 @@ class Cart extends React.Component {
                                     </div>
                                     <div className="cart__box">
                                         <button
-                                            onClick={() => this.handleIncreaseProduct(product)}
+                                            onClick={() => this.props.addToBasket(product)}
                                             className="cart__button-icon"
                                         >
                                             <i className="cart__icon fas fa-plus"></i>
                                         </button>
                                         <span className="cart__amount">{product.amount}</span>
                                         <button
-                                            onClick={() => this.handleDecreaseAmount(product)}
+                                            onClick={() => this.props.decreaseProductAmount(product)}
                                             className="cart__button-icon"
                                         >
                                             <i className="cart__icon fas fa-minus"></i>
                                         </button>
                                         <button
-                                            onClick={() => this.handleRemovingProduct(product)}
+                                            onClick={() => this.props.removeFromBasket(product)}
                                             className="cart__button-icon"
                                         >
                                             <i className="cart__icon fas fa-trash-alt"></i>
@@ -174,4 +153,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps,
-)(Cart);
+)(Basket);

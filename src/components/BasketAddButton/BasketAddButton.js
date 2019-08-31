@@ -11,20 +11,11 @@ import {
 import "./BasketAddButton.scss";
 
 class BasketAddButton extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.handleAddToBasket = this.handleAddToBasket.bind(this);
-    }
-
-    handleAddToBasket(product) {
-        this.props.addToBasket(product);
-    }
 
     renderStocked() {
         return (
             <button
-                onClick={() => this.handleAddToBasket(this.props.product)}
+                onClick={() => this.props.addToBasket(this.props.product)}
                 className="add-to-basket"
             >
                 <i className="add-to-basket__icon fas fa-cart-plus"></i>

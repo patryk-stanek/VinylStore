@@ -56,10 +56,6 @@ class Pagination extends React.Component {
         }
     }
 
-    renderPagination() {
-        
-    }
-
     render() {
 
         //Pages loop and array
