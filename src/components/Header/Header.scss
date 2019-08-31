@@ -1,20 +1,13 @@
 @import "../../styles.scss";
 
 .header {
-    display: flex;
-    flex-direction: row;
+    @include flex-row-align;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 35px;
     position: relative;
 
     @include respond(break-xl) {
         justify-content: space-around;
-    }
-
-    @include respond(break-m) {
-        margin-bottom: 20px;
     }
 
     &__link {
@@ -105,7 +98,7 @@
         }
 
         span {
-            color: $color-tertiary-3;
+            color: $color-black;
         }
     }
 }

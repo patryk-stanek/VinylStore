@@ -1,14 +1,7 @@
 @import "../../styles.scss";
 
 .cart {
-
-    &__header {
-        font-weight: 100;
-        text-align: center;
-        padding-top: 20px;
-        font-size: 45px;
-        padding-bottom: 20px;
-    }
+    @include page-layout;
 
     &__container {
         padding: 0 200px;
@@ -27,18 +20,15 @@
         background-color: transparent;
         cursor: pointer;
         color: rgba($color-black, .2);
-        margin-bottom: 15px;
+        margin: 15px 0;
 
-        @include respond(break-s) {
-            margin-bottom: 0;
-            margin: 0 auto -15px auto;
+        &:hover,
+        &:active {
+            color: $color-primary;
         }
 
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                color: $color-primary;
-            }
+        @include respond(break-m) {
+            margin: 15px auto;
         }
     }
 
@@ -59,23 +49,16 @@
 
     &__item {
         @include transition;
-        display: flex;
+        @include flex-row;
         justify-content: space-between;
-        flex-direction: row;
         padding: 10px 0;
         border-bottom: 1px solid $color-primary-2;
         cursor: pointer;
         color: rgba($color-black, .9);
-
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                border-bottom: 1px solid $color-secondary-2;
-            }
-        }
-
-        @include respond(break-s) {
-            margin: 5px 0;
+        
+        &:hover,
+        &:active {
+            border-bottom: 1px solid $color-secondary-2;
         }
 
         @include respond(break-xs) {
@@ -84,10 +67,7 @@
     }
 
     &__box {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+        @include flex-row-align;
 
         @include respond(break-s) {
             font-size: 17px;
@@ -135,17 +115,14 @@
         color: $color-white;
         background-color: $color-primary-2;
 
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                background-color: $color-secondary-2;
-                border: 1px solid $color-secondary-2;
-            }
+        &:hover,
+        &:active {
+            background-color: $color-secondary-2;
+            border: 1px solid $color-secondary-2;
         }
     }
 
     &__summary {
-        margin-top: 35px;
         text-align: right;
         text-transform: uppercase;
         font-weight: 100;
@@ -193,11 +170,9 @@
                 border: 1px solid $color-primary;
             }
 
-            @include respond(hover) {
-                &:hover,
-                &:active {
-                    border: 1px solid $color-primary-2;
-                }
+            &:hover,
+            &:active {
+                border: 1px solid $color-primary-2;
             }
         }
     }
@@ -219,13 +194,11 @@
             border: 1px solid $color-tertiary-3;
             background-color: $color-tertiary-3;
             cursor: pointer;
-
-            @include respond(hover) {
-                &:hover,
-                &:active {
-                    border: 1px solid $color-tertiary-3;
-                    background-color: $color-tertiary-3;
-                }
+            
+            &:hover,
+            &:active {
+                border: 1px solid $color-tertiary-3;
+                background-color: $color-tertiary-3;
             }
         }
 
@@ -234,12 +207,10 @@
             background-color: $color-secondary-3;
             cursor: pointer;
 
-            @include respond(hover) {
-                &:hover,
-                &:active {
-                    border: 1px solid $color-secondary-2;
-                    background-color: $color-secondary-2;
-                }
+            &:hover,
+            &:active {
+                border: 1px solid $color-secondary-2;
+                background-color: $color-secondary-2;
             }
         }
 

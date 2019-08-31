@@ -1,8 +1,6 @@
 //Importing methods
 import React from "react";
 
-import PageTransition from 'react-router-page-transition';
-
 //Importing components
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";

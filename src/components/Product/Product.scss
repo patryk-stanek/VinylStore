@@ -13,6 +13,7 @@
 
     @include respond(break-s) {
         padding: 22px;
+        margin: 0;
     }
 
     @include respond(break-xs) {
@@ -20,8 +21,7 @@
     }
 
     &__details {
-        display: flex;
-        flex-direction: row;
+        @include flex-row;
         font-weight: 100;
         padding: 10px 0 0 0;
         text-transform: uppercase;
@@ -34,8 +34,7 @@
     }
 
     &__box {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
     }
 
     &__name {
@@ -65,16 +64,11 @@
 }
 
 .product-list {
+    @include flex-row-s-col;
     width: 100%;
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: -5px;
-
-    @include respond(break-s) {
-        flex-direction: column;
-    }
 
     &__single {
         width: calc(50% - 10px);

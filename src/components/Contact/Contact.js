@@ -2,8 +2,6 @@
 import React from "react";
 import * as emailjs from "emailjs-com";
 
-import { Footer } from "../Footer/Footer";
-
 //Import styles
 import "./Contact.scss"
 

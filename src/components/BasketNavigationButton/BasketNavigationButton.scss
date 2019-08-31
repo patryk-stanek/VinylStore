@@ -12,12 +12,10 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-
-    @include respond(hover) {
-        &:hover,
-        &:active {
-            border-bottom: 1px solid $color-primary;
-        }
+    
+    &:hover,
+    &:active {
+        border-bottom: 1px solid $color-primary;
     }
 
     &__icon {

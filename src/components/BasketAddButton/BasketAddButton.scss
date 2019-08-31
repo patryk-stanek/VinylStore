@@ -1,24 +1,20 @@
 @import "../../styles.scss";
 
 .add-to-basket {
+    @include flex-row-align;
     border: none;
     background-color: transparent;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
     padding: 0;
 
     &:disabled &__icon {
         cursor: auto;
         color: $color-secondary;
         border: 1px solid $color-secondary;
-
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                background-color: transparent;
-                color: $color-secondary;
-            }
+        
+        &:hover,
+        &:active {
+            background-color: transparent;
+            color: $color-secondary;
         }
     }
 
@@ -34,17 +30,11 @@
         height: 20px;
         line-height: 20px;
         color: $color-tertiary-3;
-
+        
+        &:hover,
         &:active {
             background-color: $color-tertiary-3;
             color: $color-white;
-        }
-
-        @include respond(hover) {
-            &:hover {
-                background-color: $color-tertiary-3;
-                color: $color-white;
-            }
         }
     }
 

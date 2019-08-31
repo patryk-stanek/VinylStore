@@ -1,17 +1,16 @@
 @import "../../styles.scss";
 
 .home {
-    display: flex;
-    flex-direction: row;
+    @include flex-row-m-col;
+    padding-top: 35px;
 
     @include respond(break-m) {
-        flex-direction: column;
         align-items: center;
+        padding-top: 0;
     }
 
     &__container {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         width: 75%;
 
         @include respond(break-l) {

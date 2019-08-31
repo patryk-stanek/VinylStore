@@ -4,7 +4,15 @@
     text-align: center;
     padding: 50px 0 50px;
 
+    @include respond(break-s) {
+        background-color: $color-primary-3;
+    }
+
     &__text {
-        color: rgba($color-black, .5);
+        color: $color-grey;
+
+        @include respond(break-s) {
+            color: $color-white;
+        }
     }
 }

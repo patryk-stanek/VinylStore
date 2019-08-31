@@ -1,3 +1,89 @@
 @mixin transition {
     transition: all .1s ease-out;
 }
+
+//-------------------------------------------PAGE
+
+@mixin page-layout {
+    text-align: center;
+
+    &__header {
+        font-size: 45px;
+        font-weight: 100;
+        text-align: center;
+        padding: 10px 0;
+        margin: 0;
+        width: 100%;
+        background-color: $color-secondary-3;
+        color: $color-white;
+    }
+}
+
+@mixin page-padding {
+    padding: 0 150px;
+
+    @include respond(break-xl) {
+        padding: 0 10px;
+    }
+
+    @include respond(break-m) {
+        text-align: justify;
+    }
+}
+
+//--------------------------------------------FLEX col
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-row-s-col {
+    display: flex;
+    flex-direction: row;
+
+    @include respond(break-s) {
+        flex-direction: column;
+    }
+}
+
+@mixin flex-row-m-col {
+    display: flex;
+    flex-direction: row;
+
+    @include respond(break-m) {
+        flex-direction: column;
+    }
+}
+
+@mixin flex-row-justify {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@mixin flex-row-align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+//----------------------------------------------FLEX COL
+
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-col-justify {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin flex-col-align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

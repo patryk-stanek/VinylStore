@@ -22,11 +22,9 @@
             font-size: 25px;
         }
 
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                color: $color-primary;
-            }
+        &:hover,
+        &:active {
+            color: $color-primary;
         }
 
         &--active {

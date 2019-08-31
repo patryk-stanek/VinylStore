@@ -47,14 +47,17 @@ class Searchbar extends React.Component {
         return (
             <div className="searchbar">
                 <form id="form" onSubmit={this.handleSubmit} className="form__container">
-                    <input
-                        type="text"
-                        placeholder="Search products..."
-                        onChange={this.handleChange}
-                        onKeyPress={this.handleSearch}
-                        className="searchbar__input"
-                        
-                    />
+                    <label htmlFor="searchbar">
+                        <span>Searchbar</span>
+                        <input
+                            type="text"
+                            id="searchbar"
+                            placeholder="Search products..."
+                            onChange={this.handleChange}
+                            onKeyPress={this.handleSearch}
+                            className="searchbar__input"
+                        />
+                    </label>
                     <i className="searchbar__icon fas fa-search"></i>
                 </form>
                 {

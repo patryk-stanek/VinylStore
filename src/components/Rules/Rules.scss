@@ -1,26 +1,11 @@
 @import "../../styles.scss";
 
 .rules {
-    padding: 0 150px;
-
-    @include respond(break-l) {
-        padding: 0 100px;
-    }
-
-    @include respond(break-m) {
-        padding: 0 10px;
-    }
-
-    &__header {
-        font-size: 45px;
-        font-weight: 100;
-        text-align: center;
-        padding-top: 15px;
-    }
+    @include page-layout;
 
     &__list {
+        @include page-padding;
         list-style: none;
-        padding: 0;
         text-align: center;
 
         @include respond(break-m) {

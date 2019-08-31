@@ -1,9 +1,7 @@
 @import "../../styles.scss";
 
 .navigation {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex-row-align;
     justify-content: center;
     font-size: 16px;
     margin-top: 14px;
@@ -24,13 +22,15 @@
 
     &__link {
         @include transition;
-        color: rgba($color-black, .2);
+        color: $color-primary-2;
         text-decoration: none;
         text-transform: uppercase;
+        margin-bottom: -5px;
+        padding-bottom: 5px;
         border-bottom: 1px solid transparent;
 
         @include respond(break-m) {
-            padding: 0 5px;
+            padding: 0;
         }
 
         &:not(:last-child) {
@@ -41,23 +41,19 @@
             }
         }
 
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                color: $color-primary;
-            }
+        &:hover,
+        &:active {
+            color: $color-primary;
         }
 
         &--active:link,
         &--active:visited {
             color: $color-primary;
+            border-bottom: 1px solid $color-primary;
         }
 
         &--basket-active:link,
         &--basket-active:visited {
-            margin-top: -1px;
-            padding-bottom: 4px;
-            margin-bottom: -5px;
             border-bottom: 1px solid $color-tertiary-3;
         }
     }

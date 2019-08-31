@@ -2,8 +2,6 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { Footer } from "../Footer/Footer";
-
 //Importing components
 import Sidebar from "../Sidebar/Sidebar";
 import ProductsListContainer from "../Product/ProductsListContainer";

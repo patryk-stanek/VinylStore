@@ -14,6 +14,7 @@ class Pagination extends React.Component {
                 <button
                     onClick={() => this.props.handleChangePage(this.props.currentPage - 1)}
                     className="pagination__button pagination__button--active"
+                    aria-label="pagination__button-prev"
                 >
                     <i className="pagination__icon fas fa-chevron-left"></i>
                 </button>
@@ -23,6 +24,7 @@ class Pagination extends React.Component {
                 <button
                     disabled
                     className="pagination__button pagination__button--inactive"
+                    aria-label="pagination__button-prev"
                 >
                     <i className="pagination__icon fas fa-chevron-left"></i>
                 </button>
@@ -36,7 +38,7 @@ class Pagination extends React.Component {
                 <button
                     disabled
                     className="pagination__button pagination__button--inactive"
-                    ariaLabel="pagination__button"
+                    aria-label="pagination__button-next"
                 >
                     <i className="pagination__icon fas fa-chevron-right"></i>
                 </button>
@@ -46,7 +48,7 @@ class Pagination extends React.Component {
                 <button 
                     onClick={() => this.props.handleChangePage(this.props.currentPage + 1)}
                     className="pagination__button pagination__button--active"
-                    ariaLabel="pagination__button"
+                    aria-label="pagination__button-next"
                 >
                     <i className="pagination__icon fas fa-chevron-right"></i>
                 </button>
@@ -69,7 +71,7 @@ class Pagination extends React.Component {
                     key={i}
                     onClick={() => this.props.handleChangePage(i)}
                     className={"pagination__button " + currentPageStyle}
-                    ariaLabel="pagination__button"
+                    aria-label={`pagination__button-${i}`}
                 >
                     {i + 1}
                 </button>

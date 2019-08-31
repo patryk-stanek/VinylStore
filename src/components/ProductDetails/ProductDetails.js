@@ -4,9 +4,6 @@ import React from "react";
 import BasketAddButton from "../BasketAddButton/BasketAddButton";
 import ProductDetalsTracklist from "./ProductDetailsTracklist";
 
-import { Footer } from "../Footer/Footer";
-
-
 import "./ProductDetails.scss";
 
 // ProductDetails component

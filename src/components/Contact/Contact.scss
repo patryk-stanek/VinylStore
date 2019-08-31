@@ -1,18 +1,11 @@
 @import "../../styles.scss";
 
 .contact {
-
-    &__header {
-        font-size: 45px;
-        font-weight: 100;
-        text-align: center;
-        margin-bottom: 60px;
-        padding-top: 15px;
-    }
+    @include page-layout;
 
     &__container {
-        display: flex;
-        flex-direction: row;
+        @include flex-row;
+        margin: 50px 0;
 
         @include respond(break-m) {
             flex-direction: column;
@@ -20,8 +13,7 @@
     }
 
     &__box {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         width: 100%;
 
         &:first-child {
@@ -30,8 +22,7 @@
     }
 
     &__line {
-        display: flex;
-        flex-direction: row;
+        @include flex-row-s-col;
     }
 
     &__input {
@@ -49,12 +40,10 @@
             border: none;
             border-top: 1px solid rgba($color-grey, .5);
         }
-
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                border: 1px solid $color-primary-2;
-            }
+        
+        &:hover,
+        &:active {
+            border: 1px solid $color-primary-2;
         }
 
         &:focus {
@@ -93,12 +82,10 @@
             margin: 0px;
         }
 
-        @include respond(hover) {
-            &:hover,
-            &:active {
-                border: 1px solid $color-primary-2;
-                background-color: $color-primary-2;
-            }
+        &:hover,
+        &:active {
+            border: 1px solid $color-primary-2;
+            background-color: $color-primary-2;
         }
     }
 

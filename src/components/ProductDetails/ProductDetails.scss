@@ -1,13 +1,8 @@
 @import "../../styles.scss";
 
 .details {
-    display: flex;
-    flex-direction: row;
+    @include flex-row-s-col;
     width: 100%;
-
-    @include respond(break-s) {
-        flex-direction: column;
-    }
 
     &__cover {
         width: 50%;
@@ -23,10 +18,9 @@
     }
 
     &__container {
+        @include flex-col;
         width: 50%;
         padding: 0 50px;
-        display: flex;
-        flex-direction: column;
         justify-content: space-between;
 
         @include respond(break-xl) {
@@ -64,10 +58,9 @@
     }
 
     &__box {
+        @include flex-row;
         margin: 25px 0;
         padding: 20px 0;
-        display: flex;
-        flex-direction: row;
 
         @include respond(break-xl) {
             justify-content: flex-end;
