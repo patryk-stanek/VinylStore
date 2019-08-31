@@ -30,11 +30,14 @@
         height: 20px;
         line-height: 20px;
         color: $color-tertiary-3;
-        
-        &:hover,
-        &:active {
-            background-color: $color-tertiary-3;
-            color: $color-white;
+
+        @media (pointer: fine) {
+            
+            &:hover,
+            &:active {
+                background-color: $color-tertiary-3;
+                color: $color-white;
+            }
         }
     }
 

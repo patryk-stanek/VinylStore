@@ -1,2 +1,2 @@
 ## URL
-https://kodillavinylstore.firebaseapp.com/
+https://vstore.web.app/

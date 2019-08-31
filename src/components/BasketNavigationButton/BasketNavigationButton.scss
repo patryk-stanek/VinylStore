@@ -12,11 +12,6 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    
-    &:hover,
-    &:active {
-        border-bottom: 1px solid $color-primary;
-    }
 
     &__icon {
         @include transition;

@@ -41,6 +41,10 @@
             }
         }
 
+        @include respond(break-s) {
+            margin: 0 5px;
+        }
+
         &:hover,
         &:active {
             color: $color-primary;

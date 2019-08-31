@@ -195,10 +195,13 @@
             background-color: $color-secondary-3;
             cursor: pointer;
             
-            &:hover,
-            &:active {
-                border: 1px solid $color-tertiary-3;
-                background-color: $color-tertiary-3;
+            @media (pointer: fine) {
+
+                &:hover,
+                &:active {
+                    border: 1px solid $color-tertiary-3;
+                    background-color: $color-tertiary-3;
+                }
             }
         }
 
@@ -206,11 +209,14 @@
             border: 1px solid $color-secondary-3;
             background-color: $color-secondary-3;
             cursor: pointer;
+            
+            @media (pointer: fine) {
 
-            &:hover,
-            &:active {
-                border: 1px solid $color-secondary-2;
-                background-color: $color-secondary-2;
+                &:hover,
+                &:active {
+                    border: 1px solid $color-secondary-2;
+                    background-color: $color-secondary-2;
+                }
             }
         }
 

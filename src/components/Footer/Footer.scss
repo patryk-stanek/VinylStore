@@ -5,7 +5,7 @@
     padding: 50px 0 50px;
 
     @include respond(break-s) {
-        background-color: $color-primary-3;
+        background-color: $color-secondary;
     }
 
     &__text {

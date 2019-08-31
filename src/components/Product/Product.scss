@@ -56,7 +56,6 @@
         width: 100%;
         margin: 0 auto;
     }
-
     &__cover {
         width: 100%;
         height: auto;
@@ -76,6 +75,10 @@
 
         @include respond(break-s) {
             width: 100%;
+
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
         }
     }
 }
