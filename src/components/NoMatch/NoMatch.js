@@ -1,6 +1,9 @@
 //Importing methods
 import React from "react";
 
+import { Footer } from "../Footer/Footer";
+
+
 //Importing styles
 import "./NoMatch.scss";
 

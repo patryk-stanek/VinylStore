@@ -36,6 +36,7 @@ class Pagination extends React.Component {
                 <button
                     disabled
                     className="pagination__button pagination__button--inactive"
+                    ariaLabel="pagination__button"
                 >
                     <i className="pagination__icon fas fa-chevron-right"></i>
                 </button>
@@ -45,6 +46,7 @@ class Pagination extends React.Component {
                 <button 
                     onClick={() => this.props.handleChangePage(this.props.currentPage + 1)}
                     className="pagination__button pagination__button--active"
+                    ariaLabel="pagination__button"
                 >
                     <i className="pagination__icon fas fa-chevron-right"></i>
                 </button>
@@ -67,6 +69,7 @@ class Pagination extends React.Component {
                     key={i}
                     onClick={() => this.props.handleChangePage(i)}
                     className={"pagination__button " + currentPageStyle}
+                    ariaLabel="pagination__button"
                 >
                     {i + 1}
                 </button>

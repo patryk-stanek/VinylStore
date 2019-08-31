@@ -35,9 +35,13 @@
         line-height: 20px;
         color: $color-tertiary-3;
 
+        &:active {
+            background-color: $color-tertiary-3;
+            color: $color-white;
+        }
+
         @include respond(hover) {
-            &:hover,
-            &:active {
+            &:hover {
                 background-color: $color-tertiary-3;
                 color: $color-white;
             }

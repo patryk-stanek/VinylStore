@@ -16,10 +16,6 @@
         font-size: 18px;
     }
 
-    @include respond(break-m) {
-        // width: 100%;
-    }
-
     @include respond(break-s) {
         margin-top: 0px;
         flex-wrap: wrap;

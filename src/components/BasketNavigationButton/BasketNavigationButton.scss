@@ -38,13 +38,28 @@
         }
     }
 
+    &__price {
+        
+        @include respond(break-s) {
+            display: none;
+        }
+    }
+
     &__items {
         margin-right: 5px;
+
+        @include respond(break-s) {
+            margin-right: 0;
+        }
 
         &::after {
             content: "/";
             display: inline-block;
             margin-left: 5px;
+
+            @include respond(break-s) {
+                display: none;
+            }
         }
     }
 }

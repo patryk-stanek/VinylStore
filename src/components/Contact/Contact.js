@@ -2,6 +2,8 @@
 import React from "react";
 import * as emailjs from "emailjs-com";
 
+import { Footer } from "../Footer/Footer";
+
 //Import styles
 import "./Contact.scss"
 
@@ -145,17 +147,3 @@ export class Contact extends React.Component {
         )
     }
 }
-
-/*
-<div class="contact__box u-margin-top-huge">
-<div class="contact__left">
-    <input type="text" id="name" placeholder="Your name *" minlength="3" required>
-    <input type="email" id="email" placeholder="Your e-mail *" minlength="3" required>
-    <input type="text" id="subject" placeholder="Subject" minlength="3" required>
-</div>
-<div class="contact__right">
-    <textarea placeholder="Your message *"></textarea>
-</div>
-</div>
-<button type="submit" class="btn u-margin-top-medium">Send message</button>
-*/

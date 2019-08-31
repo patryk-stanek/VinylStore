@@ -2,6 +2,8 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { Footer } from "../Footer/Footer";
+
 //Importing components
 import Sidebar from "../Sidebar/Sidebar";
 import ProductsListContainer from "../Product/ProductsListContainer";
@@ -39,7 +41,6 @@ class Home extends React.Component {
     }
 
     handleChangePage(page) {
-        console.log(page);
         this.props.changePage(page);
         this.setState({productsPage: []})//Clearing products on page  
         this.setState({currentPage: page})//Changin page to chosen

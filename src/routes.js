@@ -16,15 +16,15 @@ import Rules from "./components/Rules/Rules";
 //Creating routes
 export default (
     <Body>
-        <Switch>
-            <Route exact path={"/"} component={Home} />
-            <Route exact path={"/catalog/product/:id"} component={ProductDetailsContainer} />
-            <Route exact path={"/contact"} component={Contact} />
-            <Route exact path={"/basket"} component={Basket} />
-            <Route exact path={"/search"} component={SearchResults} />
-            <Route exact path={"/FAQ"} component={FAQ} />
-            <Route exact path={"/rules"} component={Rules} />
-            <Route component={NoMatch} />
-        </Switch>
+      <Switch>
+        <Route exact path={"/"} component={Home} />
+        <Route exact path={"/catalog/product/:id"} component={ProductDetailsContainer} />
+        <Route exact path={"/contact"} component={Contact} />
+        <Route exact path={"/basket"} component={Basket} />
+        <Route exact path={"/search"} component={SearchResults} />
+        <Route exact path={"/FAQ"} component={FAQ} />
+        <Route exact path={"/rules"} component={Rules} />
+        <Route component={NoMatch} />
+      </Switch>
     </Body>
 )

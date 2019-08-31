@@ -2,6 +2,9 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import { Footer } from "../Footer/Footer";
+
+
 //Importing component
 import { Link } from "react-router-dom";
 import Product from "../Product/Product";
