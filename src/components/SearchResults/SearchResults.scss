@@ -1,38 +1,25 @@
 @import "../../styles.scss";
 
 .results {
-
-    &__header {
-        text-align: center;
-        font-weight: 100;
-        margin-bottom: 50px;
-
-        @include respond(break-m) {
-            margin-bottom: 20px;
-        }
-    }
+    @include page-layout;
 
     &__container {
         @include flex-row;
         width: 100%;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-top: -5px;
+        margin-top: 35px;
+
+        @include respond(break-s) {
+            margin-top: 0;
+        }
     }
 
     &__box {
         width: calc(25% - 10px);
 
         & * {
-            font-size: 12px;
-
-            @include respond(break-l) {
-                font-size: 14px;
-            }
-
-            @include respond(break-s) {
-                font-size: 16px;
-            }
+            font-size: 20px;
         }
 
         @include respond(break-l) {
@@ -41,6 +28,10 @@
 
         @include respond(break-s) {
             width: 100%;
+
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
         }
     }
 }

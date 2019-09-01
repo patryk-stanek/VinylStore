@@ -2,7 +2,11 @@
 
 .home {
     @include flex-row-m-col;
-    padding-top: 35px;
+    padding-top: 60px;
+
+    @include respond(break-l) {
+        padding-top: 35px;
+    }
 
     @include respond(break-m) {
         align-items: center;

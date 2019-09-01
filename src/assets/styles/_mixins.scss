@@ -20,7 +20,7 @@
 }
 
 @mixin page-padding {
-    padding: 0 150px;
+    padding: 35px 150px;
 
     @include respond(break-xl) {
         padding: 0 10px;

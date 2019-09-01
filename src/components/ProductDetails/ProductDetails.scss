@@ -4,9 +4,11 @@
     @include flex-row-s-col;
     width: 100%;
     padding-top: 35px;
+    margin-bottom: 35px;
 
     @include respond(break-s) {
         padding-top: 0;
+        margin-bottom: 25px;
     }
 
     &__cover {

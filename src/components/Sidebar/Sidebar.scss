@@ -20,8 +20,9 @@
 
     & form {
 
-        @include respond(break-m) {
-            padding-top: 5px;
+        @include respond(break-s) {
+            padding-top: 10px;
+            margin-bottom: 5px;
         }
 
     }
@@ -34,6 +35,10 @@
     &__item {
         width: 100%;
         margin: 10px 0;
+
+        @include respond(break-s) {
+            margin: 0;
+        }
     }
 
     &__title {

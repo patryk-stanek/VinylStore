@@ -80,14 +80,24 @@ class Basket extends React.Component {
     renderOrderButton() {
         if (this.props.totalItems === 0) {
             return (
-                <React.Fragment>
-                    <span className="cart__discount-text">Your basket is empty!</span>
-                    <button className="cart__button-text cart__button-text--submit" disabled>Place order!</button>
-                </React.Fragment>
+                <span className="cart__discount-text">Your basket is empty!</span>
             )
         } else {
             return (
                 <button className="cart__button-text cart__button-text--submit" onClick={() => this.handleOrder()}>Place order!</button>
+            )
+        }
+    }
+
+    renderClearButton() {
+        if (this.props.basket.length !== 0) {
+            return (
+                <button 
+                    onClick={() => this.props.clearBasket()}
+                    className="cart__clear-button"
+                >
+                    <i className="cart__clear-icon far fa-trash-alt"></i>clear basket
+                </button>
             )
         }
     }
@@ -107,12 +117,7 @@ class Basket extends React.Component {
                 <h1 className="cart__header">Your Cart</h1>
                 <div className="cart__container">
                     {/* Clearing basket */}
-                    <button 
-                        onClick={() => this.props.clearBasket()}
-                        className="cart__clear-button"
-                    >
-                        <i className="cart__clear-icon far fa-trash-alt"></i>clear basket
-                    </button>
+                    {this.renderClearButton()}
                     {/* Rendering list of ordered products */}
                     <ul className="cart__list">
                     {
@@ -154,7 +159,7 @@ class Basket extends React.Component {
                     <div className="cart__summary">
                         <span className="cart__total-items">Total items: {this.props.totalItems}</span>
                         {/* Input for entering discount code */}
-                        <form onSubmit={this.handleDiscount} className="cart__discounts">
+                        <form onSubmit={this.handleDiscount} className="cart__discount-input">
                             <input type="text" onChange={this.handleDiscountCodeEntering} value={this.state.codeEntered}/>
                             <input type="submit" value="submit" className={"cart__button-text " + discountButton}/>
                         </form>

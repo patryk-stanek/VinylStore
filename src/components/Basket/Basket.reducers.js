@@ -35,6 +35,8 @@ export default function basketReducer(state = initialState, action) {
                 }
             }
             const productAdded = action.product;
+            //without this basket list of ordered product won't show amount of a single one
+            productAdded.amount = action.amount;
             return {
                 ...state,
                 basket: [...state.basket, productAdded],
