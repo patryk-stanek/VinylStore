@@ -66,6 +66,7 @@ class Basket extends React.Component {
     handleOrder() {
         this.setState({
             codeEntered: "",
+            discount: 0,
             modal: true
         })
         this.props.clearBasket();
