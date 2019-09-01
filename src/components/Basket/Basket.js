@@ -32,22 +32,18 @@ class Basket extends React.Component {
         };
 
         this.handleDiscount = this.handleDiscount.bind(this);
-        this.handleCodeEnter = this.handleCodeEnter.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDiscountCodeEntering = this.handleDiscountCodeEntering.bind(this);
+        this.handleOrder = this.handleOrder.bind(this);
     }
 
     componentDidMount() {
-        //setting discount amount from product reducer
-        //setting modal on false
         this.setState({
             discount: this.props.discount,
             modal: false
         })
     }
 
-    handleCodeEnter(event) {
-        //setting entered discount code
-        //entered code is transformed to lower letters
+    handleDiscountCodeEntering(event) {
         this.setState({
             codeEntered: event.target.value.toLowerCase()
         })
@@ -58,18 +54,16 @@ class Basket extends React.Component {
         //loop for checking if entered code is placed in databse and there"s isn"t any discount active;
         for (let i=0; i<discountCodes.length; i++) {
             if(discountCodes[i].rabatCode === this.state.codeEntered && this.state.discount === 0) {
-                //setting discount state
                 this.setState({
                     discount: discountCodes[i].discount
                 });
-                //calculating discount based on value in databse
                 this.props.calculateDiscount(discountCodes[i].discount);
             } 
         }
     }
 
-    handleSubmit() {
-        //clearing basket after "placing order"
+    //there's no "real" ordering option, right now vstore is showing only modal with text while pressing order button
+    handleOrder() {
         this.setState({
             codeEntered: "",
             modal: true
@@ -77,11 +71,25 @@ class Basket extends React.Component {
         this.props.clearBasket();
     }
 
-    handleModalClose() {
-        //closing modal
+    handleClosingModal() {
         this.setState({
             modal: false
         })
+    }
+
+    renderOrderButton() {
+        if (this.props.totalItems === 0) {
+            return (
+                <React.Fragment>
+                    <span className="cart__discount-text">Your basket is empty!</span>
+                    <button className="cart__button-text cart__button-text--submit" disabled>Place order!</button>
+                </React.Fragment>
+            )
+        } else {
+            return (
+                <button className="cart__button-text cart__button-text--submit" onClick={() => this.handleOrder()}>Place order!</button>
+            )
+        }
     }
 
     render() {
@@ -90,19 +98,22 @@ class Basket extends React.Component {
         //if there"s a discount in state show text
         const discountText = this.state.discount > 0 ? `You have ${this.state.discount * 100}% discount` : "";
         //condition for showing ModalBox with custom text
-        const modalBox = this.state.modal === true ? <ModalBox handleModalClose={this.handleModalClose.bind(this)} description={this.state.modalDescription}/> : "";
+        const modalBoxConfirmation = this.state.modal === true ? <ModalBox handleClosingModal={this.handleClosingModal.bind(this)} description={this.state.modalDescription}/> : "";
 
         return (
             <div className="cart">
-                {modalBox}
+                { modalBoxConfirmation }
+                {/* Rendering component header */}
                 <h1 className="cart__header">Your Cart</h1>
                 <div className="cart__container">
+                    {/* Clearing basket */}
                     <button 
                         onClick={() => this.props.clearBasket()}
                         className="cart__clear-button"
                     >
                         <i className="cart__clear-icon far fa-trash-alt"></i>clear basket
                     </button>
+                    {/* Rendering list of ordered products */}
                     <ul className="cart__list">
                     {
                         this.props.basket.map(product => {
@@ -113,6 +124,7 @@ class Basket extends React.Component {
                                         <span className="cart__artist">{product.artist}</span>
                                     </div>
                                     <div className="cart__box">
+                                        {/* Rendering buttons */}
                                         <button
                                             onClick={() => this.props.addToBasket(product)}
                                             className="cart__button-icon"
@@ -138,13 +150,16 @@ class Basket extends React.Component {
                         })
                     }
                     </ul>
+                    {/* Rendering summary container */}
                     <div className="cart__summary">
                         <span className="cart__total-items">Total items: {this.props.totalItems}</span>
+                        {/* Input for entering discount code */}
                         <form onSubmit={this.handleDiscount} className="cart__discounts">
-                            <input type="text" onChange={this.handleCodeEnter} value={this.state.codeEntered}/>
+                            <input type="text" onChange={this.handleDiscountCodeEntering} value={this.state.codeEntered}/>
                             <input type="submit" value="submit" className={"cart__button-text " + discountButton}/>
                         </form>
                         <span className="cart__discount-text">{discountText}</span>
+                        {/* Total cost and order button */}
                         <span className="cart__total-cost">
                             Total cost: 
                             <span>
@@ -153,7 +168,7 @@ class Basket extends React.Component {
                                 }
                             </span>
                         </span>
-                        <button className="cart__button-text cart__button-text--submit" onClick={() => this.handleSubmit()}>Place order!</button>
+                        {this.renderOrderButton()}
                     </div>
                 </div>
             </div>

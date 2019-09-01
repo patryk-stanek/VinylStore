@@ -17,12 +17,12 @@ class Home extends React.Component {
         super(props);
 
         this.state = {
-            productsPage: [],
+            pageAmount: [],
             currentPage: ""
         };
 
         this.handleChangePage = this.handleChangePage.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleSortingChanges = this.handleSortingChanges.bind(this);
     }
 
     //setting visible page from props
@@ -30,51 +30,57 @@ class Home extends React.Component {
         this.handleChangePage(this.props.currentPage);
     }
     
-    handleUpdate() {
-        this.setState({productsPage: []})//Clearing products on page
-        this.setState({currentPage: 0})//Reseting start page
-        this.forceUpdate();//Forcing component to update
+    //reseting state and updating the view
+    handleSortingChanges() {
+        this.setState({
+            pageAmount: [],
+            currentPage: 0
+        });
+        this.forceUpdate();
     }
 
     handleChangePage(page) {
         this.props.changePage(page);
-        this.setState({productsPage: []})//Clearing products on page  
-        this.setState({currentPage: page})//Changin page to chosen
-        this.forceUpdate();//Forcing component to update
+        this.setState({
+            pageAmount: [],
+            currentPage: page
+        });
+        this.forceUpdate();
         window.scrollTo(0, 0);
     }
 
-    mapPropsToArray() {
-        let state = this.state.productsPage;//state variable
-        const props = this.props.visibleProducts;//props variable
-        const size = 6;//Amount of displayed products on one page
-        let newArray;
+    createPages() {
+        let pageAmount = this.state.pageAmount;
+        let productAmount = this.props.visibleProducts;
+        //Amount of displayed products on one page
+        const productsPerPage = 6;
+        let newPage;
 
         //If amount of products is more than amount in size variable, put every next one to new array
         //If new array is also more than six, create another one
-        for (let i=0; i<this.props.visibleProducts.length; i++) {
-            newArray = state[state.length - 1];
-            if (!newArray || newArray.length === size) {
-                state.push([props[i]]);
+        for (let i=0; i<productAmount.length; i++) {
+            newPage = pageAmount[pageAmount.length - 1];
+            if (!newPage || newPage.length === productsPerPage) {
+                pageAmount.push([productAmount[i]]);
             } else {
-                newArray.push(props[i]);
+                newPage.push(productAmount[i]);
             }
         }
-        return newArray;
+        return newPage;
     }
     
     render() {
         //without this tweak it's hard to avoid not duplicating products on homepage
         // eslint-disable-next-line
-        if (this.state.productsPage = []) {
-            this.mapPropsToArray();
+        if (this.state.pageAmount = []) {
+            this.createPages();
         }
         return (
             <div className="home">
-                <Sidebar visibleProducts={this.props.visibleProducts} handleUpdate={() => this.handleUpdate()}/>
+                <Sidebar visibleProducts={this.props.visibleProducts} handleSortingChanges={() => this.handleSortingChanges()}/>
                 <div className="home__container">
-                    <ProductsListContainer visibleProducts={this.state.productsPage[this.state.currentPage]} />
-                    <Pagination handleChangePage={this.handleChangePage} pagesAmount={this.state.productsPage.length} currentPage={this.state.currentPage}/>
+                    <ProductsListContainer visibleProducts={this.state.pageAmount[this.state.currentPage]} />
+                    <Pagination handleChangePage={this.handleChangePage} pagesAmount={this.state.pageAmount.length} currentPage={this.state.currentPage}/>
                 </div>
             </div>
         )

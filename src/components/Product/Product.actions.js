@@ -9,7 +9,6 @@ export const SORT_PRODUCTS_BY_ID = "SORT_PRODUCT_BY_ID";
 export const SET_CATEGORY = "SET_CATEGORY";
 export const CHANGE_PAGE = "CHANGE_PAGE"
 
-//Geting single product from database by it's id
 export function getProduct(id) {
     return {
         type: GET_PRODUCT,
@@ -17,14 +16,12 @@ export function getProduct(id) {
     }
 }
 
-//Getting all products from databse
 export function getProducts() {
     return {
         type: GET_PRODUCTS
     }
 }
 
-//Searching product in database by it's name
 export function searchProducts(searchText) {
     return {
         type: SEARCH_PRODUCTS,
@@ -32,7 +29,6 @@ export function searchProducts(searchText) {
     }
 }
 
-//Sorting products in database by name
 export function sortProductsByName(option) {
     return {
         type: SORT_PRODUCTS_BY_NAME,
@@ -40,7 +36,6 @@ export function sortProductsByName(option) {
     }
 }
 
-//Sorting products in database by name
 export function sortProductsByArtist(option) {
     return {
         type: SORT_PRODUCTS_BY_ARTIST,
@@ -48,7 +43,6 @@ export function sortProductsByArtist(option) {
     }
 }
 
-//Sorting products in database by price
 export function sortProductsByPrice(option) {
     return {
         type: SORT_PRODUCTS_BY_PRICE,
@@ -56,7 +50,6 @@ export function sortProductsByPrice(option) {
     }
 }
 
-//Sorting products in database by price
 export function sortProductsById(option) {
     return {
         type: SORT_PRODUCTS_BY_ID,
@@ -64,7 +57,7 @@ export function sortProductsById(option) {
     }
 }
 
-//Changing category of products that are shown
+// this actions is prepared for future implementation
 export function setCategory(name) {
     return {
         type: SET_CATEGORY,
@@ -72,7 +65,6 @@ export function setCategory(name) {
     }
 }
 
-//Changing page of products that are shown
 export function changePage(page) {
     return {
         type: CHANGE_PAGE,

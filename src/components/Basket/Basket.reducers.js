@@ -34,11 +34,10 @@ export default function basketReducer(state = initialState, action) {
                     };
                 }
             }
-            const product = action.product;
-            product.amount = action.amount;
+            const productAdded = action.product;
             return {
                 ...state,
-                basket: [...state.basket, product],
+                basket: [...state.basket, productAdded],
                 totalCost: costAfterAdd,
                 totalItems: state.totalItems + 1
             }
@@ -50,12 +49,12 @@ export default function basketReducer(state = initialState, action) {
             const costRemoved = parseFloat(Number(action.product.price.replace(/[^0-9.]+/g,"")));
             const costAfterRemove = state.totalCost - (costRemoved * action.product.amount);
             //Calculating new total items amount
-            const itemsAfterRemove = state.totalItems - action.product.amount;
+            const itemsTotalAfterRemove = state.totalItems - action.product.amount;
             return {
                 ...state,
                 basket: stateAfterRemove,
                 totalCost: costAfterRemove,
-                totalItems: itemsAfterRemove
+                totalItems: itemsTotalAfterRemove
             }
 
         case DECREASE_PRODUCT_AMOUNT:
@@ -96,10 +95,10 @@ export default function basketReducer(state = initialState, action) {
         
         case CALCULATE_DISCOUNT:
             //substracting discount from totalcost 
-            const costDiscount = state.totalCost - (state.totalCost * action.code);
+            const costTotalAfterDiscount = state.totalCost - (state.totalCost * action.code);
             return {
                 ...state,
-                totalCost: costDiscount,
+                totalCost: costTotalAfterDiscount,
                 discount: action.code
             }
 

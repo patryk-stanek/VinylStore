@@ -14,8 +14,10 @@ class Searchbar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            fireRedirect: false,//Value required for redirecting after pressing enter
-            searchedProduct: " ",//Value for searched term
+            //Value required for redirecting after pressing enter
+            fireRedirect: false,
+            //Value for searched term
+            searchedProduct: " ",
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,19 +26,24 @@ class Searchbar extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({searchedProduct: event.target.value});//Passing input value to this.state.searchedProduct
+        //Passing input value to this.state.searchedProduct
+        this.setState({searchedProduct: event.target.value});
     }
 
     handleSubmit(event) {
-        event.preventDefault();//Block default behavior
-        this.setState({fireRedirect: false});//Set fireRedirect back to false and allow to make a new search
+        //Block default behavior
+        event.preventDefault();
+        //Set fireRedirect back to false and allow to make a new search
+        this.setState({fireRedirect: false});
     }
 
     handleSearch(event) {
         if (event.key === "Enter") {
             this.props.searchProducts(this.state.searchedProduct);
-            this.setState({fireRedirect: true});//Changing value responsible for redirecting management 
-            document.getElementById("form").reset();//Clearing input
+            //Changing value responsible for redirecting management 
+            this.setState({fireRedirect: true});
+            //Clearing input
+            document.getElementById("form").reset();
         }
     }
 
@@ -49,6 +56,7 @@ class Searchbar extends React.Component {
                 <form id="form" onSubmit={this.handleSubmit} className="form__container">
                     <label htmlFor="searchbar">
                         <span>Searchbar</span>
+                        {/* Input that put text in state through method and when pressing enter fire redirect method */}
                         <input
                             type="text"
                             id="searchbar"

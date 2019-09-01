@@ -14,10 +14,10 @@ class BasketNavigationButton extends React.Component {
         };
     }
 
-    //setting state for simple animation for icon 
+    //state for simple animation for icon and reset it after .3s
     componentWillReceiveProps() {
         this.setState({isUpdated: true});
-        setTimeout(() => this.setState({isUpdated: false}), 300);//after .3 second change state to false and turn off the color
+        setTimeout(() => this.setState({isUpdated: false}), 300);
     }
 
     render() {
@@ -33,7 +33,7 @@ class BasketNavigationButton extends React.Component {
     }
 }
 ;
-//Mapping state= and connecting it with component
+//Mapping state and connecting it with component
 const mapStateToProps = store => ({
     totalCost: store.basketReducer.totalCost,
     totalItems: store.basketReducer.totalItems

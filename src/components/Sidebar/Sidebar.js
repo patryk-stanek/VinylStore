@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
         this.handleRecommended = this.handleRecommended.bind(this);
         this.handleOptionChange = this.handleOptionChange.bind(this);
     }
-
+    
     componentWillMount() {
         this.setState({
             selectedOption: this.props.sortingOption
@@ -35,31 +35,28 @@ class Sidebar extends React.Component {
         if (this.props.sortingOption === "sortById") {
             this.props.sortProductsById();
         }
-        this.props.handleUpdate();
+        this.props.handleSortingChanges();
     }
-
-    //Dispatching sorting products by chosen option and updating view
+    
     handleSortByName(option) {
         this.props.sortProductsByName(option);
-        this.props.handleUpdate();
+        this.props.handleSortingChanges();
     }
 
-    //Dispatching sorting products by chosen option and updating view
     handleSortByArtist(option) {
         this.props.sortProductsByArtist(option);
-        this.props.handleUpdate();
+        this.props.handleSortingChanges();
         
     }
 
-    //Dispatching sorting products by chosen option and updating view
     handleSortByPrice(option) {
         this.props.sortProductsByPrice(option);
-        this.props.handleUpdate();
+        this.props.handleSortingChanges();
     }
 
     handleRecommended() {
         this.props.sortProductsById();
-        this.props.handleUpdate();
+        this.props.handleSortingChanges();
     }
 
     handleOptionChange(event) {

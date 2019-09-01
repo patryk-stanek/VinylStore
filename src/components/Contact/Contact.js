@@ -23,7 +23,6 @@ export class Contact extends React.Component {
     }
 
     componentDidMount() {
-        //setting modal to false to prevent problems
         this.setState({
             modal: false
         })
@@ -32,26 +31,22 @@ export class Contact extends React.Component {
     handleInputChange(event) {
         event.preventDefault();
 
-        //text value variables
         const target = event.target;
         const name = target.id;
         const value = target.value;
 
-        //setting entered text in state for submiting
         this.setState({[name]: value})
     }
 
-    handleSubmit(event) {
+    handleSendMessage(event) {
         event.preventDefault();
 
-        //acquiring state values 
         const templateParams = {
             from: this.state.name,
             subject: this.state.subject,
             message: this.state.message
         };
 
-        //sending mail with values in variable
         emailjs.send("gmail", "template_QZzvx9yA", templateParams, "user_CoeXiqn6N18KnUJWx2Lyh")
             .then(function(response) {
                 console.log("SUCCESS!", response.status, response.text);
@@ -59,7 +54,6 @@ export class Contact extends React.Component {
                 console.log("FAILED...", error);
             });
 
-        //reseting values in state
         this.setState({
             name: "",
             email: "",
@@ -70,7 +64,7 @@ export class Contact extends React.Component {
     };
 
     //closing modal with information
-    handleModalClose() {
+    handleClosingModal() {
         this.setState({
             modal: false
         })
@@ -78,15 +72,17 @@ export class Contact extends React.Component {
 
     render() {
         //condition for showing ModalBox with custom text
-        const modalBox = this.state.modal === true ? <ModalBox handleModalClose={this.handleModalClose.bind(this)} description={this.state.modalDescription}/> : "";
+        const modalBoxConfirmation = this.state.modal === true ? <ModalBox handleClosingModal={this.handleClosingModal.bind(this)} description={this.state.modalDescription}/> : "";
 
         return (
             <div className="contact">
-                {modalBox}
+                { modalBoxConfirmation }
                 <h1 className="contact__header">Contact us!</h1>
                 <div className="contact__container">
-                    <form className="contact__box" onSubmit={this.handleSubmit.bind(this)}>
+                    {/* Contact form with method onSubmit*/}
+                    <form className="contact__box" onSubmit={this.handleSendMessage.bind(this)}>
                         <div className="contact__line">
+                            {/* Input for name */}
                             <input
                                 className="contact__input contact__input--half"
                                 type="text"
@@ -97,6 +93,7 @@ export class Contact extends React.Component {
                                 required
                                 onChange={this.handleInputChange.bind(this)}
                             />
+                            {/* Input for email */}
                             <input
                                 className="contact__input contact__input--half"
                                 type="email"
@@ -108,6 +105,7 @@ export class Contact extends React.Component {
                                 onChange={this.handleInputChange.bind(this)}
                             />
                         </div>
+                        {/* Input for subject */}
                         <input
                             className="contact__input contact__input--subject"
                             type="text"
@@ -118,6 +116,7 @@ export class Contact extends React.Component {
                             required
                             onChange={this.handleInputChange.bind(this)}
                         />
+                        {/* Input for message */}
                         <textarea 
                             className="contact__input contact__input--textarea"
                             id="message"
@@ -126,8 +125,10 @@ export class Contact extends React.Component {
                             rows="10"
                             onChange={this.handleInputChange.bind(this)}
                         ></textarea>
+                        {/* Submit button */}
                         <button className="contact__button" type="submit">Submit!</button>
                     </form>
+                    {/* Box with basic information */}
                     <div className="contact__box">
                         <div className="contact__information">
                             <span className="contact__part">

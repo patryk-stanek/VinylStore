@@ -15,6 +15,7 @@ export class Header extends React.Component {
     render() {
         return (
             <header className="header">
+                {/* Link to homepage */}
                 <Link to="/" className="header__link">
                     <h1 className="header__title">
                         <span className="header__span">Vinyl</span>St<i className="header__icon fas fa-compact-disc"></i>re

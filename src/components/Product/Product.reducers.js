@@ -50,52 +50,55 @@ export default function productsReducer(state = initialState, action) {
             return Object.assign({}, state, {searchedProducts: foundProducts})
 
         case SORT_PRODUCTS_BY_NAME:
+            //this reducer have prepared reverse sorting for future implementation
             const compareName = (a, b) => {
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
-                let comparison = 0;
-                if (nameA > nameB) {
-                    action.option === 0 ? comparison = -1 : comparison = 1;
+                const productNameA = a.name.toLowerCase();
+                const productNameB = b.name.toLowerCase();
+                // if value is 1 objects are sorted from first to last
+                let chosenOptionValue = 0;
+                if (productNameA > productNameB) {
+                    action.option === 0 ? chosenOptionValue = -1 : chosenOptionValue = 1;
                 } else {
-                    action.option === 0 ? comparison = 1 : comparison = -1;
+                    action.option === 0 ? chosenOptionValue = 1 : chosenOptionValue = -1;
                 }
-                return comparison;
+                return chosenOptionValue;
             }
-            const sortingOptionByName = action.option == 1 ? "sortByNameAscending" : "sortByNameDescending";
+            const sortingOptionByName = action.option === 1 ? "sortByNameAscending" : "sortByNameDescending";
             const sortedProductsByName = state.products.sort(compareName);
             return Object.assign({}, state, {visibleProducts: sortedProductsByName, sortingOption: sortingOptionByName, currentPage: 0})
 
             case SORT_PRODUCTS_BY_ARTIST:
+                //this reducer have prepared reverse sorting for future implementation
                 const compareArtist = (a, b) => {
-                    const artistA = a.artist.toLowerCase();
-                    const artistB = b.artist.toLowerCase();
-                    let comparison = 0;
-    
-                    if (artistA > artistB) {
-                        action.option === 0 ? comparison = -1 : comparison = 1;
+                    const productArtistA = a.artist.toLowerCase();
+                    const productArtistB = b.artist.toLowerCase();
+                    // if value is 1 objects are sorted from first to last
+                    let chosenOptionValue = 0;
+                    if (productArtistA > productArtistB) {
+                        action.option === 0 ? chosenOptionValue = -1 : chosenOptionValue = 1;
                     } else {
-                        action.option === 0 ? comparison = 1 : comparison = -1;
+                        action.option === 0 ? chosenOptionValue = 1 : chosenOptionValue = -1;
                     }
-                    return comparison;
+                    return chosenOptionValue;
                 }
-                const sortingOptionByArtist = action.option == 1 ? "sortByArtistAscending" : "sortByArtistDescending";
+                const sortingOptionByArtist = action.option === 1 ? "sortByArtistAscending" : "sortByArtistDescending";
                 const sortedProductsByArtist = state.products.sort(compareArtist);
                 return Object.assign({}, state, {visibleProducts: sortedProductsByArtist, sortingOption: sortingOptionByArtist, currentPage: 0})
 
         case SORT_PRODUCTS_BY_PRICE:
             const comparePrice = (a, b) => {
-                const priceA = Number(a.price.replace(/[^0-9.-]+/g,""));
-                const priceB = Number(b.price.replace(/[^0-9.-]+/g,""));
+                const productPriceA = Number(a.price.replace(/[^0-9.-]+/g,""));
+                const productPriceB = Number(b.price.replace(/[^0-9.-]+/g,""));
                 if (action.option === 1) {
-                    return priceA - priceB
+                    return productPriceA - productPriceB
                 } else {
-                    return priceB - priceA
+                    return productPriceB - productPriceA
                 }
 
             };
-            const sortingType = action.option === 1 ? "sortByPriceAscending" : "sortByPriceDescending";
+            const sortingOptionByPrice = action.option === 1 ? "sortByPriceAscending" : "sortByPriceDescending";
             const sortedProductsByPrice = state.products.sort(comparePrice);
-            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice, sortingOption: sortingType, currentPage: 0})
+            return Object.assign({}, state, {visibleProducts: sortedProductsByPrice, sortingOption: sortingOptionByPrice, currentPage: 0})
 
         case SORT_PRODUCTS_BY_ID:
             const sortedProductsByid = state.products.sort((a,b) => a.id - b.id);

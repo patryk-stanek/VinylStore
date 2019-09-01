@@ -5,7 +5,6 @@ export const DECREASE_PRODUCT_AMOUNT = "DECREASE_PRODUCT_AMOUNT";
 export const CLEAR_BASKET = "CLEAR_BASKET";
 export const CALCULATE_DISCOUNT = "CALCULATE_DISCOUNT";
 
-//Adding a single product to the basket
 export function addToBasket(product) {
     return {
         type: ADD_TO_BASKET,
@@ -14,7 +13,6 @@ export function addToBasket(product) {
     }
 }
 
-//Removing a product from the basket
 export function removeFromBasket(product) {
     return {
         type: REMOVE_FROM_BASKET,
@@ -22,7 +20,6 @@ export function removeFromBasket(product) {
     }
 }
 
-//Decrease amount of products in the basket
 export function decreaseProductAmount(product) {
     return {
         type: DECREASE_PRODUCT_AMOUNT,
@@ -30,14 +27,12 @@ export function decreaseProductAmount(product) {
     }
 }
 
-//Clear basket
 export function clearBasket() {
     return {
         type: CLEAR_BASKET
     }
 }
 
-//Calculate discount
 export function calculateDiscount(code) {
     return {
         type: CALCULATE_DISCOUNT,

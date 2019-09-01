@@ -12,7 +12,7 @@ import "./BasketAddButton.scss";
 
 class BasketAddButton extends React.Component {
     //if "stocked" value is true in databse product will be available for ordering
-    renderStocked() {
+    renderBasketNotEmpty() {
         return (
             <button
                 onClick={() => this.props.addToBasket(this.props.product)}
@@ -24,7 +24,7 @@ class BasketAddButton extends React.Component {
     }
 
     //if "stocked" value is false in databse product will not be available for ordering
-    renderNotStocked() {
+    renderBasketEmpty() {
         return (
             <React.Fragment>
                 <button
@@ -41,7 +41,7 @@ class BasketAddButton extends React.Component {
     }
 
     render() {
-        return this.props.product.stocked === true ? this.renderStocked() : this.renderNotStocked();
+        return this.props.product.stocked === true ? this.renderBasketNotEmpty() : this.renderBasketEmpty();
     }
 }
 
