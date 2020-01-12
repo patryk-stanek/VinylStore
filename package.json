@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "chalk": "^2.4.2",
+    "react-image-webp": "^0.3.1",
     "uuid": "^3.3.2"
   }
 }

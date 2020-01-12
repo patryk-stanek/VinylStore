@@ -66,7 +66,7 @@ class Searchbar extends React.Component {
                             className="searchbar__input"
                         />
                     </label>
-                    <i className="searchbar__icon fas fa-search"></i>
+                    {/* <i className="searchbar__icon fas fa-search"></i> */}
                 </form>
                 {
                     fireRedirect && (

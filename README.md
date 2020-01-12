@@ -1,11 +1,28 @@
-## URL
-https://vstore.web.app/
+# VinylStore
 
-## NPM 
-> npm start
+## An example deployment is running [here](https://vstore.web.app/).
 
-Starting project in development environment on localhost:3000.
+This project was bootstrapped with [Create Next App](https://github.com/segmentio/create-next-app).
 
-> npm run build
+Main technologies used in this app:
 
-Create build version of this project.
+- React for UI building;
+- Redux for global state management;
+- EmailJS for handling contact page;
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any errors in the console.
+
+### `npm build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
